@@ -1,0 +1,43 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+div {
+  display: flex;
+  flex-flow: column;
+
+  > * {
+    margin-bottom: $margin;
+  }
+
+  header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding;
+    background-color: var(--c-bright);
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+    grid-gap: $margin;
+
+    > * {
+      padding: $padding;
+      background-color: var(--c-bright);
+    }
+  }
+
+}
+
+// --- breakpoint 01 - 03 ---
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+
+}
+

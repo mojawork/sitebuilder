@@ -1,0 +1,8 @@
+<section>
+  <header>
+    <div class="m-pointer-g" :class="{'active': index === activeTab}" @click="active($event, index)" v-for="(tabName, index) in options" v-text="tabName"/>
+  </header>
+  <div class="content">
+    <slot />
+  </div>
+</section>

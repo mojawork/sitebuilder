@@ -1,0 +1,71 @@
+// ----------------------------------------------------------------------------
+// Config
+
+body {
+
+  --c-success: #28a745;
+  --c-danger: #de0000;
+  --c-warning: #ffc107;
+
+  --text-success: #28a745;
+  --text-danger: #de0000;
+  --text-warning: #ffc107;
+  --text-white: #ffffff;
+  --text-black: #000000;
+
+}
+
+.theme-default {
+  --text-primary: #333333;
+  --text-secondary: #848484;
+
+  --text-light: #cccccc;
+  --text-dark: #000000;
+  --text-disabeld: #e5e5e5;
+  --text-bright: #ffffff;
+
+  --c-primary: #049ae2;
+  --c-secondary: #d6e7f0;
+  --c-thirdly: #cccccc;
+  --c-dark: #000000;
+  --c-dark-light: #848484;
+  --c-light: #efefef;
+  --c-bright: #f7f7f7;
+  --c-background: #ffffff;
+
+  --ct-primary: rgba(4, 112, 178, 0.8);
+  --ct-secondary: rgba(214, 231, 240, 0.8);
+  --ct-thirdly: rgba(204, 204, 204, 0.8);
+  --ct-dark: rgba(0, 0, 0, 0.8);
+  --ct-dark-light: rgba(132, 132, 132, 0.8);
+  --ct-light: rgba(229, 229, 229, 0.8);
+  --ct-bright: rgba(255, 255, 255, 0.92);
+}
+
+.theme-dark {
+  --text-primary: #cccccc;
+  --text-secondary: #cccccc;
+  --text-light: #cccccc;
+  --text-dark: #cccccc;
+  --text-disabeld: #848484;
+  --text-bright: #ffffff;
+
+  --c-primary: #333333;
+  --c-secondary: #4b4b4b;
+  --c-thirdly: #4b4b4b;
+  --c-dark: #4b4b4b;
+  --c-dark-light: #848484;
+  --c-light: #efefef;
+  --c-bright: #f7f7f7;
+  --c-background: #333333;
+
+  --ct-primary: rgba(0, 0, 0, 0.8);
+  --ct-secondary: rgba(0, 0, 0, 0.8);
+  --ct-thirdly: rgba(0, 0, 0, 0.8);
+  --ct-dark: rgba(0, 0, 0, 0.8);
+  --ct-dark-light: rgba(0, 0, 0, 0.8);
+  --ct-light: rgba(0, 0, 0, 0.8);
+  --ct-bright: rgba(0, 0, 0, 0.8);
+}
+
+// ----------------------------------------------------------------------------

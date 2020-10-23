@@ -1,0 +1,21 @@
+import { Component, Prop, Vue } from "vue-property-decorator";
+
+import { IOfferList } from "@/types/views/offer-list";
+import MainOfferListForm from "@/components/main/offer-list/form/form.vue";
+import MainOfferListView from "@/components/main/offer-list/view/view.vue";
+
+@Component({
+  components: {
+    MainOfferListForm,
+    MainOfferListView
+  }
+})
+export default class MainOfferList extends Vue {
+  @Prop({ required: true })
+  public options!: IOfferList;
+
+  //  --- Lifecycle hooks ---
+  private mounted() {
+    console.log("MainOfferList", this.options);
+  }
+}

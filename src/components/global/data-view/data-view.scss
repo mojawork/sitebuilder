@@ -1,0 +1,23 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+fieldset {
+  display: flex;
+  flex-flow: column;
+  padding: $padding;
+  margin-bottom: $margin;
+  border: 1px solid var(--c-dark-light);
+   div {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+// --- breakpoint 01 - 03 ---
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+}

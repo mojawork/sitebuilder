@@ -1,0 +1,71 @@
+// ----------------------------------------------------------------------------
+// Config
+@import "import.scss";
+
+// ----------------------------------------------------------------------------
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: $global-font-size;
+  background-color: var(--c-background);
+}
+
+body {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  *, ::before, ::after {
+    font-style: $global-font-style;
+    font-family: $global-font-family;
+    font-weight: $global-font-weight;
+    text-decoration: $global-text-decoration;
+    letter-spacing: $global-letter-spacing;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+
+  div, article, section, figure {
+    display: flex;
+    box-sizing: border-box;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Imports external
+// @import "~@/scss/fonts/icons/material-icons";
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(~@/scss/fonts/icons/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('~@/scss/fonts/icons/Material Icons'),
+  local('~@/scss/fonts/icons/MaterialIcons-Regular'),
+  url(~@/scss/fonts/icons/MaterialIcons-Regular.woff2) format('woff2'),
+  url(~@/scss/fonts/icons/MaterialIcons-Regular.woff) format('woff'),
+  url(~@/scss/fonts/icons/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+
+
+// ----------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------
+// Imports internal
+@import "~@/scss/declaration/animation";
+@import "~@/scss/declaration/colors";
+@import "~@/scss/declaration/classes";
+@import "~@/scss/declaration/fonts";
+@import "~@/scss/declaration/tags";
+@import "~@/scss/declaration/forms";
+@import "~@/scss/declaration/modifire";
+@import "~@/scss/declaration/icons";
+@import "~@/scss/declaration/edit";
+
+// ----------------------------------------------------------------------------
+
+

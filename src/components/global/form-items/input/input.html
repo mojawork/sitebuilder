@@ -1,0 +1,23 @@
+<label :class="{'placeholder': options.placeholder}">
+    <span
+        :class="{ 'required': options.required , 'placeholder': options.placeholder }"
+        v-text="options.label"/>
+    <span class="input-wrapper">
+        <input
+            :class="{ 'error': options.error.exists, 'max-count' : options.maxlength }"
+            :type="options.inputType"
+            :placeholder="placeholder()"
+            @blur="validate"
+            :maxlength="this.options.maxlength"
+            :name = "this.options.name"
+            v-model="options.value"/>
+        <span
+            class="ELLIPSIS max-count"
+            v-if="options.maxlength"
+            v-text="this.getMaxCount.max(this.options.value, this.options.maxlength)"/>
+    </span>
+    <span
+        class="error"
+        v-if="options.error.exists"
+        v-text="options.error.massage"/>
+</label>

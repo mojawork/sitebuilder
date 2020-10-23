@@ -1,0 +1,90 @@
+// ----------------------------------------------------------------------------
+// Config
+@import "@/scss/import";
+$time: 0.4s;
+// ----------------------------------------------------------------------------
+
+.layout {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  padding: 0;
+  border-top: 0;
+  border-bottom: 0;
+
+  > header {
+    flex: 0 0;
+    padding: $padding;
+    .zoom{
+      letter-spacing: - $global-letter-spacing * 8;
+    }
+  }
+
+  > main {
+    flex: 1 1;
+    display: grid;
+    padding: $padding;
+    grid-template-columns: 1fr;
+    grid-gap: $margin;
+  }
+
+  > footer {
+    flex: 0 0;
+    padding: $padding;
+  }
+
+  //--- mediascreen 1 ---
+  @include mediascreen($mediascreen: 'ms1') {
+    @include layout($mediascreen: 'ms1');
+  }
+  //--- mediascreen 2 ---
+  @include mediascreen($mediascreen: 'ms2') {
+    @include layout($mediascreen: 'ms2');
+  }
+  //--- mediascreen 3 ---
+  @include mediascreen($mediascreen: 'ms3') {
+    @include layout($mediascreen: 'ms3');
+  }
+  //--- mediascreen 4 ---
+  @include mediascreen($mediascreen: 'ms4') {
+    transition: $time ease-in-out;
+    @include layout($mediascreen: 'ms4');
+  }
+  //--- mediascreen 5 ---
+  @include mediascreen($mediascreen: 'ms5') {
+    transition: $time ease-in-out;
+    @include layout($mediascreen: 'ms5');
+  }
+  //--- mediascreen 6 ---
+  @include mediascreen($mediascreen: 'ms6') {
+    transition: $time ease-in-out;
+    @include layout($mediascreen: 'ms6');
+  }
+}
+
+.edit{
+  position: fixed;
+  top:0;
+  right:0;
+}
+
+// ----------------------------------------------------------------------------
+// Colors
+.layout.color {
+  border: $border solid var(--c-light);
+
+  > header {
+    color: var(--text-bright);
+    background-color: var(--c-primary);
+  }
+
+  > main {
+    background-color: var(--c-bright);
+  }
+
+  > footer {
+    background-color: var(--c-light);
+  }
+}

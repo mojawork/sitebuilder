@@ -1,0 +1,62 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+section {
+  display: flex;
+  flex-flow: column;
+  header {
+    display: flex;
+
+    padding:$padding;
+    padding-bottom: 0;
+    background-color: var(--c-bright);
+    div {
+      display: flex;
+      background-color: var(--ct-light);
+      padding:$padding;
+      border-radius: $radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      margin: $margin * 0.25;
+
+      margin-bottom:0;
+      &:first-of-type {
+        margin-left:0;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &.active {
+        background-color: var(--c-bright);
+        border:1px solid var(--c-thirdly);
+        border-bottom: 0;
+        transform: translateY(1px);
+      }
+
+    }
+
+  }
+  .content{
+    display: flex;
+    flex-flow: column;
+    background-color: var(--c-bright);
+    border:1px solid var(--c-thirdly);
+    padding:$padding;
+     > * {
+      display: none;
+    }
+     > *.active {
+      display: flex;
+    }
+  }
+
+}
+
+// --- breakpoint 01 - 03 ---
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+}
