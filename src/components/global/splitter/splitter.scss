@@ -1,0 +1,68 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+.splitter {
+  display: flex;
+  flex-flow: column;
+
+  .nav {
+    display: flex;
+    padding: $padding;
+    background-color: var(--c-light);
+    justify-content: flex-end;
+    margin-bottom: $margin;
+
+    button {
+      margin-left: $margin;
+    }
+
+    @include mediascreen($mediascreen: 'custom', $max: $ms-4-max) {
+      display: none;
+    }
+
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $margin;
+    transition: $time ease-in;
+
+    &.left {
+      grid-template-columns: 3fr 1fr;
+    }
+
+    &.center {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &.right {
+      grid-template-columns: 1fr 3fr;
+    }
+
+    &.split {
+      grid-template-columns: 1fr;
+    }
+
+    // --- breakpoint 01 - 03 ---
+    @include mediascreen($mediascreen: 'custom', $max: $ms-4-max) {
+      &.left, &.center, &.right {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    > * {
+      background-color: var(--c-light);
+    }
+
+  }
+}
+
+
+

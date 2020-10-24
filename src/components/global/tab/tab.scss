@@ -6,13 +6,13 @@
 // ----------------------------------------------------------------------------
 // Defaut
 // ----------------------------------------------------------------------------
-section {
+.tabs {
   display: flex;
   flex-flow: column;
   header {
     display: flex;
 
-    padding:$padding;
+    //padding:$padding;
     padding-bottom: 0;
     background-color: var(--c-bright);
     div {

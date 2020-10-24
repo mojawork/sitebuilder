@@ -1,0 +1,12 @@
+<div class="splitter">
+    <nav class="nav">
+        <button @click="wideCssClass = CEwide.left" class="icons-g">border_right</button>
+        <button @click="wideCssClass = CEwide.center" class="icons-g">border_vertical</button>
+        <button @click="wideCssClass = CEwide.right" class="icons-g">border_left</button>
+        <button @click="wideCssClass = CEwide.split" class="icons-g">border_horizontal</button>
+    </nav>
+    <div class="content" :class="wideCssClass">
+        <slot name="left"/>
+        <slot name="right"/>
+    </div>
+</div>

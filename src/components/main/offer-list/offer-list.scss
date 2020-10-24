@@ -7,14 +7,10 @@
 // Defaut
 // ----------------------------------------------------------------------------
 
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: $margin;
-  > * {
-    padding:$padding;
-    background-color: var(--c-light);
-  }
+.offer-list {
+  display:flex;
+  flex-flow: column;
+  min-width: 100%;
 }
 
 // --- breakpoint 01 - 03 ---

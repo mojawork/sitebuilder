@@ -1,4 +1,4 @@
-<section>
+<section class="tabs">
   <header>
     <div class="m-pointer-g" :class="{'active': index === activeTab}" @click="active($event, index)" v-for="(tabName, index) in options" v-text="tabName"/>
   </header>

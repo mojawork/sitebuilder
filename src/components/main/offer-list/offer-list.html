@@ -1,4 +1,6 @@
-<section>
-    <MainOfferListForm :options="options.form"></MainOfferListForm>
-    <MainOfferListView :options="options.view"></MainOfferListView>
+<section class="offer-list">
+    <GlobalSplitter>
+        <MainOfferListForm slot="left" :options="options.form"></MainOfferListForm>
+        <MainOfferListView slot="right" :options="options.view"></MainOfferListView>
+    </GlobalSplitter>
 </section>

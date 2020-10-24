@@ -39,6 +39,5 @@ export default class GlobaTab extends Vue {
   //  --- Lifecycle hooks ---
   private mounted() {
     this.activeContent(this.activeTab);
-    // console.log("GlobaDataView", this.options);
   }
 }
