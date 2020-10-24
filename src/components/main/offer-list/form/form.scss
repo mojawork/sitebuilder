@@ -27,12 +27,16 @@
 
   .entry {
     display: grid;
-    grid-template-columns: 2fr 4fr 1fr;
+    grid-template-columns: 2fr 4fr 1fr auto;
     grid-gap: $margin;
 
     > * {
       padding: $padding;
       background-color: var(--c-bright);
+    }
+    .remove {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 

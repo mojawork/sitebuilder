@@ -2,19 +2,23 @@
 
     <header>
         <h2 v-text="options.headline"/>
-        <button @click="addEntry()" class="icons-g">add_box</button>
+        <button @click="addEntry()" class="icons-g">add_circle</button>
     </header>
 
-
-    <div class="entry" v-for="entry in options.entries">
+    <div class="entry" v-for="(entry ,index) in options.entries">
         <GlobalInput v-for="item in entry.items" :options="item"></GlobalInput>
+        <div class="remove">
+            <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
+        </div>
     </div>
 
-    <footer>
-        <h2 v-text="options.headline"/>
-        <button @click="addEntry()" class="icons-g">add_box</button>
+    <footer v-if="options.entries.length > 0">
+        <button @click="addEntry()" class="icons-g">add_circle</button>
+        <button @click="reset()">
+            {{options.footer.resetlabel}}
+            <span class="icon">delete</span>
+        </button>
+        <button @click="save()" class="icons-g">save</button>
     </footer>
-
-
 
 </div>

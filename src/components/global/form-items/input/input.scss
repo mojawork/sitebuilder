@@ -61,7 +61,7 @@ label {
     }
 
     &.error {
-      color: var(--c-red);
+      color: var(--text-danger);
       grid-column-start: 2;
     }
   }
@@ -75,7 +75,7 @@ label {
       width: 100%;
 
       &.error {
-        border-color: var(--c-red);
+        border-color: var(--text-danger);
       }
       &.max-count{
         padding-right: $maxCountWidth;

@@ -32,6 +32,8 @@ body {
 
     &:focus {
       outline: none;
+      border-color: var(--c-focus);
+      box-shadow: 0 0 $button-shadow *2  0 var(--c-focus);
     }
   }
 
@@ -54,10 +56,12 @@ body {
     &:active {
       box-shadow: 0 0 0 0 !important;
     }
+
+
   }
 
-  button.icons-g{
-    padding:0;
+  button.icons-g {
+    padding: 0;
     // transform: translateX(-50%);
   }
 

@@ -1,17 +1,21 @@
-import { IInputItem } from "@/types/global/iForms";
+import {IInputItem} from "@/types/global/iForms";
 
 export interface IOfferListForm {
-  headline: string;
-  entries: {
-    items: Array<IInputItem>;
-  }[];
+    headline: string;
+    entries: {
+        items: Array<IInputItem>;
+    }[];
+    footer: {
+        savelabel: string;
+        resetlabel: string;
+    }
 }
 
 export interface IOfferListView {
-  headline: string;
+    headline: string;
 }
 
 export interface IOfferList {
-  form: IOfferListForm;
-  view: IOfferListView;
+    form: IOfferListForm;
+    view: IOfferListView;
 }
