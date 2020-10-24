@@ -19,15 +19,27 @@
 
   header, footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: $padding;
     background-color: var(--c-bright);
   }
 
+  header {
+    justify-content: space-between;
+  }
+
+  footer {
+    justify-content: flex-end;
+    > button {
+      margin-left: $margin;
+    }
+  }
+
+
+
   .entry {
     display: grid;
-    grid-template-columns: 2fr 4fr 1fr auto;
+    grid-template-columns: 2fr 4fr minmax(18rem ,1fr) auto;
     grid-gap: $margin;
 
     > * {

@@ -47,7 +47,7 @@ label {
     &.max-count {
       position: absolute;
       top: 50%;
-      right: 0;
+      right: 1px;
       max-width: $maxCountWidth;
       transform: translateY(-50%);
       padding: $padding * 0.125;

@@ -39,9 +39,6 @@ export class FormValidate {
         formItems: Record<string, IfromValidate> | Array<IfromValidate>
     ): boolean {
         _find(formItems, (item: IfromValidate) => {
-
-            console.log(item, item.value)
-
             if (item.required) {
                 item.error.exists = (item.value?.length ?? 0) <= 1;
             }

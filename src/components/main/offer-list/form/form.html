@@ -6,7 +6,7 @@
     </header>
 
     <div class="entry" v-for="(entry ,index) in options.entries">
-        <GlobalInput v-for="item in entry.items" :options="item"></GlobalInput>
+        <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
         <div class="remove">
             <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
         </div>
@@ -14,11 +14,16 @@
 
     <footer v-if="options.entries.length > 0">
         <button @click="addEntry()" class="icons-g">add_circle</button>
-        <button @click="reset()">
-            {{options.footer.resetlabel}}
-            <span class="icon">delete</span>
+
+        <button class="text-icon-g" @click="reset()">
+            <span class="icons-g">delete</span>
+            {{ options.footer.resetlabel }}
         </button>
-        <button @click="save()" class="icons-g">save</button>
+        <button class="text-icon-g" @click="save()">
+            <span class="icons-g">save</span>
+            {{ options.footer.savelabel }}
+        </button>
+
     </footer>
 
 </div>

@@ -19,13 +19,13 @@ export const offerformItem: IInputItem[] = [
     {
         formType: EFormItemType.input,
         name: "description",
-        label: "Beschribung",
+        label: "Beschreibung",
         value: "",
         error: {
             massage: "error",
             exists: false
         },
-        required: true,
+        required: false,
         inputType: EInputTypes.text,
         maxlength: 500,
         placeholder: false
@@ -41,7 +41,7 @@ export const offerformItem: IInputItem[] = [
         },
         required: true,
         inputType: EInputTypes.text,
-        maxlength: 500,
+        maxlength: 7,
         placeholder: false
     }
 ];
@@ -49,11 +49,7 @@ export const offerformItem: IInputItem[] = [
 export const dataOfferList: IOfferList = {
     form: {
         headline: "OfferForm",
-        entries: [
-            {
-                items: offerformItem
-            }
-        ],
+        entries: [],
         footer: {
             savelabel: 'save',
             resetlabel: 'reset'

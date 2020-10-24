@@ -1,9 +1,10 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-import {dataOfferList} from "@/data/offer-list"
+import {offerformItem} from "@/data/offer-list"
 import GlobalInput from "@/components/global/form-items/input/input.vue";
 import {IOfferListForm} from "@/types/views/offer-list";
 import _cloneDeep from "lodash/cloneDeep";
 import {FormValidate} from "@/components/global/form-items/validate/validate";
+import store from '@/store';
 
 @Component({
     components: {
@@ -13,37 +14,36 @@ import {FormValidate} from "@/components/global/form-items/validate/validate";
 export default class MainOfferListForm extends Vue {
     @Prop({required: true})
     public options!: IOfferListForm;
-    public cloneEntry = dataOfferList.form.entries[0];
+    public cloneEntry = offerformItem;
     private validate = new FormValidate();
 
     public addEntry(): void {
-
-      console.log(this.cloneEntry.items[0].error)
-
         this.options.entries.push(_cloneDeep(this.cloneEntry));
+        store.commit('updateState', store.state);
     }
 
     public removeEntry(index: number): void {
         this.options.entries.splice(index, 1);
+        store.commit('updateState', store.state);
     }
 
-  public reset (): void {
-    console.log('reset');
-    this.options.entries = [];
-  }
+    public reset(): void {
+        console.log('reset');
+        this.options.entries = [];
+        store.commit('updateState', store.state);
+    }
 
-    public save (): void {
-
-      this.options.entries.forEach((entry) => {
-
-        this.validate.checkErrors(entry.items)
-        //console.log(entry)
-
-      } )
-
-      // const test = this.validate.checkErrors(this.options.entries[0].items)
-
-      // console.log('save',  test);
+    public save(): void {
+        let error = false
+        this.options.entries.forEach((entry) => {
+            if (!error) {
+                error = this.validate.checkErrors(entry)
+            } else {
+                this.validate.checkErrors(entry)
+            }
+        })
+        store.commit('updateState', store.state);
+        console.log('save', 'error:', error);
     }
 
     //  --- Lifecycle hooks ---
