@@ -15,6 +15,11 @@
     <footer v-if="options.entries.length > 0">
         <button @click="addEntry()" class="icons-g">add_circle</button>
 
+        <button class="text-icon-g" @click="load()">
+            <span class="icons-g">get_app</span>
+            load
+        </button>
+
         <button class="text-icon-g" @click="reset()">
             <span class="icons-g">delete</span>
             {{ options.footer.resetlabel }}

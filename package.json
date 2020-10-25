@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/lodash-es": "^4.17.3",
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "lodash-es": "^4.17.15",
     "vue": "^2.6.11",

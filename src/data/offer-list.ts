@@ -28,7 +28,7 @@ export const offerformItem: IInputItem[] = [
         required: false,
         inputType: EInputTypes.text,
         maxlength: 500,
-        placeholder: false
+        placeholder: true
     },
     {
         formType: EFormItemType.input,
@@ -50,6 +50,7 @@ export const dataOfferList: IOfferList = {
     form: {
         headline: "OfferForm",
         entries: [],
+        entriesResonse: [],
         footer: {
             savelabel: 'save',
             resetlabel: 'reset'

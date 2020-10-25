@@ -3,6 +3,7 @@ import {IInputItem} from "@/types/global/iForms";
 export interface IOfferListForm {
     headline: string;
     entries: Array<IInputItem>[];
+    entriesResonse: Array<IInputItem>[];
     footer: {
         savelabel: string;
         resetlabel: string;
