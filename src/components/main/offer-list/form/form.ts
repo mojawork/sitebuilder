@@ -53,16 +53,12 @@ export default class MainOfferListForm extends Vue {
             }
         })
 
+        // store.commit('updateState', store.state);
         if (!error) {
-            this.options.entriesResonse = _cloneDeep(this.options.entries);
+            this.saveService.save();
+            // this.options.entriesResonse = _cloneDeep(this.options.entries);
         }
 
-        store.commit('updateState', store.state);
-
-        this.saveService.save();
-
-        console.log('save', 'error:', error);
-        console.log(this.options.entriesResonse)
     }
 
     //  --- Lifecycle hooks ---

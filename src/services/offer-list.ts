@@ -1,49 +1,30 @@
-
 import axios from 'axios';
 import store from '@/store';
 
 import _forEach from 'lodash/forEach';
-
+import {IInputItem} from "@/types/global/iForms";
 
 
 export class OfferListService {
 
-
+    // config ---
+    private saveService = process.env.VUE_APP_OFFER_LIST_SAVE;
 
     public save() {
-        console.log('saveService')
-
-        console.log(store.state.data.main.offerList.form.entries)
-
         axios({
             method: 'post',
-            url: 'https://mojawork.de/service/contact.php',
+            url: this.saveService,
             headers: {
-                 'accept': 'application/json;charset=UTF-8',
-                 'content-type': 'application/x-www-form-urlencoded'
+                'accept': 'application/json;charset=UTF-8',
+                'content-type': 'application/x-www-form-urlencoded'
             },
-            data: store.state.data.main.offerList.form
+            data: store.state.data.main.offerList.form.entries
         }).then((result) => {
             console.info('contatDATA:', result.data);
-            //console.log(JSON.parse(result.data))
-
-
-            /*
-            _forEach (result.data, (test) => {
-                console.log('lodash',test);
-
-
-            })
-
-             */
-
-
-            //store.state.data.main.offerList.form.entriesResonse = result.data
+            store.commit('UpdateOfferListFormEntriesResonse', result.data as Array<IInputItem>[]);
         }, (error) => {
             // ToDo: Error Handling
             console.error('ERROR', error);
         });
-
-
     }
 }

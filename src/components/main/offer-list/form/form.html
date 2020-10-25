@@ -1,33 +1,37 @@
 <div class="form">
 
     <header>
-        <h2 v-text="options.headline"/>
         <button @click="addEntry()" class="icons-g">add_circle</button>
+        <div>
+            <h2 v-text="options.headline"/>
+            <button class="text-icon-g" @click="load()">
+                <span class="icons-g">get_app</span>
+                load
+            </button>
+        </div>
     </header>
 
     <div class="entry" v-for="(entry ,index) in options.entries">
-        <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
         <div class="remove">
             <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
         </div>
+        <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
+
     </div>
 
     <footer v-if="options.entries.length > 0">
         <button @click="addEntry()" class="icons-g">add_circle</button>
 
-        <button class="text-icon-g" @click="load()">
-            <span class="icons-g">get_app</span>
-            load
-        </button>
-
-        <button class="text-icon-g" @click="reset()">
-            <span class="icons-g">delete</span>
-            {{ options.footer.resetlabel }}
-        </button>
-        <button class="text-icon-g" @click="save()">
-            <span class="icons-g">save</span>
-            {{ options.footer.savelabel }}
-        </button>
+        <div>
+            <button class="text-icon-g" @click="reset()">
+                <span class="icons-g">delete</span>
+                {{ options.footer.resetlabel }}
+            </button>
+            <button class="text-icon-g" @click="save()">
+                <span class="icons-g">save</span>
+                {{ options.footer.savelabel }}
+            </button>
+        </div>
 
     </footer>
 

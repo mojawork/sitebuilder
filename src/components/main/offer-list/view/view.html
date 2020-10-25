@@ -2,9 +2,6 @@
     <header >
         <h2 v-text="options.headline"/>
     </header>
-    <!--
-    <GlobaDataView :options="options"></GlobaDataView>
-    // -->
     <GlobaTab :options="['data header','data form','no content']" :activeTab="1">
         <GlobaDataView :options="$store.state.data.header"></GlobaDataView>
         <div>

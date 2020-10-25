@@ -6,6 +6,7 @@ node_modules
 /ftpdeploy/hist.json
 
 # local env files
+.env
 .env.local
 .env.*.local
 
