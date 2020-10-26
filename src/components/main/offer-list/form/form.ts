@@ -1,7 +1,7 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 import {offerformItem} from "@/data/offer-list"
 import GlobalInput from "@/components/global/form-items/input/input.vue";
-import {IOfferListForm} from "@/types/views/offer-list";
+import {EentryNames, IOfferListForm} from "@/types/views/offer-list";
 import _cloneDeep from "lodash/cloneDeep";
 import {FormValidate} from "@/components/global/form-items/validate/validate";
 import store from '@/store';
@@ -36,11 +36,12 @@ export default class MainOfferListForm extends Vue {
     }
 
     public load(): void {
-        console.log('reset');
         if (this.options.entriesResonse.length > 0) {
             this.options.entries = _cloneDeep(this.options.entriesResonse);
         }
-        store.commit('updateState', store.state);
+        else {
+            this.saveService.load(EentryNames.entries);
+        }
     }
 
     public save(): void {
@@ -52,17 +53,14 @@ export default class MainOfferListForm extends Vue {
                 this.validate.checkErrors(entry)
             }
         })
-
-        // store.commit('updateState', store.state);
         if (!error) {
             this.saveService.save();
-            // this.options.entriesResonse = _cloneDeep(this.options.entries);
         }
-
     }
 
     //  --- Lifecycle hooks ---
     private mounted() {
+        this.saveService.load(EentryNames.entries);
         console.log("MainOfferListForm", this.options);
     }
 }

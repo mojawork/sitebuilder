@@ -23,7 +23,7 @@
     padding: $padding;
     background-color: var(--c-bright);
 
-    > div > button {
+    button {
       margin-left: $margin;
     }
   }
@@ -33,14 +33,14 @@
   }
 
   footer {
-    justify-content: space-between;
+    justify-content: flex-end;
 
   }
 
 
   .entry {
     display: grid;
-    grid-template-columns: auto 2fr 4fr minmax(18rem, 1fr);
+    grid-template-columns: auto 2fr 4fr minmax(18rem, 1fr) auto;
     grid-gap: $margin;
 
     > * {
@@ -49,8 +49,8 @@
     }
 
     .remove {
-      display: flex;
-      justify-content: flex-end;
+      //display: flex;
+      //justify-content: flex-end;
     }
   }
 

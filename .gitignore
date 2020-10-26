@@ -5,6 +5,8 @@ node_modules
 /storybook/dist
 /ftpdeploy/hist.json
 
+/public/data/offer-list/*.json
+
 # local env files
 .env
 .env.local

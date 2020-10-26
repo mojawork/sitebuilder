@@ -7,7 +7,6 @@ export class FormInputValidate {
     }
 
     public text(value: string): boolean {
-        console.info(value);
         return false;
     }
 

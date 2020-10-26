@@ -52,6 +52,7 @@ export const dataOfferList: IOfferList = {
         entries: [],
         entriesResonse: [],
         footer: {
+            loadlabel: 'load',
             savelabel: 'save',
             resetlabel: 'reset'
         },

@@ -1,10 +1,16 @@
 import {IInputItem} from "@/types/global/iForms";
 
+export enum EentryNames {
+    entries= 'entries',
+    entriesResonse= 'entriesResonse',
+}
+
 export interface IOfferListForm {
     headline: string;
-    entries: Array<IInputItem>[];
-    entriesResonse: Array<IInputItem>[];
+    [EentryNames.entries]: Array<IInputItem>[];
+    [EentryNames.entriesResonse]: Array<IInputItem>[];
     footer: {
+        loadlabel:string;
         savelabel: string;
         resetlabel: string;
     }
