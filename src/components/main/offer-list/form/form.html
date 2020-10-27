@@ -5,28 +5,32 @@
         <button @click="addEntry()" class="icons-g">add_circle</button>
     </header>
 
+    <div class="entry-header">
+        <strong v-text="entry[0].label"></strong>
+        <strong v-text="entry[1].label"></strong>
+        <strong v-text="entry[2].label"></strong>
+
+    </div>
+
     <div class="entry" v-for="(entry ,index) in options.entries">
         <div><button class="icons-g" @click="removeEntry(index)">remove_circle</button></div>
         <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
         <div><button class="icons-g" @click="addEntry()">add_circle</button></div>
-
     </div>
 
     <footer v-if="options.entries.length > 0">
             <button class="text-icon-g" @click="load()">
                 <span class="icons-g">get_app</span>
-                {{ options.footer.loadlabel}}
+                {{ options.formActions.loadlabel}}
             </button>
             <button class="text-icon-g" @click="reset()">
                 <span class="icons-g">delete</span>
-                {{ options.footer.resetlabel}}
+                {{ options.formActions.resetlabel}}
             </button>
             <button class="text-icon-g" @click="save()">
                 <span class="icons-g">save</span>
-                {{ options.footer.savelabel}}
+                {{ options.formActions.savelabel}}
             </button>
-
-
     </footer>
 
 </div>

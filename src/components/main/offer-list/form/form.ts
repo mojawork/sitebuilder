@@ -1,7 +1,7 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-import {offerformItem} from "@/data/offer-list"
+import {offerFormItems} from "@/data/offer-list"
 import GlobalInput from "@/components/global/form-items/input/input.vue";
-import {EentryNames, IOfferListForm} from "@/types/views/offer-list";
+import {EentryNames, IOfferListData} from "@/types/views/offer-list";
 import _cloneDeep from "lodash/cloneDeep";
 import {FormValidate} from "@/components/global/form-items/validate/validate";
 import store from '@/store';
@@ -14,13 +14,13 @@ import {OfferListService} from "@/services/offer-list";
 })
 export default class MainOfferListForm extends Vue {
     @Prop({required: true})
-    public options!: IOfferListForm;
-    public cloneEntry = offerformItem;
+    public options!: IOfferListData;
+    public entry = offerFormItems;
     private validate = new FormValidate();
     private saveService = new OfferListService();
 
     public addEntry(): void {
-        this.options.entries.push(_cloneDeep(this.cloneEntry));
+        this.options.entries.push(_cloneDeep(this.entry));
         store.commit('updateState', store.state);
     }
 

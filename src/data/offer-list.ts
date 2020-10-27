@@ -1,28 +1,50 @@
 import {EFormItemType, EInputTypes, IInputItem} from "@/types/global/iForms";
-import {IOfferList} from "@/types/views/offer-list";
+import {IOfferList, IOfferListLabels} from "@/types/views/offer-list";
 
-export const offerformItem: IInputItem[] = [
+export const offerlistLabels: IOfferListLabels = {
+    form: {
+        headline: 'offers',
+        name: 'name',
+        description: 'description',
+        price: 'price',
+        load: 'load',
+        save: 'save',
+        reset: 'reset',
+        error: 'error'
+    },
+    view: {
+        headline: 'preview',
+        data: 'data',
+        site: 'site',
+        documentation: 'documentation',
+    },
+    site: {
+        headline: 'headline'
+    }
+}
+
+export const offerFormItems: IInputItem[] = [
     {
         formType: EFormItemType.input,
         name: "name",
-        label: "Name",
+        label: offerlistLabels.form.name,
         value: "",
         error: {
-            massage: "error",
+            massage: offerlistLabels.form.error,
             exists: false
         },
         required: true,
         inputType: EInputTypes.text,
         maxlength: 40,
-        placeholder: false
+        placeholder: true
     },
     {
         formType: EFormItemType.input,
         name: "description",
-        label: "Beschreibung",
+        label: offerlistLabels.form.description,
         value: "",
         error: {
-            massage: "error",
+            massage: offerlistLabels.form.error,
             exists: false
         },
         required: false,
@@ -33,31 +55,39 @@ export const offerformItem: IInputItem[] = [
     {
         formType: EFormItemType.input,
         name: "price",
-        label: "Preis",
+        label: offerlistLabels.form.price,
         value: "",
         error: {
-            massage: "error",
+            massage: offerlistLabels.form.error,
             exists: false
         },
         required: true,
         inputType: EInputTypes.text,
         maxlength: 7,
-        placeholder: false
+        placeholder: true
     }
 ];
 
 export const dataOfferList: IOfferList = {
     form: {
-        headline: "OfferForm",
+        headline: offerlistLabels.form.headline,
         entries: [],
         entriesResonse: [],
-        footer: {
-            loadlabel: 'load',
-            savelabel: 'save',
-            resetlabel: 'reset'
+        formActions: {
+            loadlabel: offerlistLabels.form.load,
+            savelabel: offerlistLabels.form.save,
+            resetlabel: offerlistLabels.form.reset
         },
     },
     view: {
-        headline: "headline"
+        headline: offerlistLabels.view.headline,
+        tabs: [offerlistLabels.view.data, offerlistLabels.view.site, offerlistLabels.view.documentation]
+    },
+    site: {
+        headline: offerlistLabels.site.headline,
+        entries: [],
+        entriesResonse: [],
     }
+
+
 };

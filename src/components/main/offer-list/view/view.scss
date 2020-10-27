@@ -10,7 +10,7 @@
 div {
   display: flex;
   flex-flow: column;
-  header{
+  .header{
     display: flex;
     padding:$padding;
     background-color: var(--c-bright);

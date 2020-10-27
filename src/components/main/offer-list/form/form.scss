@@ -37,20 +37,30 @@
 
   }
 
+  .entry-header, .entry {
+    display: grid;
+    grid-template-columns: 5.4rem 2fr 4fr minmax(18rem, 1fr) 5.4rem;
+    grid-gap: $margin;
+  }
 
   .entry {
-    display: grid;
-    grid-template-columns: auto 2fr 4fr minmax(18rem, 1fr) auto;
-    grid-gap: $margin;
-
     > * {
       padding: $padding;
       background-color: var(--c-bright);
     }
 
-    .remove {
-      //display: flex;
-      //justify-content: flex-end;
+  }
+
+  .entry-header {
+    background-color: var(--c-bright);
+    border-bottom: 1px solid var(--c-thirdly);
+
+    strong {
+      padding: $padding;
+    }
+
+    strong:first-of-type {
+      grid-column-start: 2;
     }
   }
 

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article>
     <MainOfferList :options="dataOfferList" />
-  </div>
+  </article>
 </template>
 
 <script lang="ts">

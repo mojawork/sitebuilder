@@ -10,7 +10,7 @@ import GlobaTab from "@/components/global/tab/tab.vue";
     GlobaTab
   }
 })
-export default class MainOfferListView extends Vue {
+export default class MainOfferListSite extends Vue {
   @Prop({ required: true })
   public options!: IOfferListView;
 
