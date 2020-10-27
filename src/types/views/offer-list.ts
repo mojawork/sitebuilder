@@ -7,14 +7,14 @@ export enum EentryNames {
 
 export interface IOfferListLabels {
     form: {
-        headline:string;
+        headline: string;
         name: string;
         description: string;
         price: string;
         load: string;
         save: string;
         reset: string;
-        error:string;
+        error: string;
     },
     view: {
         headline: string;
@@ -28,10 +28,8 @@ export interface IOfferListLabels {
 
 }
 
-export interface IOfferListData {
+export interface IOfferListForm {
     headline: string;
-    [EentryNames.entries]: Array<IInputItem>[];
-    [EentryNames.entriesResonse]: Array<IInputItem>[];
     formActions?: {
         loadlabel: string;
         savelabel: string;
@@ -44,8 +42,16 @@ export interface IOfferListView {
     tabs: string[];
 }
 
+export interface IOfferListSite {
+    headline: string;
+}
+
 export interface IOfferList {
-    form: IOfferListData;
+    form: IOfferListForm;
     view: IOfferListView;
-    site: IOfferListData;
+    site: IOfferListSite;
+    data: {
+        [EentryNames.entries]: Array<IInputItem>[];
+        [EentryNames.entriesResonse]: Array<IInputItem>[];
+    }
 }

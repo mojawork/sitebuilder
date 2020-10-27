@@ -1,6 +1,10 @@
 <div class="offer-list">
     <GlobalSplitter>
-        <MainOfferListForm slot="left" :options="options.form"></MainOfferListForm>
+        <MainOfferListForm slot="left"
+            :options="options.form"
+            :data="options.data"
+            >
+        </MainOfferListForm>
         <MainOfferListView slot="right" :options="options.view"></MainOfferListView>
     </GlobalSplitter>
 </div>

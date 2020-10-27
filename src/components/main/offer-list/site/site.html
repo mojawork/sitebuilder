@@ -2,6 +2,14 @@
   <header>
     <h2 v-text="options.headline" />
   </header>
-  <div>aa</div>
+    <div class="content" v-for="(entry ,index) in data.entries">
+
+        <template v-for="(item, index) in entry">
+            <strong v-if="index === 0" v-text="item.value"/>
+            <span v-if="index === 1" v-text="item.value"/>
+            <span v-if="index === 2" v-text="item.value"/>
+        </template>
+
+    </div>
   <footer></footer>
 </section>

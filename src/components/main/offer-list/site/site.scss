@@ -7,7 +7,7 @@
 // Defaut
 // ----------------------------------------------------------------------------
 
-div {
+section {
   display: flex;
   flex-flow: column;
   header{
@@ -15,6 +15,18 @@ div {
     padding:$padding;
     background-color: var(--c-bright);
     margin:0;
+  }
+  .content {
+    display: grid;
+    padding:$padding;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-gap: $margin;
+    border-top: 1px solid var(--c-thirdly);
+    span:last-of-type {
+      display: flex;
+      justify-self: flex-end;
+      font-weight: $font-weight-bold;
+    }
 
   }
 }

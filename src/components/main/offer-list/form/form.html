@@ -12,13 +12,13 @@
 
     </div>
 
-    <div class="entry" v-for="(entry ,index) in options.entries">
+    <div class="entry" v-for="(entry ,index) in data.entries">
         <div><button class="icons-g" @click="removeEntry(index)">remove_circle</button></div>
         <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
         <div><button class="icons-g" @click="addEntry()">add_circle</button></div>
     </div>
 
-    <footer v-if="options.entries.length > 0">
+    <footer v-if="data.entries.length > 0">
             <button class="text-icon-g" @click="load()">
                 <span class="icons-g">get_app</span>
                 {{ options.formActions.loadlabel}}

@@ -71,8 +71,7 @@ export const offerFormItems: IInputItem[] = [
 export const dataOfferList: IOfferList = {
     form: {
         headline: offerlistLabels.form.headline,
-        entries: [],
-        entriesResonse: [],
+
         formActions: {
             loadlabel: offerlistLabels.form.load,
             savelabel: offerlistLabels.form.save,
@@ -85,6 +84,8 @@ export const dataOfferList: IOfferList = {
     },
     site: {
         headline: offerlistLabels.site.headline,
+    },
+    data: {
         entries: [],
         entriesResonse: [],
     }

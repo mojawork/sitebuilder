@@ -46,7 +46,7 @@ export class OfferListService {
                 'accept': 'application/json;charset=UTF-8',
                 'content-type': 'application/x-www-form-urlencoded'
             },
-            data: store.state.data.main.offerList.form.entries
+            data: store.state.data.main.offerList.data[EentryNames.entries]
         }).then((result) => {
             console.info('save contatDATA:', result.data);
             let data = result.data as Array<IInputItem>[];

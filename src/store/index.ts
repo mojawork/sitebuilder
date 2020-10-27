@@ -28,7 +28,7 @@ export default new Vuex.Store<IRootState>({
                 entryName: EentryNames
                 data: Array<IInputItem>[],
             }) {
-            state.data.main.offerList.form[payload.entryName] = payload.data
+            state.data.main.offerList.data[payload.entryName] = payload.data
         },
     },
     actions: {},
