@@ -1,0 +1,33 @@
+ @media print {
+
+
+   @page
+   {
+     size: auto;   /* auto is the initial value */
+     margin: 0;  /* this affects the margin in the printer settings */
+   }
+
+
+  body > * {
+    //display: none !important;
+
+    .printable,
+    // .printable *
+    {
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      padding:$padding;
+
+      display: flex !important;
+      z-index: 100;
+      background-color: #ffffff;
+
+      * {
+        color: #049ae2 !important;
+      }
+    }
+  }
+}
