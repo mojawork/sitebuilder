@@ -1,6 +1,6 @@
 <section class="tabs">
   <header>
-    <div class="m-pointer-g" :class="{'active': index === activeTab}" @click="active($event, index)" v-for="(tabName, index) in options" v-text="tabName"/>
+    <div class="m-pointer-g tab-selector" :class="{'active': index === activeTab}" @click="active($event, index)" v-for="(tabName, index) in options" v-text="tabName"/>
   </header>
   <div class="content">
     <slot />

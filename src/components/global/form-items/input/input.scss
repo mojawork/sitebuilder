@@ -21,7 +21,7 @@ label {
   }
 
   &.placeholder span.error {
-    color: var(--c-red);
+    color: var(--c-error);
     grid-column-start: initial;
   }
 
@@ -30,17 +30,6 @@ label {
     align-items: center;
 
     &.placeholder {
-      /*
-      display: flex;
-      position: absolute;
-      left: 0;
-      top: -$margin * 2;
-      padding:$padding * 0.25;
-      background-color: var(--c-white);
-      border:1px solid var(--c-grey);
-      border-radius: $inputRadius;
-      transform: scale(0.8);
-       */
       display: none;
     }
 
@@ -51,7 +40,7 @@ label {
       max-width: $maxCountWidth;
       transform: translateY(-50%);
       padding: $padding * 0.125;
-      background-color: var(--text-light);
+      background-color: var(--c-thirdly);
       border-top-left-radius: $radius;
       border-bottom-left-radius: $radius;
     }
@@ -61,7 +50,7 @@ label {
     }
 
     &.error {
-      color: var(--text-danger);
+      color: var(--c-error);
       grid-column-start: 2;
     }
   }
@@ -75,12 +64,11 @@ label {
       width: 100%;
 
       &.error {
-        border-color: var(--text-danger);
+        border-color: var(--c-error);
       }
-      &.max-count{
+
+      &.max-count {
         padding-right: $maxCountWidth;
-
-
       }
 
     }

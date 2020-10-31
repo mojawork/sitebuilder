@@ -7,15 +7,15 @@
 // Defaut
 // ----------------------------------------------------------------------------
 
-div {
+.view-wrapper {
   display: flex;
   flex-flow: column;
+  background-color: var(--c-thirdly);
+  padding:$padding;
   .header{
     display: flex;
     padding:$padding;
-    background-color: var(--c-bright);
-    margin:0;
-
+    background-color: var(--c-secondary);
   }
 }
 

@@ -11,18 +11,17 @@
   flex-flow: column;
   header {
     display: flex;
-
-    //padding:$padding;
+    padding:$padding;
     padding-bottom: 0;
-    background-color: var(--c-bright);
-    div {
+    background-color: var(--c-secondary);
+    .tab-selector {
       display: flex;
-      background-color: var(--ct-light);
+      background-color: var(--c-thirdly);
       padding:$padding;
       border-radius: $radius;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      margin: $margin * 0.25;
+      margin: $margin * 0.5;
 
       margin-bottom:0;
       &:first-of-type {
@@ -32,20 +31,19 @@
         margin-right: 0;
       }
       &.active {
-        background-color: var(--c-bright);
+        background-color: var(--c-secondary);
         border:1px solid var(--c-thirdly);
         border-bottom: 0;
         transform: translateY(1px);
       }
-
     }
 
   }
   .content{
     display: flex;
     flex-flow: column;
-    background-color: var(--c-bright);
-    border:1px solid var(--c-thirdly);
+    background-color: var(--c-secondary);
+    border-top:1px solid var(--c-thirdly);
     padding:$padding;
      > * {
       display: none;

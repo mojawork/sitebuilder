@@ -36,7 +36,7 @@ export const offerFormItems: IInputItem[] = [
         required: true,
         inputType: EInputTypes.text,
         maxlength: 40,
-        placeholder: true
+        placeholder: false
     },
     {
         formType: EFormItemType.input,

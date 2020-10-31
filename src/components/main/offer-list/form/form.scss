@@ -10,18 +10,18 @@
 .form {
   display: flex;
   flex-flow: column;
-  background-color: var(--c-light);
+  background-color: var(--c-thirdly);
   padding: $padding;
 
   > * {
-    margin-bottom: $margin;
+    margin-bottom: 1px;
   }
 
   header, footer {
     display: flex;
     align-items: center;
     padding: $padding;
-    background-color: var(--c-bright);
+    background-color: var(--c-secondary);
 
     button {
       margin-left: $margin;
@@ -40,20 +40,19 @@
   .entry-header, .entry {
     display: grid;
     grid-template-columns: 5.4rem 2fr 4fr minmax(18rem, 1fr) 5.4rem;
-    grid-gap: $margin;
+    grid-gap: 1px;
   }
 
   .entry {
     > * {
       padding: $padding;
-      background-color: var(--c-bright);
+      background-color: var(--c-secondary);
     }
 
   }
 
   .entry-header {
-    background-color: var(--c-bright);
-    border-bottom: 1px solid var(--c-thirdly);
+    background-color: var(--c-secondary);
 
     strong {
       padding: $padding;

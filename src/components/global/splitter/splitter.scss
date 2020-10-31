@@ -14,7 +14,7 @@
   .nav {
     display: flex;
     padding: $padding;
-    background-color: var(--c-light);
+    background-color: var(--c-thirdly);
     justify-content: flex-end;
     margin-bottom: $margin;
 
@@ -55,10 +55,6 @@
       &.left, &.center, &.right {
         grid-template-columns: 1fr;
       }
-    }
-
-    > * {
-      background-color: var(--c-light);
     }
 
   }

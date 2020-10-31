@@ -73,18 +73,18 @@
 // ----------------------------------------------------------------------------
 // Colors
 .layout.color {
-  border: $border solid var(--c-light);
+  border-left: $border solid var(--text-primary);
+  border-right: $border solid var(--text-primary);
 
   > header {
-    color: var(--text-bright);
     background-color: var(--c-primary);
   }
 
   > main {
-    background-color: var(--c-bright);
+     background-color: var(--c-secondary);
   }
 
   > footer {
-    background-color: var(--c-light);
+    background-color: var(--c-primary);
   }
 }

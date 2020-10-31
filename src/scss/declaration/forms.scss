@@ -52,7 +52,7 @@ body {
   button {
     font-weight: $font-weight-bold;
     color: var(--text-secondary);
-    background-color: var(--c-light);
+    background-color: var(--c-primary);
     border: $border solid transparent;
     box-shadow: 0 0 $button-shadow 0 var(--text-secondary);
 
@@ -76,19 +76,19 @@ body {
   }
 
   button.success-g {
-    color: var(--text-bright);
+    color: var(--text-secondary);
     background-color: var(--c-success);
     box-shadow: 0 0 $button-shadow 0 var(--c-success);
   }
 
   button.danger-g {
-    color: var(--text-bright);
-    background-color: var(--c-danger);
-    box-shadow: 0 0 $button-shadow 0 var(--c-danger);
+    color: var(--text-secondary);
+    background-color: var(--c-error);
+    box-shadow: 0 0 $button-shadow 0 var(--c-error);
   }
 
   button.warning-g {
-    color: var(--text-bright);
+    color: var(--text-secondary);
     background-color: var(--c-warning);
     box-shadow: 0 0 $button-shadow 0 var(--c-warning);
   }

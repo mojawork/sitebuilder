@@ -6,12 +6,12 @@
 // ----------------------------------------------------------------------------
 // Defaut
 // ----------------------------------------------------------------------------
-fieldset {
+.data-view-wrapper {
   display: flex;
   flex-flow: column;
   padding: $padding;
-  margin-bottom: $margin;
-  border: 1px solid var(--c-dark-light);
+  margin: $margin;
+  border: 1px solid var(--c-thirdly);
    div {
     display: flex;
     flex-flow: column;
