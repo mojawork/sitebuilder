@@ -3,6 +3,7 @@ module.exports = {
   env: {
     node: true
   },
+
   extends: [
     "plugin:vue/essential",
     "eslint:recommended",
@@ -11,6 +12,9 @@ module.exports = {
     "@vue/prettier/@typescript-eslint"
   ],
   parserOptions: {
+    "plugins": [
+      "html"
+    ],
     ecmaVersion: 6,
     sourceType: "module",
     ecmaFeatures: {

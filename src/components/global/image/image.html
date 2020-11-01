@@ -1,0 +1,17 @@
+<a v-if="options.url" :href="options.url" :target="{'next':options.target}">
+    <figure
+            :title="options.title"
+            :class="{'border': options.caption}">
+        <img :src="options.src" :alt="options.alt">
+        <figcaption v-if="options.caption"> logo</figcaption>
+    </figure>
+</a>
+
+<figure v-else
+        :title="options.title"
+        :class="{'border': options.caption}">
+    <img :src="options.src" :alt="options.alt">
+    <figcaption v-if="options.caption"> logo</figcaption>
+</figure>
+
+

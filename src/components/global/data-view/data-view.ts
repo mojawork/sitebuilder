@@ -15,6 +15,6 @@ export default class GlobaDataView extends Vue {
 
   //  --- Lifecycle hooks ---
   private mounted() {
-    console.log("GlobaDataView", this.options);
+
   }
 }

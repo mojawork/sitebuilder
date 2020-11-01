@@ -18,6 +18,6 @@ export default class MainOfferList extends Vue {
 
   //  --- Lifecycle hooks ---
   private mounted() {
-    console.log("MainOfferList", this.options);
+
   }
 }

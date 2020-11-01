@@ -36,40 +36,29 @@ body {
 
 // ----------------------------------------------------------------------------
 // Imports external
-// @import "~@/scss/fonts/icons/material-icons";
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(~@/scss/fonts/icons/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('~@/scss/fonts/icons/Material Icons'),
-  local('~@/scss/fonts/icons/MaterialIcons-Regular'),
-  url(~@/scss/fonts/icons/MaterialIcons-Regular.woff2) format('woff2'),
-  url(~@/scss/fonts/icons/MaterialIcons-Regular.woff) format('woff'),
-  url(~@/scss/fonts/icons/MaterialIcons-Regular.ttf) format('truetype');
-}
+
 
 
 
 // ----------------------------------------------------------------------------
 
-@import "config/colors";
+
 
 // ----------------------------------------------------------------------------
 // Imports internal
+@import "~@/scss/config/colors";
+@import "~@/scss/declaration/fonts";
 @import "~@/scss/declaration/animation";
 @import "~@/scss/declaration/colors";
 @import "~@/scss/declaration/classes";
-@import "~@/scss/declaration/fonts";
 @import "~@/scss/declaration/tags";
 @import "~@/scss/declaration/forms";
 @import "~@/scss/declaration/modifire";
 @import "~@/scss/declaration/icons";
-@import "~@/scss/declaration/edit";
-
 @import "~@/scss/declaration/print";
-
 // ----------------------------------------------------------------------------
+
+@import "~@/scss/customize.scss";
 
 

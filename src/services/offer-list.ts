@@ -8,7 +8,7 @@ import {EentryNames} from "@/types/views/offer-list";
 export class OfferListService {
 
     // config ---
-    private saveService = process.env.VUE_APP_OFFER_LIST_SAVE;
+    private saveService = process.env.VUE_APP_OFFER_LIST_SERVICE;
 
 
     public load(entryName: EentryNames) {

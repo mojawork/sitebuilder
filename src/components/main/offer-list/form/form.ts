@@ -35,7 +35,6 @@ export default class MainOfferListForm extends Vue {
     }
 
     public reset(): void {
-        console.log('reset');
         this.data.entries = [];
         store.commit('updateState', store.state);
     }
@@ -66,6 +65,5 @@ export default class MainOfferListForm extends Vue {
     //  --- Lifecycle hooks ---
     private mounted() {
         this.saveService.load(EentryNames.entries);
-        console.log("MainOfferListForm", this.options);
     }
 }

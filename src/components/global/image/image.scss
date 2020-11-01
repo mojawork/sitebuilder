@@ -6,18 +6,27 @@
 // ----------------------------------------------------------------------------
 // Defaut
 // ----------------------------------------------------------------------------
-.data-view-wrapper {
+
+figure {
   display: flex;
   flex-flow: column;
-  padding: $padding;
-  margin: $margin;
-  border: $border solid var(--c-thirdly);
-   div {
-    display: flex;
-    flex-flow: column;
+  position: relative;
+  &.border {
+    border :$border solid  var(--c-thirdly);
   }
+
+  figcaption{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    display: flex;
+    padding: $padding;
+    min-width: 100%;
+    background-color: var(--ct-thirdly);
+    border-top :$border solid  var(--c-thirdly);
+  }
+
 }
 
-// --- breakpoint 01 - 03 ---
-@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
-}
+
+

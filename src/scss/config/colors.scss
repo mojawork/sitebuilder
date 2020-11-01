@@ -37,4 +37,17 @@ body {
   --ct-thirdly: rgba(102, 102, 102, 0.8);
 }
 
+.theme-light, .theme-dark {
+
+  .printable {
+    --print-text-primary: #000000;
+    --print-text-secondary: #848484;
+    --print-c-primary: #000000;
+    --print-c-secondary: #848484;
+    --print-c-background: #ffffff;
+
+  }
+}
+
+
 // ----------------------------------------------------------------------------

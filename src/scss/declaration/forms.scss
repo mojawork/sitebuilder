@@ -15,7 +15,7 @@ body {
     legend {
       padding: $padding * 0.5 $padding;
       background-color: var(--c-secondary);
-      border: 1px solid var(--c-thirdly);
+      border: $border solid var(--c-thirdly);
 
       &.move-g {
         animation-name: label-move;

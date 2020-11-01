@@ -3,6 +3,12 @@ export enum EThemes {
     dark = 'theme-dark'
 }
 
+export enum ELayoutMod {
+    mEmpty = '',
+    mZoom = 'm-zoom',
+}
+
+
 export enum EDirections {
     left = 'left',
     center = 'center',

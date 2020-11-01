@@ -3,7 +3,10 @@
         <button @click="wideCssClass = CEwide.left" class="icons-g">border_right</button>
         <button @click="wideCssClass = CEwide.center" class="icons-g">border_vertical</button>
         <button @click="wideCssClass = CEwide.right" class="icons-g">border_left</button>
+        <button @click="wideCssClass = CEwide.split" class="icons-g">border_horizontal</button>
+        <button @click="zoom()" class="icons-g">center_focus_strong</button>
         <button @click="setTheme()" class="icons-g">invert_colors</button>
+        <button @click="print()" class="icons-g">print</button>
     </nav>
     <div class="content" :class="wideCssClass">
         <slot name="left"/>

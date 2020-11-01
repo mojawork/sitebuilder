@@ -1,0 +1,32 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+@media print {
+  .printable {
+    background-color: var(--print-c-primary);
+
+    .content{
+      border-color: var(--print-text-secondary)
+    }
+
+    h1 {
+      color: var(--print-text-primary);
+    }
+
+    strong {
+      color: var(--print-text-primary);
+    }
+
+    span {
+      color: var(--print-text-secondary);
+    }
+
+  }
+}
+

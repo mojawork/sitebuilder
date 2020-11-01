@@ -1,15 +1,14 @@
-<section class="printable">
-  <header>
-    <h2 v-text="options.headline" />
-  </header>
+<section class="printable shadow-g theme-customize">
+    <header>
+        <GlobalImage class="logo" :options="testImage"/>
+        <h1 v-text="options.headline"/>
+    </header>
     <div class="content" v-for="(entry ,index) in data.entries">
-
         <template v-for="(item, index) in entry">
             <strong v-if="index === 0" v-text="item.value"/>
             <span v-if="index === 1" v-text="item.value"/>
             <span v-if="index === 2" v-text="item.value"/>
         </template>
-
     </div>
-  <footer></footer>
+    <footer></footer>
 </section>

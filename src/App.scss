@@ -4,7 +4,7 @@
 
 // ----------------------------------------------------------------------------
 
-.layout {
+#layout {
   display: flex;
   flex-flow: column;
   position: absolute;
@@ -72,9 +72,9 @@
 
 // ----------------------------------------------------------------------------
 // Colors
-.layout.color {
-  border-left: $border solid var(--text-primary);
-  border-right: $border solid var(--text-primary);
+#layout {
+  border-left: $border solid var(--c-thirdly);
+  border-right: $border solid var(--c-thirdly);
 
   > header {
     background-color: var(--c-primary);

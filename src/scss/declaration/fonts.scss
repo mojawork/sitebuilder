@@ -67,4 +67,35 @@ body {
     }
   }
 
+  // --- print 04 - 06 ---
+  @media print {
+    *:not(span) {
+      font-size: $font-size-5 * $font-print-factor;
+      line-height: $line-height-5 * $font-print-factor;
+    }
+    h1, .h1-g {
+      font-size: $font-size-1 * $font-print-factor;
+      line-height: $line-height-1 * $font-print-factor;
+    }
+    h2, .h2-g {
+      font-size: $font-size-2 * $font-print-factor;
+      line-height: $line-height-2 * $font-print-factor;
+    }
+    h3, .h3-g {
+      font-size: $font-size-3 * $font-print-factor;
+      line-height: $line-height-3 * $font-print-factor;
+    }
+    h4, .h4-g, strong {
+      font-size: $font-size-4 * $font-print-factor;
+      line-height: $line-height-4 * $font-print-factor;
+    }
+    small, .small {
+      font-size: $font-size-1 * $font-print-factor;
+      line-height: $line-height-1 * $font-print-factor;
+    }
+    .icons-g {
+      font-size: $font-size-button * $font-print-factor;
+    }
+  }
+
 }

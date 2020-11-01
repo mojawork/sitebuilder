@@ -10,12 +10,6 @@
   margin-left:0;
 }
 
-@mixin m-edit {
-  left:0;
-  width:40%;
-  margin-left:0;
-}
-
 @mixin layout(
   $mediascreen:null) {
 
@@ -40,9 +34,7 @@
     &.m-zoom{
       @include m-zoom()
     }
-    &.m-edit{
-      @include m-edit();
-    }
+
   }
 
   // -- mediascreen5 ---
@@ -53,9 +45,6 @@
     &.m-zoom{
       @include m-zoom()
     }
-    &.m-edit{
-      @include m-edit();
-    }
   }
 
   // -- mediascreen6 ---
@@ -65,9 +54,6 @@
     margin-left: -$ms-6-min * 0.5;
     &.m-zoom{
       @include m-zoom();
-    }
-    &.m-edit{
-      @include m-edit();
     }
   }
 

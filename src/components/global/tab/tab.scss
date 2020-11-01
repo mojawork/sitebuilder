@@ -32,9 +32,9 @@
       }
       &.active {
         background-color: var(--c-secondary);
-        border:1px solid var(--c-thirdly);
+        border:$border solid var(--c-thirdly);
         border-bottom: 0;
-        transform: translateY(1px);
+        transform: translateY($border);
       }
     }
 
@@ -43,7 +43,7 @@
     display: flex;
     flex-flow: column;
     background-color: var(--c-secondary);
-    border-top:1px solid var(--c-thirdly);
+    border-top:$border solid var(--c-thirdly);
     padding:$padding;
      > * {
       display: none;

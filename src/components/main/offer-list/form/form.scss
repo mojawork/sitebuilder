@@ -14,7 +14,7 @@
   padding: $padding;
 
   > * {
-    margin-bottom: 1px;
+    margin-bottom: $border;
   }
 
   header, footer {
@@ -40,7 +40,7 @@
   .entry-header, .entry {
     display: grid;
     grid-template-columns: 5.4rem 2fr 4fr minmax(18rem, 1fr) 5.4rem;
-    grid-gap: 1px;
+    grid-gap: $border;
   }
 
   .entry {

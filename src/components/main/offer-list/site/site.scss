@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Config
 // ----------------------------------------------------------------------------
-@import "@/scss/import.scss";
+@import "~@/scss/import.scss";
 
 // ----------------------------------------------------------------------------
 // Defaut
@@ -10,16 +10,30 @@
 section {
   display: flex;
   flex-flow: column;
+  background-color: var(--c-background);
   header{
     display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     padding:$padding;
     margin:0;
+    .logo {
+      display: flex;
+      width:50%;
+    }
+    h1 {
+      margin: $margin 0;
+    }
   }
   .content {
     display: grid;
     padding:$padding;
     grid-template-columns: 2fr 3fr 1fr;
     grid-gap: $margin;
+
+    border-top: $border solid var(--c-thirdly);
+    //border-top: 1px solid var(--c-thirdly);
     span:last-of-type {
       display: flex;
       justify-self: flex-end;
@@ -27,6 +41,19 @@ section {
     }
 
   }
+
+  h1 {
+    color: var(--text-primary);
+  }
+
+  strong {
+    color: var(--text-primary);
+  }
+
+  span {
+    color: var(--text-secondary);
+  }
+
 }
 
 // --- breakpoint 01 - 03 ---
