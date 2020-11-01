@@ -6,7 +6,9 @@ export enum EentryNames {
 }
 
 export interface IOfferListLabels {
+
     form: {
+        label: string
         headline: string;
         name: string;
         description: string;
@@ -17,7 +19,7 @@ export interface IOfferListLabels {
         error: string;
     },
     view: {
-        headline: string;
+        label: string
         data: string;
         site: string;
         documentation: string;
@@ -29,7 +31,7 @@ export interface IOfferListLabels {
 }
 
 export interface IOfferListForm {
-    headline: string;
+    label: string;
     formActions?: {
         loadlabel: string;
         savelabel: string;
@@ -38,7 +40,7 @@ export interface IOfferListForm {
 }
 
 export interface IOfferListView {
-    headline: string;
+    label: string;
     tabs: string[];
 }
 
@@ -51,6 +53,7 @@ export interface IOfferList {
     view: IOfferListView;
     site: IOfferListSite;
     data: {
+        headline:IInputItem;
         [EentryNames.entries]: Array<IInputItem>[];
         [EentryNames.entriesResonse]: Array<IInputItem>[];
     }

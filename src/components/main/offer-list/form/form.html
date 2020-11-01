@@ -1,11 +1,18 @@
 <div class="form">
 
     <header>
-        <h2 v-text="options.headline"/>
+        <h2 v-text="options.label"/>
         <button @click="addEntry()" class="icons-g">add_circle</button>
     </header>
 
+
+
     <div class="entry-header">
+        <GlobalInput :options="data.headline"></GlobalInput>
+
+    </div>
+
+    <div class="entry-labels">
         <strong v-text="entry[0].label"></strong>
         <strong v-text="entry[1].label"></strong>
         <strong v-text="entry[2].label"></strong>

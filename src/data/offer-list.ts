@@ -3,7 +3,8 @@ import {IOfferList, IOfferListLabels} from "@/types/views/offer-list";
 
 export const offerlistLabels: IOfferListLabels = {
     form: {
-        headline: 'offers',
+        label: 'offers',
+        headline: 'headline',
         name: 'name',
         description: 'description',
         price: 'price',
@@ -13,7 +14,7 @@ export const offerlistLabels: IOfferListLabels = {
         error: 'error'
     },
     view: {
-        headline: 'preview',
+        label: 'preview',
         data: 'data',
         site: 'site',
         documentation: 'documentation',
@@ -22,6 +23,21 @@ export const offerlistLabels: IOfferListLabels = {
         headline: 'headline'
     }
 }
+
+export const offerFormHeadline = {
+    formType: EFormItemType.input,
+    name: "headline",
+    label: offerlistLabels.form.headline,
+    value: "",
+    error: {
+        massage: offerlistLabels.form.error,
+        exists: false
+    },
+    required: true,
+    inputType: EInputTypes.text,
+    maxlength: 200,
+    placeholder: false
+};
 
 export const offerFormItems: IInputItem[] = [
     {
@@ -70,8 +86,7 @@ export const offerFormItems: IInputItem[] = [
 
 export const dataOfferList: IOfferList = {
     form: {
-        headline: offerlistLabels.form.headline,
-
+        label: offerlistLabels.form.label,
         formActions: {
             loadlabel: offerlistLabels.form.load,
             savelabel: offerlistLabels.form.save,
@@ -79,16 +94,16 @@ export const dataOfferList: IOfferList = {
         },
     },
     view: {
-        headline: offerlistLabels.view.headline,
+        label: offerlistLabels.view.label,
         tabs: [offerlistLabels.view.data, offerlistLabels.view.site, offerlistLabels.view.documentation]
     },
     site: {
         headline: offerlistLabels.site.headline,
     },
     data: {
+        headline: offerFormHeadline,
         entries: [],
         entriesResonse: [],
     }
-
 
 };

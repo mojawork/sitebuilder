@@ -31,9 +31,7 @@ section {
     padding:$padding;
     grid-template-columns: 2fr 3fr 1fr;
     grid-gap: $margin;
-
     border-top: $border solid var(--c-thirdly);
-    //border-top: 1px solid var(--c-thirdly);
     span:last-of-type {
       display: flex;
       justify-self: flex-end;
