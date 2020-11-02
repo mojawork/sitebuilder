@@ -1,15 +1,18 @@
 import {IInputItem} from "@/types/global/iForms";
 
-export enum EentryNames {
+export enum EofferListDataNames {
+    header = 'header',
     entries = 'entries',
-    entriesResonse = 'entriesResonse',
+    footer = 'footer',
 }
+
 
 export interface IOfferListLabels {
 
     form: {
         label: string
         headline: string;
+        date: string;
         name: string;
         description: string;
         price: string;
@@ -53,8 +56,13 @@ export interface IOfferList {
     view: IOfferListView;
     site: IOfferListSite;
     data: {
-        headline:IInputItem;
-        [EentryNames.entries]: Array<IInputItem>[];
-        [EentryNames.entriesResonse]: Array<IInputItem>[];
+        [EofferListDataNames.header]: Array<IInputItem>[];
+        [EofferListDataNames.entries]: Array<IInputItem>[];
+        [EofferListDataNames.footer]: Array<IInputItem>[];
+    },
+    response: {
+        [EofferListDataNames.header]: Array<IInputItem>[];
+        [EofferListDataNames.entries]: Array<IInputItem>[];
+        [EofferListDataNames.footer]: Array<IInputItem>[];
     }
 }

@@ -1,7 +1,7 @@
 <section class="printable shadow-g theme-customize">
     <header>
         <GlobalImage class="logo" :options="testImage"/>
-        <h1 v-text="data.headline.value"/>
+        <h1 v-if="data.header[0]" v-text="data.header[0][0].value"/>
     </header>
     <div class="content" v-for="(entry ,index) in data.entries">
         <template v-for="(item, index) in entry">

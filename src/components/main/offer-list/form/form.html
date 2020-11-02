@@ -8,8 +8,12 @@
 
 
     <div class="entry-header">
-        <GlobalInput :options="data.headline"></GlobalInput>
+        <!-- <GlobalInput :options="data"></GlobalInput> //-->
 
+    </div>
+
+    <div class="entry-header" v-if="data.header.length > 0">
+        <GlobalInput  v-for="item in data.header[0]" :options="item"></GlobalInput>
     </div>
 
     <div class="entry-labels">

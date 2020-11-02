@@ -1,10 +1,11 @@
 import {EFormItemType, EInputTypes, IInputItem} from "@/types/global/iForms";
-import {IOfferList, IOfferListLabels} from "@/types/views/offer-list";
+import {EofferListDataNames, IOfferList, IOfferListLabels} from "@/types/views/offer-list";
 
 export const offerlistLabels: IOfferListLabels = {
     form: {
         label: 'offers',
         headline: 'headline',
+        date: 'date',
         name: 'name',
         description: 'description',
         price: 'price',
@@ -24,20 +25,38 @@ export const offerlistLabels: IOfferListLabels = {
     }
 }
 
-export const offerFormHeadline = {
-    formType: EFormItemType.input,
-    name: "headline",
-    label: offerlistLabels.form.headline,
-    value: "",
-    error: {
-        massage: offerlistLabels.form.error,
-        exists: false
+export const offerFormHeader: IInputItem[] = [
+    {
+        formType: EFormItemType.input,
+        name: "headline",
+        label: offerlistLabels.form.headline,
+        value: "",
+        error: {
+            massage: offerlistLabels.form.error,
+            exists: false
+        },
+        required: true,
+        inputType: EInputTypes.text,
+        maxlength: 200,
+        placeholder: false
     },
-    required: true,
-    inputType: EInputTypes.text,
-    maxlength: 200,
-    placeholder: false
-};
+    {
+        formType: EFormItemType.input,
+        name: "date",
+        label: offerlistLabels.form.date,
+        value: "",
+        error: {
+            massage: offerlistLabels.form.error,
+            exists: false
+        },
+        required: true,
+        inputType: EInputTypes.text,
+        maxlength: 12,
+        placeholder: false
+    }
+
+
+    ];
 
 export const offerFormItems: IInputItem[] = [
     {
@@ -101,9 +120,15 @@ export const dataOfferList: IOfferList = {
         headline: offerlistLabels.site.headline,
     },
     data: {
-        headline: offerFormHeadline,
-        entries: [],
-        entriesResonse: [],
+        [EofferListDataNames.header]: [],
+        [EofferListDataNames.entries]: [],
+        [EofferListDataNames.footer]: [],
+    },
+    response: {
+        [EofferListDataNames.header]: [],
+        [EofferListDataNames.entries]: [],
+        [EofferListDataNames.footer]: [],
     }
+
 
 };

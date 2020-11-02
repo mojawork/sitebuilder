@@ -2,7 +2,7 @@ import axios from 'axios';
 import store from '@/store';
 
 import {IInputItem} from "@/types/global/iForms";
-import {EentryNames} from "@/types/views/offer-list";
+import {EofferListDataNames, IOfferList} from "@/types/views/offer-list";
 
 
 export class OfferListService {
@@ -11,7 +11,7 @@ export class OfferListService {
     private saveService = process.env.VUE_APP_OFFER_LIST_SERVICE;
 
 
-    public load(entryName: EentryNames) {
+    public load() {
         axios({
             method: 'get',
             url: this.saveService,
@@ -20,21 +20,14 @@ export class OfferListService {
                 'content-type': 'application/x-www-form-urlencoded'
             }
         }).then((result) => {
-            let data = result.data as Array<IInputItem>[] | string;
-            if (typeof data === 'string') {data = []}
-            store.commit('UpdateOfferListFormEntries', {
-                entryName: entryName,
-                data: data
-            });
+            let data = result.data as IOfferList['data'] | string;
+            if (typeof data !== 'string') {
+                store.commit('UpdateOfferListData', data);
+            }
 
         }, (error) => {
             // ToDo: Error Handling
             console.error('ERROR', error);
-            store.commit('UpdateOfferListFormEntries', {
-                entryName: entryName,
-                data: []
-            });
-
         });
     }
 
@@ -46,21 +39,14 @@ export class OfferListService {
                 'accept': 'application/json;charset=UTF-8',
                 'content-type': 'application/x-www-form-urlencoded'
             },
-            data: store.state.data.main.offerList.data[EentryNames.entries]
+            data: store.state.data.main.offerList.data
         }).then((result) => {
             console.info('save contatDATA:', result.data);
-            let data = result.data as Array<IInputItem>[];
-            store.commit('UpdateOfferListFormEntries', {
-                entryName: EentryNames.entriesResonse,
-                data: data
-            });
+            let data =  result.data as IOfferList['response'] | string;
+            store.commit('UpdateOfferListResponse',  data);
         }, (error) => {
             // ToDo: Error Handling
             console.error('ERROR', error);
-            store.commit('UpdateOfferListFormEntries', {
-                entryName: EentryNames.entriesResonse,
-                data: []
-            });
         });
     }
 }
