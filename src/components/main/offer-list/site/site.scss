@@ -55,7 +55,25 @@ section {
 }
 
 // --- breakpoint 01 - 03 ---
+
 @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+  section {
+    .content {
+      display: grid;
+      padding: $padding;
+      grid-template-columns: 3fr 1fr;
+      strong {
+        order: 1;
+      }
+      span:first-of-type {
+        order: 3;
+        grid-column: 1 / span 2;
+      }
+      span:last-of-type {
+        order: 2;
+      }
+    }
+  }
 
 }
 

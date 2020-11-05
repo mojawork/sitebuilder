@@ -1,12 +1,17 @@
 @media print {
 
+  #layout{
+    left:0;
+    width:100%;
+    margin-left:0;
+  }
+
   @page {
     size: auto;   /* auto is the initial value */
     margin: 0;  /* this affects the margin in the printer settings */
   }
   body > * {
     .printable {
-
       position: absolute;
       left: 0;
       top: 0;
@@ -22,6 +27,6 @@
       }
     }
   }
-}
+ }
 
 

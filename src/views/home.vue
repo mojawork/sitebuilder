@@ -1,23 +1,37 @@
 <template>
   <article>
-    <MainOfferList :options="dataOfferList" />
+    <MainOfferListSite
+      :options="$store.state.data.main.offerList.site"
+      :data="$store.state.data.main.offerList.data"
+    />
   </article>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { dataOfferList } from "@/data/offer-list";
-import MainOfferList from "@/components/main/offer-list/offer-list.vue";
+import MainOfferListSite from "@/components/main/offer-list/site/site.vue";
+import { OfferListService } from "@/services/offer-list";
+import {EHTMLIds} from "@/types/global/IHtmlIds";
+import {ELayoutMod} from "@/types/global/ICssClasses";
 
 @Component({
   components: {
-    MainOfferList
+    MainOfferListSite
   }
 })
 export default class Home extends Vue {
-  // public data = inputText;
-  // public data2 = _clone(inputText);
   public dataOfferList = dataOfferList;
+  private service = new OfferListService();
+
+  //  --- Lifecycle hooks ---
+  private mounted() {
+    this.service.load();
+    const layout = document.getElementById(EHTMLIds.layout);
+    if (layout) {
+      layout.className = ELayoutMod.mEmpty;
+    }
+  }
 }
 </script>
 
