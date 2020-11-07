@@ -3,9 +3,14 @@
 
 body {
   --c-success: #28a745;
-  --c-error: #de0000;
+  --c-error: #b60202;
   --c-warning: #ffc107;
   --c-focus: #049ae2;
+
+  --print-text-primary: #333333;
+  --print-text-secondary: #848484;
+  --print-c-background: #ffffff;
+
 }
 
 .theme-light {
@@ -21,6 +26,7 @@ body {
   --ct-primary: rgba(221, 221, 221, 0.8);
   --ct-secondary: rgba(230, 230, 230, 0.8);
   --ct-thirdly: rgba(239, 239, 239, 0.8);
+
 }
 
 .theme-dark {

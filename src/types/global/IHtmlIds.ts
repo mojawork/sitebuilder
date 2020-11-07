@@ -1,4 +1,3 @@
 export enum EHTMLIds {
-    layout = 'layout',
-
+  layout = "layout"
 }

@@ -1,41 +1,11 @@
 // ----------------------------------------------------------------------------
 // Fonts
 
-
-@font-face {
-  font-family: "bickham";
-  src: url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.eot");
-  src: url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.eot?#iefix") format("embedded-opentype"),
-  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.otf") format("opentype"),
-  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.svg") format("svg"),
-  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.ttf") format("truetype"),
-  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.woff") format("woff"),
-  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.theme-customize {
-
-  --text-primary: #a12537 !important;
-  --text-secondary: #18470f !important;
-
-  --c-background: #ffffff !important;
-
-  --print-text-primary: #a12537 !important;
-  --print-text-secondary: #18470f !important;
-
-  --print-c-background: #ffffff !important;
-
-  h1 {
-    font-family: 'bickham', cursive;
-    font-size: 8rem;
-    font-weight: 400;
-    font-style: normal;
-    transform: translateY(-1.8rem);
-    //letter-spacing: -0.04rem;
-  }
+@import "~@/scss/customize/colors.scss";
+@import "~@/scss/customize/fonts.scss";
 
 
-}
+
+
+
 

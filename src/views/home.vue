@@ -9,11 +9,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { dataOfferList } from "@/data/offer-list";
 import MainOfferListSite from "@/components/main/offer-list/site/site.vue";
 import { OfferListService } from "@/services/offer-list";
-import {EHTMLIds} from "@/types/global/IHtmlIds";
-import {ELayoutMod} from "@/types/global/ICssClasses";
+import { setTheme } from "@/views/utils/setTheme";
 
 @Component({
   components: {
@@ -21,16 +19,13 @@ import {ELayoutMod} from "@/types/global/ICssClasses";
   }
 })
 export default class Home extends Vue {
-  public dataOfferList = dataOfferList;
   private service = new OfferListService();
+  private theme = new setTheme();
 
   //  --- Lifecycle hooks ---
   private mounted() {
     this.service.load();
-    const layout = document.getElementById(EHTMLIds.layout);
-    if (layout) {
-      layout.className = ELayoutMod.mEmpty;
-    }
+    this.theme.site();
   }
 }
 </script>

@@ -1,0 +1,33 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+header {
+  flex: 0 0;
+  padding: $padding;
+
+  .zoom {
+    letter-spacing: - $global-letter-spacing * 8;
+  }
+
+  nav {
+    display: flex;
+
+    a {
+      margin-right: $margin;
+      text-decoration: underline;
+    }
+  }
+}
+
+// --- breakpoint 01 - 03 ---
+
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+
+}
+

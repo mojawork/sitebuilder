@@ -8,6 +8,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { dataOfferList } from "@/data/offer-list";
 import MainOfferList from "@/components/main/offer-list/offer-list.vue";
+import { setTheme } from "@/views/utils/setTheme";
 
 @Component({
   components: {
@@ -15,9 +16,13 @@ import MainOfferList from "@/components/main/offer-list/offer-list.vue";
   }
 })
 export default class Edit extends Vue {
-  // public data = inputText;
-  // public data2 = _clone(inputText);
   public dataOfferList = dataOfferList;
+  private theme = new setTheme();
+
+  //  --- Lifecycle hooks ---
+  private mounted() {
+    this.theme.edit();
+  }
 }
 </script>
 

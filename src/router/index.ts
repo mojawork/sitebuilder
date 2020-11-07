@@ -16,7 +16,6 @@ const routes: Array<RouteConfig> = [
     name: "Edit",
     component: Edit
   }
-
 ];
 
 const router = new VueRouter({

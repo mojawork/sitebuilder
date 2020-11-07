@@ -1,0 +1,14 @@
+<div class="popup" @click="resetDisplay">
+    <div class="shadow-g content" v-if="options">
+        <div class="header" v-if="options.headline">
+            <h2 :class="options.color" v-text="options.headline"/>
+            <span class="m-pointer-g icons-g" @click="resetDisplay">close</span>
+        </div>
+
+        <div class="button" v-if="options.button">
+            <button class="m-pointer-g" @click="resetDisplay">{{ options.button }}</button>
+        </div>
+
+    </div>
+    <slot/>
+</div>

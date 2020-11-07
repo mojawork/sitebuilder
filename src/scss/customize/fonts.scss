@@ -1,0 +1,37 @@
+// ----------------------------------------------------------------------------
+// fonts
+// ----------------------------------------------------------------------------
+
+@font-face {
+  font-family: "bickham";
+  src: url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.eot");
+  src: url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.eot?#iefix") format("embedded-opentype"),
+  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.otf") format("opentype"),
+  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.svg") format("svg"),
+  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.ttf") format("truetype"),
+  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.woff") format("woff"),
+  url("~@/assets/fonts/bickham/bickham-script-oneallfontnet.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.theme-customize {
+
+  h1{
+    font-family: 'bickham', cursive;
+    font-size: 8rem  * $font-desktop-factor;
+    font-weight: 400;
+    font-style: normal;
+    transform: translateY(-1.8rem);
+  }
+
+  @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+    h1{
+      font-size: 8rem  * $font-mobile-factor * 0.65;
+    }
+  }
+
+}
+
+
+

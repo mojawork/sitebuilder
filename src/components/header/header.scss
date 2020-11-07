@@ -1,0 +1,31 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    display: flex;
+
+    a {
+      margin-right: $margin;
+      text-decoration: underline;
+    }
+  }
+}
+
+// --- breakpoint 01 - 03 ---
+
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+
+}
+

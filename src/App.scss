@@ -17,16 +17,6 @@
   > header {
     flex: 0 0;
     padding: $padding;
-    .zoom{
-      letter-spacing: - $global-letter-spacing * 8;
-    }
-    nav{
-      display: flex;
-      a{
-        margin-right:$margin;
-        text-decoration: underline;
-      }
-    }
   }
 
   > main {

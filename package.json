@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open --host localhost",
     "build": "vue-cli-service build",
+    "deploy": "vue-cli-service ftpdeploy --genHist --diffFileOnly --ftpCfgPath /ftpdeploy/ --ftpHistPath /ftpdeploy/",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-ftp-deploy": "~0.1.14",
     "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {},

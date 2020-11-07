@@ -5,15 +5,8 @@
         <button @click="addEntry()" class="icons-g">add_circle</button>
     </header>
 
-
-
-    <div class="entry-header">
-        <!-- <GlobalInput :options="data"></GlobalInput> //-->
-
-    </div>
-
     <div class="entry-header" v-if="data.header.length > 0">
-        <GlobalInput  v-for="item in data.header[0]" :options="item"></GlobalInput>
+        <GlobalInput v-for="item in data.header[0]" :options="item"></GlobalInput>
     </div>
 
     <div class="entry-labels">
@@ -24,24 +17,44 @@
     </div>
 
     <div class="entry" v-for="(entry ,index) in data.entries">
-        <div><button class="icons-g" @click="removeEntry(index)">remove_circle</button></div>
+        <div>
+            <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
+        </div>
         <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
-        <div><button class="icons-g" @click="addEntry()">add_circle</button></div>
+        <div>
+            <button class="icons-g" @click="addEntry()">add_circle</button>
+        </div>
     </div>
 
     <footer v-if="data.entries.length > 0">
-            <button class="text-icon-g" @click="load()">
-                <span class="icons-g">get_app</span>
-                {{ options.formActions.loadlabel}}
-            </button>
-            <button class="text-icon-g" @click="reset()">
-                <span class="icons-g">delete</span>
-                {{ options.formActions.resetlabel}}
-            </button>
-            <button class="text-icon-g" @click="save()">
-                <span class="icons-g">save</span>
-                {{ options.formActions.savelabel}}
-            </button>
+        <button class="text-icon-g" @click="load()">
+            <span class="icons-g">get_app</span>
+            {{ options.formActions.loadlabel }}
+        </button>
+        <button class="text-icon-g" @click="reset()">
+            <span class="icons-g">delete</span>
+            {{ options.formActions.resetlabel }}
+        </button>
+        <button class="text-icon-g" @click="save()">
+            <span class="icons-g">save</span>
+            {{ options.formActions.savelabel }}
+        </button>
     </footer>
 
+    <global-popup
+            v-if="data.error"
+            v-bind:display.sync="data.error"
+            :options="{
+                headline: 'Data cannot be loaded',
+                button: 'ok',
+                color: textColors.error
+            }"/>
+    <global-popup
+            v-if="response.error"
+            v-bind:display.sync="response.error"
+            :options="{
+                headline: 'Data cannot be saved',
+                button: 'ok',
+                color: textColors.error
+            }"/>
 </div>

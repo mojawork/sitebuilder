@@ -1,4 +1,3 @@
-import MainOfferListForm from "@/components/main/offer-list/form/form.vue";
 import { IOfferList } from "@/types/views/offer-list";
 
 export interface IRootState {

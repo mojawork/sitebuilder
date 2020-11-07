@@ -12,9 +12,7 @@ module.exports = {
     "@vue/prettier/@typescript-eslint"
   ],
   parserOptions: {
-    "plugins": [
-      "html"
-    ],
+    plugins: ["html"],
     ecmaVersion: 6,
     sourceType: "module",
     ecmaFeatures: {

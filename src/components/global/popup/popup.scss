@@ -1,0 +1,57 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ct-primary);
+  z-index: 1000;
+  > .content {
+    display: flex;
+    flex-flow: column;
+    max-width: 60%;
+    max-height: 60%;
+    border: $border solid var(--text-primary);
+    border-top-right-radius: $radius;
+    background-color: var(--c-primary);
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: $padding $padding * 4 $padding $padding;
+      background-color: var(--c-secondary);
+      position: relative;
+
+      span {
+        position: absolute;
+        top: - $border;
+        right: - $border;
+        background-color: var(--c-thirdly);
+        border: $border solid var(--text-primary);
+        border-bottom-left-radius: $radius;
+        border-top-right-radius: $radius;
+      }
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      padding: $padding;
+      background-color: var(--c-primary);
+    }
+
+  }
+
+
+}
