@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-import {saticOfferFormHeader, staticOfferListOfferItems} from "@/data/offer-list";
+import {saticOfferFormHeader, staticOfferListHeadlineItems, staticOfferListOfferItems} from "@/data/offer-list";
 import GlobalInput from "@/components/global/form-items/input/input.vue";
 import GlobalPopup from "@/components/global/popup/popup.vue";
 import {EofferListDataNames, IOfferList,} from "@/types/views/offer-list";
@@ -25,21 +25,32 @@ export default class MainOfferListForm extends Vue {
     public response!: IOfferList["response"];
 
     private header = saticOfferFormHeader;
+
+    public staticOfferHeadlineItems = staticOfferListHeadlineItems;
     public staticOfferItems = staticOfferListOfferItems;
     public textColors = ETextColors;
     private validate = new FormValidate();
     private service = new OfferListService();
 
-    public addEntry(): void {
+    public addItem(index: number): void {
         if (this.data.header.length === 0) {
             this.data.header.push(_cloneDeep(this.header));
         }
-
-        this.data[EofferListDataNames.items].push(_cloneDeep(this.staticOfferItems));
+        this.data[EofferListDataNames.items].splice(index + 1, 0, _cloneDeep(this.staticOfferItems));
         store.commit("updateState", store.state);
     }
 
-    public removeEntry(index: number): void {
+    public addHeadlineItem(index: number): void {
+        if (this.data.header.length === 0) {
+            this.data.header.push(_cloneDeep(this.header));
+        }
+        this.data[EofferListDataNames.items].splice(index + 1, 0, _cloneDeep(this.staticOfferHeadlineItems));
+        this.data[EofferListDataNames.items].splice(index + 2, 0, _cloneDeep(this.staticOfferItems));
+        store.commit("updateState", store.state);
+    }
+
+
+    public removeItem(index: number): void {
         this.data[EofferListDataNames.items].splice(index, 1);
         store.commit("updateState", store.state);
     }
@@ -71,8 +82,8 @@ export default class MainOfferListForm extends Vue {
             if ("offer" in item) {
                 error = this.validate.checkErrors(item.offer)
             }
-            if ("offerHeadline" in item) {
-                error = this.validate.checkErrors(item.offerHeadline)
+            if ("headline" in item) {
+                error = this.validate.checkErrors(item.headline)
             }
         })
         if (!error) {

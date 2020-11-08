@@ -7,70 +7,91 @@
 // Defaut
 // ----------------------------------------------------------------------------
 
-section {
+.offer-list-site {
   display: flex;
   flex-flow: column;
   background-color: var(--c-background);
-  header{
+
+  header {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding:$padding;
-    margin:0;
+    padding: $padding;
+    margin: 0;
+
     .logo {
       display: flex;
-      width:50%;
+      width: 50%;
     }
+
     h1 {
       margin: $margin 0;
+      color: var(--text-primary);
     }
   }
+
   .content {
-    display: grid;
-    padding:$padding;
-    grid-template-columns: 2fr 3fr 1fr;
-    grid-gap: $margin;
-    border-top: $border solid var(--c-thirdly);
-    span:last-of-type {
+    display: flex;
+    flex-flow: column;
+
+    h2 {
       display: flex;
-      justify-self: flex-end;
-      font-weight: $font-weight-bold;
+      flex-flow: column;
+      padding: $padding;
+      margin: $margin 0;
+      border-bottom: $border solid var(--text-primary);
     }
 
+    p {
+      display: grid;
+      padding: $padding;
+      grid-template-columns: 2fr 3fr 1fr;
+      grid-gap: $margin;
+      border-bottom: $border solid var(--c-thirdly);
+      &:last-of-type {
+        border:0;
+      }
+
+      strong {
+        color: var(--text-secondary);
+      }
+
+      span {
+        color: var(--text-secondary);
+      }
+
+      span:last-of-type {
+        display: flex;
+        justify-self: flex-end;
+        font-weight: $font-weight-bold;
+      }
+    }
   }
 
-  h1 {
-    color: var(--text-primary);
-  }
-
-  strong {
-    color: var(--text-primary);
-  }
-
-  span {
-    color: var(--text-secondary);
-  }
 
 }
 
 // --- breakpoint 01 - 03 ---
 
 @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
-  section {
+  .offer-list-site {
     .content {
-      display: grid;
-      padding: $padding;
-      grid-template-columns: 3fr 1fr;
-      strong {
-        order: 1;
-      }
-      span:first-of-type {
-        order: 3;
-        grid-column: 1 / span 2;
-      }
-      span:last-of-type {
-        order: 2;
+      p {
+        grid-template-columns: 3fr 1fr;
+
+        strong {
+          order: 1;
+        }
+
+        span:first-of-type {
+          order: 3;
+          grid-column: 1 / span 2;
+        }
+
+        span:last-of-type {
+          order: 2;
+        }
       }
     }
   }

@@ -1,16 +1,33 @@
-<section class="printable theme-customize">
+<div class="offer-list-site printable theme-customize">
     <header>
         <GlobalImage class="logo" :options="testImage"/>
 
         <h1 v-if="data.header[0]" v-text="data.header[0][0].value"/>
 
     </header>
-    <div class="content" v-for="(items ,index) in data.items">
-        <template v-if="items.offer" v-for="(item, index) in items.offer">
-            <strong v-if="index === 0" v-text="item.value"/>
-            <span v-if="index === 1" v-text="item.value"/>
-            <span v-if="index === 2" v-text="item.value"/>
+
+    <section class="content">
+
+        <template v-for="(items ,index) in data.items">
+
+
+            <template v-if="items.headline" v-for="(item, index) in items.headline">
+                <h2 v-if="index === 0" v-text="item.value"/>
+            </template>
+
+            <p v-if="items.offer">
+                <template v-for="(item, index) in items.offer">
+                <strong v-if="index === 0" v-text="item.value"/>
+                <span v-if="index === 1" v-text="item.value"/>
+                <span v-if="index === 2" v-text="item.value"/>
+                </template>
+            </p>
+
+
         </template>
-    </div>
+
+    </section>
+
+
     <footer></footer>
-</section>
+</div>

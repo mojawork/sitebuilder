@@ -1,7 +1,7 @@
 import {EFormItemType, EInputTypes, IInputItem} from "@/types/global/iForms";
 import {
     EofferListDataNames,
-    IOfferList,
+    IOfferList, IOfferListHeadlineItems,
     IOfferListLabels, IOfferListOfferItems
 } from "@/types/views/offer-list";
 
@@ -10,6 +10,7 @@ export const staticOfferlistLabels: IOfferListLabels = {
         label: "offers",
         headline: "headline",
         date: "date",
+        offerHeadline: "Headline Offers",
         name: "name",
         description: "description",
         price: "price",
@@ -62,10 +63,57 @@ export const saticOfferFormHeader: IInputItem[] = [
 
 export const staticOfferListOfferItems: IOfferListOfferItems = {
     offer:[
+        {
+            formType: EFormItemType.input,
+            name: "name",
+            label: staticOfferlistLabels.form.name,
+            value: "",
+            error: {
+                massage: staticOfferlistLabels.form.error,
+                exists: false
+            },
+            required: true,
+            inputType: EInputTypes.text,
+            maxlength: 40,
+            placeholder: true
+        },
+        {
+            formType: EFormItemType.input,
+            name: "description",
+            label: staticOfferlistLabels.form.description,
+            value: "",
+            error: {
+                massage: staticOfferlistLabels.form.error,
+                exists: false
+            },
+            required: false,
+            inputType: EInputTypes.text,
+            maxlength: 500,
+            placeholder: true
+        },
+        {
+            formType: EFormItemType.input,
+            name: "price",
+            label: staticOfferlistLabels.form.price,
+            value: "",
+            error: {
+                massage: staticOfferlistLabels.form.error,
+                exists: false
+            },
+            required: true,
+            inputType: EInputTypes.text,
+            maxlength: 7,
+            placeholder: true
+        }
+    ]
+};
+
+export const staticOfferListHeadlineItems: IOfferListHeadlineItems = {
+    headline:[
             {
                 formType: EFormItemType.input,
-                name: "name",
-                label: staticOfferlistLabels.form.name,
+                name: "headline",
+                label: staticOfferlistLabels.form.offerHeadline,
                 value: "",
                 error: {
                     massage: staticOfferlistLabels.form.error,
@@ -73,37 +121,9 @@ export const staticOfferListOfferItems: IOfferListOfferItems = {
                 },
                 required: true,
                 inputType: EInputTypes.text,
-                maxlength: 40,
+                maxlength: 200,
                 placeholder: false
             },
-            {
-                formType: EFormItemType.input,
-                name: "description",
-                label: staticOfferlistLabels.form.description,
-                value: "",
-                error: {
-                    massage: staticOfferlistLabels.form.error,
-                    exists: false
-                },
-                required: false,
-                inputType: EInputTypes.text,
-                maxlength: 500,
-                placeholder: true
-            },
-            {
-                formType: EFormItemType.input,
-                name: "price",
-                label: staticOfferlistLabels.form.price,
-                value: "",
-                error: {
-                    massage: staticOfferlistLabels.form.error,
-                    exists: false
-                },
-                required: true,
-                inputType: EInputTypes.text,
-                maxlength: 7,
-                placeholder: true
-            }
         ]
 };
 

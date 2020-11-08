@@ -11,6 +11,7 @@ export interface IOfferListLabels {
     label: string;
     headline: string;
     date: string;
+    offerHeadline: string;
     name: string;
     description: string;
     price: string;
@@ -48,8 +49,8 @@ export interface IOfferListSite {
   headline: string;
 }
 
-export interface IOfferListGroupHeadline {
-  offerHeadline: Array<IInputItem>;
+export interface IOfferListHeadlineItems {
+  headline: Array<IInputItem>;
 }
 
 export interface IOfferListOfferItems {
@@ -63,13 +64,13 @@ export interface IOfferList {
   site: IOfferListSite;
   data: {
     [EofferListDataNames.header]: Array<IInputItem>[];
-    [EofferListDataNames.items]: Array <IOfferListGroupHeadline | IOfferListOfferItems>
+    [EofferListDataNames.items]: Array <IOfferListHeadlineItems | IOfferListOfferItems>
     [EofferListDataNames.footer]: Array<IInputItem>[];
     error: boolean;
   };
   response: {
     [EofferListDataNames.header]: Array<IInputItem>[];
-    [EofferListDataNames.items]: Array <IOfferListOfferItems>;
+    [EofferListDataNames.items]: Array <IOfferListHeadlineItems | IOfferListOfferItems>;
     [EofferListDataNames.footer]: Array<IInputItem>[];
     error: boolean;
   };

@@ -2,7 +2,10 @@
 
     <header>
         <h2 v-text="options.label"/>
-        <button @click="addEntry()" class="icons-g">add_circle</button>
+        <div class="buttons">
+            <button class="icons-g" @click="addItem(-1)">add_circle</button>
+            <button class="icons-g" @click="addHeadlineItem(-1)">playlist_add</button>
+        </div>
     </header>
 
     <div class="entry-header" v-if="data.header.length > 0">
@@ -17,36 +20,52 @@
 
     </div>
 
-    <template  v-if="data.items" v-for="(item ,index) in data.items">
+    <template v-if="data.items" v-for="(item ,index) in data.items">
+
+        <div class="headline-items" v-if="item.headline">
+            <div>
+                <button class="icons-g" @click="removeItem(index)">remove_circle</button>
+            </div>
+            <GlobalInput v-for="item in item.headline" :options="item"></GlobalInput>
+            <div class="buttons">
+                <button class="icons-g" @click="addItem(index)">add_circle</button>
+                <button class="icons-g" @click="addHeadlineItem(index)">playlist_add</button>
+            </div>
+        </div>
 
 
         <div class="offer-items" v-if="item.offer">
             <div>
-                <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
+                <button class="icons-g" @click="removeItem(index)">remove_circle</button>
             </div>
             <GlobalInput v-for="item in item.offer" :options="item"></GlobalInput>
-            <div>
-                <button class="icons-g" @click="addEntry()">add_circle</button>
+            <div class="buttons">
+                <button class="icons-g" @click="addItem(index)">add_circle</button>
+                <button class="icons-g" @click="addHeadlineItem(index)">playlist_add</button>
             </div>
         </div>
+
+
+
 
     </template>
 
 
-
     <footer v-if="data.items.length > 0">
-        <button class="text-icon-g" @click="load()">
-            <span class="icons-g">get_app</span>
-            {{ options.formActions.loadlabel }}
-        </button>
-        <button class="text-icon-g" @click="reset()">
-            <span class="icons-g">delete</span>
-            {{ options.formActions.resetlabel }}
-        </button>
-        <button class="text-icon-g" @click="save()">
-            <span class="icons-g">save</span>
-            {{ options.formActions.savelabel }}
-        </button>
+        <div class="buttons">
+            <button class="text-icon-g" @click="load()">
+                <span class="icons-g">get_app</span>
+                {{ options.formActions.loadlabel }}
+            </button>
+            <button class="text-icon-g" @click="reset()">
+                <span class="icons-g">delete</span>
+                {{ options.formActions.resetlabel }}
+            </button>
+            <button class="text-icon-g" @click="save()">
+                <span class="icons-g">save</span>
+                {{ options.formActions.savelabel }}
+            </button>
+        </div>
     </footer>
 
 
