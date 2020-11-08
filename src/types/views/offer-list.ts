@@ -48,9 +48,14 @@ export interface IOfferListSite {
   headline: string;
 }
 
+export interface IOfferListGroupHeadline {
+  offerHeadline: Array<IInputItem>;
+}
+
 export interface IOfferListOfferItems {
   offer: Array<IInputItem>;
 }
+
 
 export interface IOfferList {
   form: IOfferListForm;
@@ -58,7 +63,7 @@ export interface IOfferList {
   site: IOfferListSite;
   data: {
     [EofferListDataNames.header]: Array<IInputItem>[];
-    [EofferListDataNames.items]: Array <IOfferListOfferItems>
+    [EofferListDataNames.items]: Array <IOfferListGroupHeadline | IOfferListOfferItems>
     [EofferListDataNames.footer]: Array<IInputItem>[];
     error: boolean;
   };

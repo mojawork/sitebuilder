@@ -11,81 +11,81 @@ import {ETextColors} from "@/types/global/ICssClasses";
 
 
 @Component({
-  components: {
-    GlobalInput,
-    GlobalPopup
-  }
+    components: {
+        GlobalInput,
+        GlobalPopup
+    }
 })
 export default class MainOfferListForm extends Vue {
-  @Prop({ required: true })
-  public options!: IOfferList["form"];
-  @Prop({ required: true })
-  public data!: IOfferList["data"];
-  @Prop({ required: true })
-  public response!: IOfferList["response"];
+    @Prop({required: true})
+    public options!: IOfferList["form"];
+    @Prop({required: true})
+    public data!: IOfferList["data"];
+    @Prop({required: true})
+    public response!: IOfferList["response"];
 
-  private header = saticOfferFormHeader;
-  public staticOfferItems = staticOfferListOfferItems;
-  public textColors = ETextColors;
-  private validate = new FormValidate();
-  private service = new OfferListService();
+    private header = saticOfferFormHeader;
+    public staticOfferItems = staticOfferListOfferItems;
+    public textColors = ETextColors;
+    private validate = new FormValidate();
+    private service = new OfferListService();
 
-  public addEntry(): void {
-    if (this.data.header.length === 0) {
-      this.data.header.push(_cloneDeep(this.header));
+    public addEntry(): void {
+        if (this.data.header.length === 0) {
+            this.data.header.push(_cloneDeep(this.header));
+        }
+
+        this.data[EofferListDataNames.items].push(_cloneDeep(this.staticOfferItems));
+        store.commit("updateState", store.state);
     }
 
-    this.data[EofferListDataNames.items].push(_cloneDeep(this.staticOfferItems));
-    store.commit("updateState", store.state);
-  }
-
-  public removeEntry(index: number): void {
-    this.data[EofferListDataNames.items].splice(index, 1);
-    store.commit("updateState", store.state);
-  }
-
-  public reset(): void {
-    this.data.header = [];
-    this.data[EofferListDataNames.items] = [];
-    store.commit("updateState", store.state);
-  }
-
-  public load(): void {
-    if (this.response.header.length > 0) {
-      this.data.header = _cloneDeep(this.response.header);
+    public removeEntry(index: number): void {
+        this.data[EofferListDataNames.items].splice(index, 1);
+        store.commit("updateState", store.state);
     }
-    if (this.response[EofferListDataNames.items].length > 0) {
-      this.data[EofferListDataNames.items] = _cloneDeep(this.response[EofferListDataNames.items]);
-    }
-    if (this.response.footer.length > 0) {
-      this.data.footer = _cloneDeep(this.response.footer);
-    } else {
-      this.service.load();
-    }
-  }
 
-  public save(): void {
-    const error = false;
-    /*
-        this.data.entries.forEach((entry) => {
-            if (!error) {
-                error = this.validate.checkErrors(entry)
-            } else {
-                this.validate.checkErrors(entry)
+    public reset(): void {
+        this.data.header = [];
+        this.data[EofferListDataNames.items] = [];
+        store.commit("updateState", store.state);
+    }
+
+    public load(): void {
+        if (this.response.header.length > 0) {
+            this.data.header = _cloneDeep(this.response.header);
+        }
+        if (this.response[EofferListDataNames.items].length > 0) {
+            this.data[EofferListDataNames.items] = _cloneDeep(this.response[EofferListDataNames.items]);
+        }
+        if (this.response.footer.length > 0) {
+            this.data.footer = _cloneDeep(this.response.footer);
+        } else {
+            this.service.load();
+        }
+    }
+
+    public save(): void {
+        let error = true;
+
+        this.data.items.forEach((item) => {
+            if ("offer" in item) {
+                error = this.validate.checkErrors(item.offer)
+            }
+            if ("offerHeadline" in item) {
+                error = this.validate.checkErrors(item.offerHeadline)
             }
         })
-         */
-    if (!error) {
-      this.service.save();
+        if (!error) {
+            this.service.save();
+        }
     }
-  }
 
-  public error () : boolean {
-    return this.response.error || this.data.error;
-  }
+    public error(): boolean {
+        return this.response.error || this.data.error;
+    }
 
-  //  --- Lifecycle hooks ---
-  private mounted() {
-    this.service.load();
-  }
+    //  --- Lifecycle hooks ---
+    private mounted() {
+        this.service.load();
+    }
 }
