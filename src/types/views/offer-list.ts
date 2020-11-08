@@ -2,7 +2,7 @@ import { IInputItem } from "@/types/global/iForms";
 
 export enum EofferListDataNames {
   header = "header",
-  entries = "entries",
+  items = "items",
   footer = "footer"
 }
 
@@ -48,19 +48,23 @@ export interface IOfferListSite {
   headline: string;
 }
 
+export interface IOfferListOfferItems {
+  offer: Array<IInputItem>;
+}
+
 export interface IOfferList {
   form: IOfferListForm;
   view: IOfferListView;
   site: IOfferListSite;
   data: {
     [EofferListDataNames.header]: Array<IInputItem>[];
-    [EofferListDataNames.entries]: Array<IInputItem>[];
+    [EofferListDataNames.items]: Array <IOfferListOfferItems>
     [EofferListDataNames.footer]: Array<IInputItem>[];
     error: boolean;
   };
   response: {
     [EofferListDataNames.header]: Array<IInputItem>[];
-    [EofferListDataNames.entries]: Array<IInputItem>[];
+    [EofferListDataNames.items]: Array <IOfferListOfferItems>;
     [EofferListDataNames.footer]: Array<IInputItem>[];
     error: boolean;
   };

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { dataOfferList } from "@/data/offer-list";
+import { staticDataOfferList } from "@/data/offer-list";
 import MainOfferList from "@/components/main/offer-list/offer-list.vue";
 import { setTheme } from "@/views/utils/setTheme";
 
@@ -16,7 +16,7 @@ import { setTheme } from "@/views/utils/setTheme";
   }
 })
 export default class Edit extends Vue {
-  public dataOfferList = dataOfferList;
+  public dataOfferList = staticDataOfferList;
   private theme = new setTheme();
 
   //  --- Lifecycle hooks ---

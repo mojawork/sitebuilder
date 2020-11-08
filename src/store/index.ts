@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { IRootState } from "@/types/state/state";
-import { dataOfferList } from "@/data/offer-list";
+import { staticDataOfferList } from "@/data/offer-list";
 import { IInputItem } from "@/types/global/iForms";
 import { EofferListDataNames, IOfferList } from "@/types/views/offer-list";
 
@@ -12,7 +12,7 @@ export default new Vuex.Store<IRootState>({
     data: {
       header: "header",
       main: {
-        offerList: dataOfferList
+        offerList: staticDataOfferList
       },
       footer: "footer"
     }
@@ -32,18 +32,9 @@ export default new Vuex.Store<IRootState>({
       payload: IOfferList["response"]
     ) {
       state.data.main.offerList.response = payload;
-    },
-
-    // --- UpdateOfferListFormEntriesResonse ---
-    UpdateOfferListFormEntries(
-      state: IRootState,
-      payload: {
-        entryName: EofferListDataNames;
-        data: Array<IInputItem>[];
-      }
-    ) {
-      state.data.main.offerList.data[payload.entryName] = payload.data;
     }
+
+
   },
   actions: {},
   modules: {}

@@ -1,14 +1,12 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { offerFormHeader, offerFormItems } from "@/data/offer-list";
+import {Component, Prop, Vue} from "vue-property-decorator";
+import {saticOfferFormHeader, staticOfferListOfferItems} from "@/data/offer-list";
 import GlobalInput from "@/components/global/form-items/input/input.vue";
 import GlobalPopup from "@/components/global/popup/popup.vue";
-import {
-  IOfferList,
-} from "@/types/views/offer-list";
+import {EofferListDataNames, IOfferList,} from "@/types/views/offer-list";
 import _cloneDeep from "lodash/cloneDeep";
-import { FormValidate } from "@/components/global/form-items/validate/validate";
+import {FormValidate} from "@/components/global/form-items/validate/validate";
 import store from "@/store";
-import { OfferListService } from "@/services/offer-list";
+import {OfferListService} from "@/services/offer-list";
 import {ETextColors} from "@/types/global/ICssClasses";
 
 
@@ -26,8 +24,8 @@ export default class MainOfferListForm extends Vue {
   @Prop({ required: true })
   public response!: IOfferList["response"];
 
-  private header = offerFormHeader;
-  public entry = offerFormItems;
+  private header = saticOfferFormHeader;
+  public staticOfferItems = staticOfferListOfferItems;
   public textColors = ETextColors;
   private validate = new FormValidate();
   private service = new OfferListService();
@@ -37,18 +35,18 @@ export default class MainOfferListForm extends Vue {
       this.data.header.push(_cloneDeep(this.header));
     }
 
-    this.data.entries.push(_cloneDeep(this.entry));
+    this.data[EofferListDataNames.items].push(_cloneDeep(this.staticOfferItems));
     store.commit("updateState", store.state);
   }
 
   public removeEntry(index: number): void {
-    this.data.entries.splice(index, 1);
+    this.data[EofferListDataNames.items].splice(index, 1);
     store.commit("updateState", store.state);
   }
 
   public reset(): void {
     this.data.header = [];
-    this.data.entries = [];
+    this.data[EofferListDataNames.items] = [];
     store.commit("updateState", store.state);
   }
 
@@ -56,8 +54,8 @@ export default class MainOfferListForm extends Vue {
     if (this.response.header.length > 0) {
       this.data.header = _cloneDeep(this.response.header);
     }
-    if (this.response.entries.length > 0) {
-      this.data.entries = _cloneDeep(this.response.entries);
+    if (this.response[EofferListDataNames.items].length > 0) {
+      this.data[EofferListDataNames.items] = _cloneDeep(this.response[EofferListDataNames.items]);
     }
     if (this.response.footer.length > 0) {
       this.data.footer = _cloneDeep(this.response.footer);

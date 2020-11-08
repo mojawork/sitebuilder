@@ -9,24 +9,32 @@
         <GlobalInput v-for="item in data.header[0]" :options="item"></GlobalInput>
     </div>
 
-    <div class="entry-labels">
-        <strong v-text="entry[0].label"></strong>
-        <strong v-text="entry[1].label"></strong>
-        <strong v-text="entry[2].label"></strong>
+
+    <div class="offer-item-labels">
+        <strong v-text="staticOfferItems.offer[0].label"></strong>
+        <strong v-text="staticOfferItems.offer[1].label"></strong>
+        <strong v-text="staticOfferItems.offer[2].label"></strong>
 
     </div>
 
-    <div class="entry" v-for="(entry ,index) in data.entries">
-        <div>
-            <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
-        </div>
-        <GlobalInput v-for="item in entry" :options="item"></GlobalInput>
-        <div>
-            <button class="icons-g" @click="addEntry()">add_circle</button>
-        </div>
-    </div>
+    <template  v-if="data.items" v-for="(item ,index) in data.items">
 
-    <footer v-if="data.entries.length > 0">
+
+        <div class="offer-items" v-if="item.offer">
+            <div>
+                <button class="icons-g" @click="removeEntry(index)">remove_circle</button>
+            </div>
+            <GlobalInput v-for="item in item.offer" :options="item"></GlobalInput>
+            <div>
+                <button class="icons-g" @click="addEntry()">add_circle</button>
+            </div>
+        </div>
+
+    </template>
+
+
+
+    <footer v-if="data.items.length > 0">
         <button class="text-icon-g" @click="load()">
             <span class="icons-g">get_app</span>
             {{ options.formActions.loadlabel }}
@@ -40,6 +48,7 @@
             {{ options.formActions.savelabel }}
         </button>
     </footer>
+
 
     <global-popup
             v-if="data.error"
