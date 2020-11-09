@@ -42,6 +42,9 @@ export default class GlobalInput extends Vue {
         if (this.options.inputType === EInputTypes.tel) {
             this.options.error.exists = this.validateInput.tel(this.options.value);
         }
+        if (this.options.inputType === EInputTypes.date) {
+            this.options.error.exists = this.validateInput.date(this.options.value);
+        }
         if (this.options.inputType === EInputTypes.price) {
             let validateOutput = this.validateInput.price(this.options.value)
             this.options.error.exists = validateOutput.error

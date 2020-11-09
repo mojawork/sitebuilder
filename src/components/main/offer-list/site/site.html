@@ -3,6 +3,7 @@
         <GlobalImage class="logo" :options="testImage"/>
 
         <h1 v-if="data.header[0]" v-text="data.header[0][0].value"/>
+        <span v-if="data.header[0]" v-text="showdate(data.header[0][1].value)"/>
 
     </header>
 

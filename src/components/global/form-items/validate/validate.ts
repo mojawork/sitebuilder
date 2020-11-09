@@ -32,6 +32,10 @@ export class FormInputValidate {
         );
     }
 
+    public date (value: string) {
+        return isNaN(Date.parse(value));
+    }
+
     public price(value: string): {
         value: string;
         error: boolean

@@ -19,6 +19,7 @@
     align-items: center;
     padding: $padding;
     margin: 0;
+    position: relative;
 
     .logo {
       display: flex;
@@ -28,6 +29,12 @@
     h1 {
       margin: $margin 0;
       color: var(--text-primary);
+    }
+    span {
+      position: absolute;
+      top: $margin;
+      right: $margin;
+      color: var(--text-secondary);
     }
   }
 
