@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Config
 // ----------------------------------------------------------------------------
-@import "@/scss/import.scss";
+@import "~@/scss/import.scss";
 
 $maxCountWidth: 3rem;
 
@@ -68,7 +68,7 @@ label {
       }
 
       &.max-count {
-        padding-right: $maxCountWidth;
+        padding-right: $maxCountWidth * 1.25;
       }
 
     }

@@ -101,8 +101,8 @@ export const staticOfferListOfferItems: IOfferListOfferItems = {
                 exists: false
             },
             required: true,
-            inputType: EInputTypes.text,
-            maxlength: 7,
+            inputType: EInputTypes.price,
+            maxlength: 9,
             placeholder: true
         }
     ]

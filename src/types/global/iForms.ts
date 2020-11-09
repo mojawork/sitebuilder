@@ -6,7 +6,9 @@ export enum EInputTypes {
   text = "text",
   number = "number",
   email = "email",
-  tel = "tel"
+  tel = "tel",
+  price = "price",
+  date = "date"
 }
 
 export interface IInputError {

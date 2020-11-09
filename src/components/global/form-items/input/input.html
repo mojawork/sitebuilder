@@ -5,7 +5,7 @@
     <span class="input-wrapper">
         <input
             :class="{ 'error': options.error.exists, 'max-count' : options.maxlength }"
-            :type="options.inputType"
+            :type="inputType()"
             :placeholder="placeholder()"
             @blur="validate"
             :maxlength="this.options.maxlength"
