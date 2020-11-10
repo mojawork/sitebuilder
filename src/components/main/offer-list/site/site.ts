@@ -6,6 +6,7 @@ import GlobaTab from "@/components/global/tab/tab.vue";
 import GlobalImage from "@/components/global/image/image.vue";
 
 import {IImage} from "@/types/global/IImage";
+import {saticOfferHeadeImager} from "@/data/offer-list";
 
 @Component({
     components: {
@@ -20,13 +21,7 @@ export default class MainOfferListSite extends Vue {
     @Prop({required: true})
     public data!: IOfferList["data"];
 
-    public testImage: IImage = {
-        src: "svg/logo-berger.svg",
-        // url: 'https://mojawork.de',
-        alt: "logo",
-        // caption: 'caption',
-        title: "title"
-    };
+    public headerImage = saticOfferHeadeImager;
 
     public showdate(date: string): string {
         var options = {year: 'numeric', month: 'long', day: 'numeric'};

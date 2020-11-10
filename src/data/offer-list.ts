@@ -4,6 +4,7 @@ import {
     IOfferList, IOfferListHeadlineItems,
     IOfferListLabels, IOfferListOfferItems
 } from "@/types/views/offer-list";
+import {IImage} from "@/types/global/IImage";
 
 export const staticOfferlistLabels: IOfferListLabels = {
     form: {
@@ -29,6 +30,14 @@ export const staticOfferlistLabels: IOfferListLabels = {
         headline: "headline"
     }
 };
+
+export const saticOfferHeadeImager: IImage = {
+    src: "svg/logo-berger.svg",
+    // url: 'https://mojawork.de',
+    alt: "logo",
+    // caption: 'caption',
+    title: "title"
+}
 
 export const saticOfferFormHeader: IInputItem[] = [
     {
