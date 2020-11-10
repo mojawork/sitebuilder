@@ -87,7 +87,7 @@ export const staticOfferListOfferItems: IOfferListOfferItems = {
                 exists: false
             },
             required: false,
-            inputType: EInputTypes.date,
+            inputType: EInputTypes.text,
             maxlength: 500,
             placeholder: true
         },
