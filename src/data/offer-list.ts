@@ -31,7 +31,7 @@ export const staticOfferlistLabels: IOfferListLabels = {
     }
 };
 
-export const saticOfferHeadeImager: IImage = {
+export const saticOfferHeadeImage: IImage = {
     src: "svg/logo-berger.svg",
     // url: 'https://mojawork.de',
     alt: "logo",
