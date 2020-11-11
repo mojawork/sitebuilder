@@ -1,9 +1,9 @@
 @media print {
 
-  #layout{
-    left:0;
-    width:100%;
-    margin-left:0;
+  #layout {
+    left: 0;
+    width: 100%;
+    margin-left: 0;
   }
 
   @page {
@@ -21,12 +21,13 @@
       display: flex !important;
       z-index: 100;
       background-color: var(--print-c-background);
+
       * {
         color-adjust: exact !important;
         -webkit-print-color-adjust: exact !important;;
       }
     }
   }
- }
+}
 
 
