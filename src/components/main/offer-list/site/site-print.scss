@@ -9,7 +9,7 @@
 
 @media print {
   .printable {
-    background-color: var(--print-c-primary);
+    background-color: var(--print-c-background);
 
     .content{
       border-color: var(--print-text-secondary)

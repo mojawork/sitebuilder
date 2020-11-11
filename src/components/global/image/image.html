@@ -10,7 +10,7 @@
 <figure v-else
         :title="options.title"
         :class="{'border': options.caption}">
-    <img :src="options.src" :alt="options.alt">
+    <img :src="imageSRC" :alt="options.alt">
     <figcaption v-if="options.caption"> logo</figcaption>
 </figure>
 

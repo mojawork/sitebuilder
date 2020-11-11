@@ -26,7 +26,6 @@ body {
   --ct-primary: rgba(221, 221, 221, 0.8);
   --ct-secondary: rgba(230, 230, 230, 0.8);
   --ct-thirdly: rgba(239, 239, 239, 0.8);
-
 }
 
 .theme-dark {
@@ -42,20 +41,4 @@ body {
   --ct-secondary: rgba(75, 75, 75, 0.8);
   --ct-thirdly: rgba(102, 102, 102, 0.8);
 }
-
-.theme-light, .theme-dark {
-
-  .printable {
-    --print-text-primary: #000000;
-    --print-text-secondary: #848484;
-    --print-c-primary: #000000;
-    --print-c-secondary: #848484;
-    --print-c-background: #ffffff;
-
-    background-color: var(--print-c-background);
-
-  }
-}
-
-
 // ----------------------------------------------------------------------------
