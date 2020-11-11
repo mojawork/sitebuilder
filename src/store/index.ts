@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import { IRootState } from "@/types/state/state";
 import { staticDataOfferList } from "@/data/offer-list";
 import { IInputItem } from "@/types/global/iForms";
-import { EofferListDataNames, IOfferList } from "@/types/views/offer-list";
+import { EofferListDataNames, IOfferList } from "@/types/components/offer-list";
 
 Vue.use(Vuex);
 

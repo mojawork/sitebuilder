@@ -3,7 +3,7 @@ import {
     EofferListDataNames,
     IOfferList, IOfferListHeadlineItems,
     IOfferListLabels, IOfferListOfferItems
-} from "@/types/views/offer-list";
+} from "@/types/components/offer-list";
 import {IImage} from "@/types/global/IImage";
 
 export const staticOfferlistLabels: IOfferListLabels = {
@@ -31,7 +31,7 @@ export const staticOfferlistLabels: IOfferListLabels = {
     }
 };
 
-export const saticOfferHeadeImage: IImage = {
+export const saticOfferHeaderImage: IImage = {
     src: "svg/logo-mojawork.svg",
     // url: 'https://mojawork.de',
     alt: "logo",

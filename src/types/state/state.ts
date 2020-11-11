@@ -1,4 +1,4 @@
-import { IOfferList } from "@/types/views/offer-list";
+import { IOfferList } from "@/types/components/offer-list";
 
 export interface IRootState {
   data: {

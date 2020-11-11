@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-import {IOfferList} from "@/types/views/offer-list";
+import {IOfferList} from "@/types/components/offer-list";
 import {ETextColors} from "@/types/global/ICssClasses";
 
 @Component({

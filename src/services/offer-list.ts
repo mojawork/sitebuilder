@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "@/store";
 
 import { IInputItem } from "@/types/global/iForms";
-import { EofferListDataNames, IOfferList } from "@/types/views/offer-list";
+import { EofferListDataNames, IOfferList } from "@/types/components/offer-list";
 
 export class OfferListService {
   // config ---

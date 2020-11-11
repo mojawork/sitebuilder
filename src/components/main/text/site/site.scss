@@ -1,0 +1,107 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+.offer-list-site {
+  display: flex;
+  flex-flow: column;
+  background-color: var(--c-background);
+
+  header {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: $padding;
+    margin: 0;
+    position: relative;
+
+    .logo {
+      display: flex;
+      width: 50%;
+    }
+
+    h1 {
+      margin: $margin 0;
+      color: var(--text-primary);
+    }
+    span {
+      position: absolute;
+      top: $margin;
+      right: $margin;
+      color: var(--text-secondary);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column;
+
+    h2 {
+      display: flex;
+      flex-flow: column;
+      padding: $padding;
+      margin: $margin 0;
+      border-bottom: $border solid var(--text-primary);
+    }
+
+    p {
+      display: grid;
+      padding: $padding;
+      grid-template-columns: 2fr 3fr 1fr;
+      grid-gap: $margin;
+      border-bottom: $border solid var(--c-thirdly);
+      &:last-of-type {
+        border:0;
+      }
+
+      strong {
+        color: var(--text-secondary);
+      }
+
+      span {
+        color: var(--text-secondary);
+      }
+
+      span:last-of-type {
+        display: flex;
+        justify-self: flex-end;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+
+}
+
+// --- breakpoint 01 - 03 ---
+
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+  .offer-list-site {
+    .content {
+      p {
+        grid-template-columns: 3fr 1fr;
+
+        strong {
+          order: 1;
+        }
+
+        span:first-of-type {
+          order: 3;
+          grid-column: 1 / span 2;
+        }
+
+        span:last-of-type {
+          order: 2;
+        }
+      }
+    }
+  }
+
+}
+
