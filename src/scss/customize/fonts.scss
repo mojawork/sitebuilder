@@ -22,13 +22,12 @@
     font-size: 4rem  * $font-desktop-factor;
     font-weight: 400;
     font-style: normal;
-    transform: translateY(-1.8rem);
   }
 
   h2{
     font-family: 'terminator', cursive;
     font-size: 2rem  * $font-desktop-factor;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
     padding-bottom: $padding * 0.5 !important;
   }
