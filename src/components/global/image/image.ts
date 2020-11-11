@@ -5,7 +5,7 @@ import { IImage } from "@/types/global/IImage";
   components: {}
 })
 export default class GlobalImage extends Vue {
-  private assets = process.env.VUE_APP_PUBLIC_ASSETS;
+  public assets = process.env.VUE_APP_PUBLIC_ASSETS;
   public imageSRC = '';
 
   @Prop({ required: true })
@@ -13,6 +13,12 @@ export default class GlobalImage extends Vue {
 
   //  --- Lifecycle hooks ---
   private beforeMount() {
+
+    console.log(this.assets);
+
     this.imageSRC= this.assets + this.options.src
+
+    console.log(this.imageSRC)
+
   }
 }
