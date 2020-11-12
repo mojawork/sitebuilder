@@ -7,8 +7,12 @@ export enum ETextTypes {
 }
 
 export interface IText {
+  id: string;
   type: ETextTypes;
   headline : string;
-  dataUrl : string;
-  id: string;
+  folder : string;
+  file: string;
+  response: string;
 }
+
+

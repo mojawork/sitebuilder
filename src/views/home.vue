@@ -1,23 +1,22 @@
 <template>
   <article>
-    <section>
-      <MainTextSite :options="test" />
-    </section>
+
+    <MainTextSite :options="test"/>
 
     <MainOfferListSite
-      :options="$store.state.data.main.offerList.site"
-      :data="$store.state.data.main.offerList.data"
+        :options="$store.state.data.main.offerList.site"
+        :data="$store.state.data.main.offerList.data"
     />
   </article>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import {Component, Vue} from "vue-property-decorator";
 import MainOfferListSite from "@/components/main/offer-list/site/site.vue";
-import { OfferListService } from "@/services/offer-list";
-import { setTheme } from "@/views/utils/setTheme";
+import {OfferListService} from "@/services/offer-list";
+import {setTheme} from "@/views/utils/setTheme";
 import MainTextSite from "@/components/main/text/site/site.vue";
-import { saticTextText } from "@/data/text";
+import {saticTextText} from "@/data/text";
 
 @Component({
   components: {
@@ -46,10 +45,5 @@ article {
   display: flex;
   flex-flow: column;
 
-  > * {
-    // background-color: #cccccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
 }
 </style>

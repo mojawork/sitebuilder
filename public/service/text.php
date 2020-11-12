@@ -1,12 +1,12 @@
 <?php
 
 $registeredtypes = ['html', 'md'];
-$site = $_GET['site'];
+$folder = $_GET['folder'];
 $type = $_GET['type'];
 $file = $_GET['file'];
 
-if ($site && $file && in_array($type , $registeredtypes)) {
-    $url ='../content/' . $site . '/' . $file . '.'. $type;
+if ($folder && $file && in_array($type , $registeredtypes)) {
+    $url ='../content/' . $folder . '/' . $file . '.'. $type;
     $content = file_get_contents($url);
     if ($content) {
         echo $content;

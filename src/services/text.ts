@@ -1,32 +1,29 @@
 import axios from "axios";
 import store from "@/store";
 
-import { IInputItem } from "@/types/global/iForms";
-import { EofferListDataNames, IOfferList } from "@/types/components/offer-list";
+import {IText} from "@/types/components/text";
 
 export class TextService {
-  // config ---
-  private loadService = process.env.VUE_APP_TEXT_SERVICE;
+    // config ---
+    private loadService = process.env.VUE_APP_TEXT_SERVICE;
 
-
-
-  public load() {
-    axios({
-      method: "get",
-      url: this.loadService + '?site=index&file=text&type=html',
-      headers: {
-        accept: "application/json;charset=UTF-8",
-        "content-type": "application/x-www-form-urlencoded"
-      }
-    }).then(
-      result => {
-        const data = result.data as | string;
-        console.log('TextService', data)
-      },
-      error => {
-        console.log(error)
-      }
-    );
-  }
+    public load(text: IText) {
+        axios({
+            method: "get",
+            url: this.loadService + '?folder=' + text.folder + '&file=' + text.file + '&type=' + text.type,
+            headers: {
+                accept: "application/json;charset=UTF-8",
+                "content-type": "application/x-www-form-urlencoded"
+            }
+        }).then(
+            result => {
+                text.response = result.data;
+                store.commit("UpdateTextData", text);
+            },
+            error => {
+                console.error(error)
+            }
+        );
+    }
 
 }

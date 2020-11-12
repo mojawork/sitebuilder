@@ -2,9 +2,11 @@ import {ETextTypes, IText} from "@/types/components/text";
 
 
 export const saticTextText: IText = {
-    headline: 'test',
-    type:ETextTypes.html,
-    dataUrl: 'test.html',
-    id: '01'
 
+    id: '01',
+    type: ETextTypes.html,
+    headline: 'text Component',
+    folder: 'index',
+    file: 'text',
+    response: ''
 }
