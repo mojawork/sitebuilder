@@ -1,20 +1,37 @@
 <?php
 
-$registeredtypes = ['html', 'md'];
-$folder = $_GET['folder'];
-$type = $_GET['type'];
-$file = $_GET['file'];
+header('Content-Type: application/json');
 
-if ($folder && $file && in_array($type , $registeredtypes)) {
-    $url ='../content/' . $folder . '/' . $file . '.'. $type;
-    $content = file_get_contents($url);
-    if ($content) {
-        echo $content;
-    } else {
-        echo '<h1>Server Error: Level 2</h1>';
+$_POST = json_decode(file_get_contents('php://input'), true);
+
+
+if ($_POST) {
+    $text = $_POST;
+    $folder = '../data/' . $text["folder"];
+    $fileTextData = $folder . '/' . $text["file"];
+    $fileJson = $folder . '/' . json;
+
+    function loadData($ldFileJson, $ldFileTextData)
+    {
+        $responseJson = json_decode(file_get_contents($ldFileJson), true);
+        $responseTextData = file_get_contents($ldFileTextData);
+        $responseJson["response"] = $responseTextData;
+        echo json_encode($responseJson);
     }
+
+}
+
+
+if ($_POST && $text["generate"]) {
+    mkdir($folder, 0777, true);
+    file_put_contents($fileTextData, $text["data"], FILE_TEXT | LOCK_EX);
+    $text["data"] = '';
+    file_put_contents($fileJson, json_encode($text), FILE_TEXT | LOCK_EX);
+    loadData($fileJson, $fileTextData);
+} elseif ($_POST) {
+    loadData($fileJson, $fileTextData);
 } else {
-    echo '<h1>Server Error: Level 1</h1>';
+    echo 'no-data';
 }
 
 ?>

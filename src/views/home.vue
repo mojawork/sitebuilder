@@ -1,8 +1,6 @@
 <template>
   <article>
-
-    <MainTextSite :options="test"/>
-
+    <MainTextSite :options="textLoad"/>
     <MainOfferListSite
         :options="$store.state.data.main.offerList.site"
         :data="$store.state.data.main.offerList.data"
@@ -16,7 +14,8 @@ import MainOfferListSite from "@/components/main/offer-list/site/site.vue";
 import {OfferListService} from "@/services/offer-list";
 import {setTheme} from "@/views/utils/setTheme";
 import MainTextSite from "@/components/main/text/site/site.vue";
-import {saticTextText} from "@/data/text";
+import {saticTextLoad, saticTextSave} from "@/data/text";
+
 
 @Component({
   components: {
@@ -26,15 +25,14 @@ import {saticTextText} from "@/data/text";
 })
 export default class Home extends Vue {
   private offerListService = new OfferListService();
-
   private theme = new setTheme();
 
-  public test = saticTextText;
+  public textLoad = saticTextLoad;
+  public textSave = saticTextSave;
 
   //  --- Lifecycle hooks ---
   private mounted() {
     this.offerListService.load();
-
     this.theme.site();
   }
 }
@@ -44,6 +42,5 @@ export default class Home extends Vue {
 article {
   display: flex;
   flex-flow: column;
-
 }
 </style>

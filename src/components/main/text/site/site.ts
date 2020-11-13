@@ -1,22 +1,33 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 
-import {IText} from "@/types/components/text";
+import {ETextTypes, IText} from "@/types/components/text";
 import {TextService} from "@/services/text";
 import store from "@/store";
 
 @Component({
-    components: {
-    }
+    components: {}
 })
 export default class MainTextSite extends Vue {
-    @Prop({required: true})
+    @Prop({
+        required: true,
+    })
     private options!: IText;
     private textService = new TextService();
 
     //  --- Lifecycle hooks ---
+
     private mounted() {
-        if (!store.state.data.main.text[this.options.id]){
-            this.textService.load(this.options);
+
+        console.log(this.options)
+
+        if (!store.state.data.main.text[this.options.id]) {
+            if (this.options.generate) {
+                console.log('save')
+                this.textService.save(this.options);
+            } else {
+                console.log('load')
+                this.textService.load(this.options);
+            }
         }
 
     }
