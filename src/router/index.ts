@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "@/views/home.vue";
-import Edit from "@/views/edit.vue";
+import ViewHome from "@/views/home.vue";
+import OfferListEdit from "@/views/offer-list-edit.vue";
+import ViewContent from "@/views/content.vue";
 
 Vue.use(VueRouter);
 
@@ -9,13 +10,20 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: ViewHome, props: true,
+    // alias: ['/wurst']
   },
   {
-    path: "/edit",
-    name: "Edit",
-    component: Edit
-  }
+    path: "/Content/",
+    name: "Content",
+    component: ViewContent, props: true,
+  },
+  {
+    path: "/ViewOfferListEdit",
+    name: "ViewOfferListEdit",
+    component: OfferListEdit,
+  },
+
 ];
 
 const router = new VueRouter({

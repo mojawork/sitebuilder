@@ -2,12 +2,12 @@
 // Config
 // ----------------------------------------------------------------------------
 
-.row-g{
+.row-g {
   display: flex;
   flex-flow: row;
 }
 
-.column-g{
+.column-g {
   display: flex;
   flex-flow: column;
 }
@@ -29,4 +29,17 @@
 
 .shadow-g {
   box-shadow: 0 0 1rem var(--c-primary);
+}
+
+.edit-g {
+  position: absolute;
+  top: - $margin * 2;
+  right: -$margin * 2;
+  display: flex;
+  background-color: var(--c-warning);
+}
+.edit-view{
+  .edit-g {
+    display: none;
+  }
 }

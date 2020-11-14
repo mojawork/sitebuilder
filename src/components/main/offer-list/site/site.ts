@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from "vue-property-decorator";
 import {IOfferList} from "@/types/components/offer-list";
 import GlobalImage from "@/components/global/image/image.vue";
 import {saticOfferHeaderImage} from "@/data/offer-list";
+import store from "@/store";
 
 @Component({
     components: {

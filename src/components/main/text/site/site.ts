@@ -1,6 +1,6 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 
-import {ETextTypes, IText} from "@/types/components/text";
+import {IText} from "@/types/components/text";
 import {TextService} from "@/services/text";
 import store from "@/store";
 

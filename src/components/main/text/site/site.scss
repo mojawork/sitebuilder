@@ -11,6 +11,7 @@
   display: flex;
   flex-flow: column;
   padding: $padding * 2 $padding $padding;
+  margin-bottom:$margin;
   background-color: var(--c-background);
   .headline {
     margin-bottom: $margin;

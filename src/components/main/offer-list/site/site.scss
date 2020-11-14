@@ -11,6 +11,7 @@
   display: flex;
   flex-flow: column;
   background-color: var(--c-background);
+  // position: relative;
 
   header {
     display: flex;
@@ -23,7 +24,7 @@
 
     .logo {
       display: flex;
-      width: 50%;
+      width: 40%;
     }
 
     h1 {

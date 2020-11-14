@@ -15,7 +15,7 @@ import { setTheme } from "@/views/utils/setTheme";
     MainOfferList
   }
 })
-export default class Edit extends Vue {
+export default class ViewOfferListEdit extends Vue {
   public dataOfferList = staticDataOfferList;
   private theme = new setTheme();
 

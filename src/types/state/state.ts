@@ -10,4 +10,5 @@ export interface IRootState {
     };
     footer: string;
   };
+  edit:boolean;
 }

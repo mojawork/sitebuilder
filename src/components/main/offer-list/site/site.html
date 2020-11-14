@@ -1,5 +1,13 @@
 <div class="offer-list-site printable theme-customize">
+
     <header>
+        <router-link
+                v-if="$store.state.edit"
+                tag="button"
+                class="icons-g edit-g"
+                :to="{name: 'ViewOfferListEdit'}">
+            edit
+        </router-link>
         <GlobalImage class="logo" :options="headerImage"/>
         <h1 v-if="data.header[0]" v-text="data.header[0][0].value"/>
         <span v-if="data.header[0]" v-text="showdate(data.header[0][1].value)"/>

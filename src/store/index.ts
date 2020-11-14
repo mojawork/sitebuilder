@@ -2,11 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 import {IRootState} from "@/types/state/state";
 import {staticDataOfferList} from "@/data/offer-list";
-import {IInputItem} from "@/types/global/iForms";
-import {EofferListDataNames, IOfferList} from "@/types/components/offer-list";
-import {ETextTypes, IText} from "@/types/components/text";
-
-import _mapValues from "lodash/mapValues";
+import {IOfferList} from "@/types/components/offer-list";
+import {IText} from "@/types/components/text";
 
 Vue.use(Vuex);
 
@@ -18,8 +15,8 @@ export default new Vuex.Store<IRootState>({
                 offerList: staticDataOfferList,
                 text: {}
             },
-            footer: "footer"
-        }
+            footer: "footer",
+        }, edit: false
     },
     mutations: {
         // --- updateState ---
