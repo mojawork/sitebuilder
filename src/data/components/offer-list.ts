@@ -25,9 +25,6 @@ export const staticOfferlistLabels: IOfferListLabels = {
         data: "data",
         site: "site",
         documentation: "documentation"
-    },
-    site: {
-        headline: "headline"
     }
 };
 
@@ -152,9 +149,6 @@ export const staticDataOfferList: IOfferList = {
             staticOfferlistLabels.view.site,
             staticOfferlistLabels.view.documentation
         ]
-    },
-    site: {
-        headline: staticOfferlistLabels.site.headline
     },
     data: {
         [EofferListDataNames.header]: [],

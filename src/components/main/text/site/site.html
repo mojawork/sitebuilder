@@ -1,4 +1,10 @@
-<section :key="options.id" class="site">
-    <h1 class="headline">{{ options.headline }}</h1>
-    <div class="content" v-html="options.data"></div>
+<section v-if="options" :key="options.id" class="site">
+    <button
+        v-if="$store.state.edit"
+        @click="setEditId()"
+        class="icons-g edit-g">
+        edit
+    </button>
+    <h1 v-if="options.data.headline" class="headline">{{ options.data.headline.value }}</h1>
+    <div v-if="options.data.content" class="content" v-html="options.data.content.value"></div>
 </section>

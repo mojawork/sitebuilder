@@ -1,6 +1,6 @@
 <template>
   <article>
-    <MainTextSite :options="textLoad"/>
+    <MainTextSite :options="false"/>
   </article>
 </template>
 
@@ -8,7 +8,6 @@
 import {Component, Vue} from "vue-property-decorator";
 import {setTheme} from "@/views/utils/setTheme";
 import MainTextSite from "@/components/main/text/site/site.vue";
-import {saticTextLoad, saticTextSave} from "@/data/text";
 
 @Component({
   components: {
@@ -17,9 +16,6 @@ import {saticTextLoad, saticTextSave} from "@/data/text";
 })
 export default class ViewContent extends Vue {
   private theme = new setTheme();
-
-  public textLoad = saticTextLoad;
-  public textSave = saticTextSave;
 
   //  --- Lifecycle hooks ---
   private mounted() {

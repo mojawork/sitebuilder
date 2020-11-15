@@ -1,12 +1,19 @@
-import { Component, Vue } from "vue-property-decorator";
+import {Component, Prop, Vue} from "vue-property-decorator";
 import { EDirections, ELayoutMod, EThemes } from "@/types/global/ICssClasses";
 import { globalChangeCssClass } from "@/components/utils/changeCssClass";
 import { EHTMLIds } from "@/types/global/IHtmlIds";
+import {ITextItem} from "@/types/components/text";
 
 @Component({
   components: {}
 })
 export default class GlobalSplitter extends Vue {
+
+  @Prop({
+    required: false,
+  })
+  public allowPrint!: boolean;
+
   public CEwide = EDirections;
   public wideCssClass: EDirections = EDirections.center;
 

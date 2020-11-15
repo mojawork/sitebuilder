@@ -7,21 +7,14 @@
 // Defaut
 // ----------------------------------------------------------------------------
 
-.site {
-  position:relative;
+.text {
   display: flex;
   flex-flow: column;
-  padding: $padding * 2 $padding $padding;
-  margin-bottom:$margin;
-  background-color: var(--c-background);
-  .headline {
-    margin-bottom: $margin;
-  }
+  min-width: 100%;
+}
 
-  // --- breakpoint 01 - 03 ---
+// --- breakpoint 01 - 03 ---
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
 
-  @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
-
-  }
 }
 

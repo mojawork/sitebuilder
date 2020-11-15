@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-import {saticOfferFormHeader, staticOfferListHeadlineItems, staticOfferListOfferItems} from "@/data/offer-list";
+import {saticOfferFormHeader, staticOfferListHeadlineItems, staticOfferListOfferItems} from "@/data/components/offer-list";
 import GlobalInput from "@/components/global/form-items/input/input.vue";
 import GlobalPopup from "@/components/global/popup/popup.vue";
 import {EofferListDataNames, IOfferList,} from "@/types/components/offer-list";

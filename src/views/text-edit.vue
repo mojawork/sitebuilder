@@ -1,22 +1,21 @@
 <template>
   <article>
-    <MainOfferList :options="dataOfferList" />
+    <MainText />
   </article>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { staticDataOfferList } from "@/data/components/offer-list";
-import MainOfferList from "@/components/main/offer-list/offer-list.vue";
+
 import { setTheme } from "@/views/utils/setTheme";
+import MainText from "@/components/main/text/text.vue";
 
 @Component({
   components: {
-    MainOfferList
+    MainText
   }
 })
-export default class ViewOfferListEdit extends Vue {
-  public dataOfferList = staticDataOfferList;
+export default class ViewTextEdit extends Vue {
   private theme = new setTheme();
 
   //  --- Lifecycle hooks ---

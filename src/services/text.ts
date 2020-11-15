@@ -1,13 +1,13 @@
 import axios from "axios";
 import store from "@/store";
 
-import {IText} from "@/types/components/text";
+import {ITextItem} from "@/types/components/text";
 
 export class TextService {
     // config ---
     private service = process.env.VUE_APP_TEXT_SERVICE;
 
-    public load(text: IText) {
+    public load(text: ITextItem) {
         axios({
             method: "post",
             url: this.service,
@@ -18,9 +18,8 @@ export class TextService {
             data: text
         }).then(
             result => {
-                let resultText = result.data as IText;
-                text.headline = resultText.headline;
-                text.data = resultText.response;
+                let resultText = result.data as ITextItem;
+                text.data = resultText.response
                 store.commit("UpdateTextData", text);
             },
             error => {
@@ -29,7 +28,7 @@ export class TextService {
         );
     }
 
-    public save(text: IText) {
+    public save(text: ITextItem) {
         text.generate = true;
         axios({
             method: "post",
@@ -41,8 +40,7 @@ export class TextService {
             data: text
         }).then(
             result => {
-                let resultText = result.data as IText;
-                text.headline = resultText.headline;
+                let resultText = result.data as ITextItem;
                 text.response = resultText.response;
                 text.generate = false;
                 store.commit("UpdateTextData", text);

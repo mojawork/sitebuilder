@@ -1,6 +1,7 @@
 <div class="offer-list">
-    <GlobalSplitter class="edit-view">
-        <MainOfferListForm slot="left"
+    <GlobalSplitter class="edit-view" :allowPrint="true">
+        <MainOfferListForm
+            slot="left"
             :options="options.form"
             :data="options.data"
             :response="options.response"

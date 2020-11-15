@@ -1,6 +1,8 @@
 <template>
   <article>
-    <MainTextSite :options="textLoad"/>
+    <template v-for="(component) in viewPageHome.components">
+      <MainTextSite v-if="component.componentType === componentTypes.text" :options="component"/>
+    </template>
     <MainOfferListSite
         :options="$store.state.data.main.offerList.site"
         :data="$store.state.data.main.offerList.data"
@@ -14,7 +16,9 @@ import MainOfferListSite from "@/components/main/offer-list/site/site.vue";
 import {OfferListService} from "@/services/offer-list";
 import {setTheme} from "@/views/utils/setTheme";
 import MainTextSite from "@/components/main/text/site/site.vue";
-import {saticTextLoad, saticTextSave} from "@/data/text";
+import {staticViewPageHome} from "@/data/view/home";
+import {IViewPageHome} from "@/types/views/home";
+import {EComponentTypes} from "@/types/components/global";
 
 
 @Component({
@@ -27,8 +31,9 @@ export default class ViewHome extends Vue {
   private offerListService = new OfferListService();
   private theme = new setTheme();
 
-  public textLoad = saticTextLoad;
-  public textSave = saticTextSave;
+  public viewPageHome: IViewPageHome = staticViewPageHome;
+  public componentTypes = EComponentTypes;
+
 
   //  --- Lifecycle hooks ---
   private mounted() {

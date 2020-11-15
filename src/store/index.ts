@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import {IRootState} from "@/types/state/state";
-import {staticDataOfferList} from "@/data/offer-list";
+import {staticDataOfferList} from "@/data/components/offer-list";
 import {IOfferList} from "@/types/components/offer-list";
-import {IText} from "@/types/components/text";
+import {ITextItem} from "@/types/components/text";
 
 Vue.use(Vuex);
 
@@ -13,7 +13,10 @@ export default new Vuex.Store<IRootState>({
             header: "header",
             main: {
                 offerList: staticDataOfferList,
-                text: {}
+                text: {
+                    edit: '',
+                    data: {}
+                }
             },
             footer: "footer",
         }, edit: false
@@ -39,14 +42,22 @@ export default new Vuex.Store<IRootState>({
         // --- OfferList --------------------------------------------------------------
 
         // --- text -------------------------------------------------------------------
+        UpdateTextEdit(
+            state: IRootState,
+            payload: string
+        ) {
+            state.data.main.text.edit = payload;
+        },
+
         UpdateTextData(
             state: IRootState,
-            payload: IText
+            payload: ITextItem
         ) {
-            state.data.main.text[payload.id] = payload;
+            if (state.data.main.text.data) {
+                state.data.main.text.data[payload.id] = payload;
+            }
         }
         // --- text -------------------------------------------------------------------
-
     },
     actions: {},
     modules: {}

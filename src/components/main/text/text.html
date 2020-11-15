@@ -1,0 +1,14 @@
+<div class="text" v-if="data">
+    <GlobalSplitter class="edit-view">
+        <MainTextForm
+            slot="left"
+            :options="options.form"
+            :data="data"
+            />
+        <MainTextView
+            slot="right"
+            :options="options.view"
+            :data="data"
+            />
+    </GlobalSplitter>
+</div>

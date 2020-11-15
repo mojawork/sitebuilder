@@ -1,0 +1,18 @@
+<div class="view-wrapper">
+    <div class="header" >
+        <h2 v-text="options.label"/>
+    </div>
+    <GlobaTab :options="options.tabs" :activeTab="1">
+        <div class="column-g">
+            <GlobaDataView :options="$store.state.data.main.text"></GlobaDataView>
+        </div>
+
+        <MainTextSite
+                class="shadow-g"
+                :options="data"
+                >
+        </MainTextSite>
+
+        <div>not set</div>
+    </GlobaTab>
+</div>

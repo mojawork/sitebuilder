@@ -1,27 +1,26 @@
 // ----------------------------------------------------------------------------
 // Config
 // ----------------------------------------------------------------------------
-@import "~@/scss/import.scss";
+@import "@/scss/import.scss";
 
 // ----------------------------------------------------------------------------
 // Defaut
 // ----------------------------------------------------------------------------
 
-.site {
-  position:relative;
+.view-wrapper {
   display: flex;
   flex-flow: column;
-  padding: $padding * 2 $padding $padding;
-  margin-bottom:$margin;
-  background-color: var(--c-background);
-  .headline {
-    margin-bottom: $margin;
+  background-color: var(--c-thirdly);
+  padding:$padding;
+  .header{
+    display: flex;
+    padding:$padding;
+    background-color: var(--c-secondary);
   }
+}
 
-  // --- breakpoint 01 - 03 ---
+// --- breakpoint 01 - 03 ---
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
 
-  @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
-
-  }
 }
 

@@ -1,0 +1,105 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+$iconSize: 5.4rem;
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+
+.form {
+  display: flex;
+  flex-flow: column;
+  background-color: var(--c-thirdly);
+  padding: $padding;
+
+  > * {
+    margin-bottom: $border;
+  }
+
+  header, footer {
+    display: flex;
+    align-items: center;
+    padding: $padding;
+    background-color: var(--c-secondary);
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-right: $margin;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  footer {
+    justify-content: flex-end;
+    margin-top: $margin;
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $border;
+
+    > * {
+      padding: $padding;
+      background-color: var(--c-secondary);
+    }
+  }
+
+  .headline-items {
+    display: grid;
+    grid-template-columns: $iconSize 1fr $iconSize * 2;
+    grid-gap: $border;
+    padding: $padding;
+    background-color: var(--c-secondary);
+    margin-top: $margin
+  }
+
+  .offer-item-labels,
+  .offer-items {
+    display: grid;
+    grid-template-columns: $iconSize 2fr 4fr minmax(18rem, 1fr) $iconSize * 2;
+    grid-gap: $border;
+  }
+
+  .offer-item-labels {
+    background-color: var(--c-thirdly);
+
+    strong {
+      padding: $padding;
+    }
+
+    strong:first-of-type {
+      grid-column-start: 2;
+    }
+  }
+
+  .offer-items {
+    > * {
+      padding: $padding;
+      background-color: var(--c-secondary);
+    }
+
+  }
+
+}
+
+// --- breakpoint 01 - 03 ---
+@include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+
+}
+

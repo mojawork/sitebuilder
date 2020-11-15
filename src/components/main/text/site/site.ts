@@ -1,6 +1,6 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 
-import {IText} from "@/types/components/text";
+import {ITextItem} from "@/types/components/text";
 import {TextService} from "@/services/text";
 import store from "@/store";
 
@@ -11,24 +11,19 @@ export default class MainTextSite extends Vue {
     @Prop({
         required: true,
     })
-    private options!: IText;
+    private options!: ITextItem | null;
     private textService = new TextService();
 
+    public setEditId() {
+        store.commit("UpdateTextEdit", this.options?.id);
+        this.$router.push('/ViewTextEdit')
+    }
+
     //  --- Lifecycle hooks ---
-
     private mounted() {
-
-        console.log(this.options)
-
-        if (!store.state.data.main.text[this.options.id]) {
-            if (this.options.generate) {
-                console.log('save')
-                this.textService.save(this.options);
-            } else {
-                console.log('load')
-                this.textService.load(this.options);
-            }
+        if (this.options) {
+            store.commit("UpdateTextData", this.options)
+            // this.textService.load(this.options); // todo: reactivate service
         }
-
     }
 }
