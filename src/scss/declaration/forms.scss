@@ -24,7 +24,7 @@ body {
     }
   }
 
-  input, select, button {
+  input, select, button, textarea {
     display: flex;
     align-items: center;
     border-radius: $radius;
@@ -40,7 +40,7 @@ body {
     }
   }
 
-  input, select {
+  input, select, textarea {
     border: $border solid var(--c-thirdly);
   }
 

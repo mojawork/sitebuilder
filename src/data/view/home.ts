@@ -14,7 +14,6 @@ export const staticViewPageHome: IViewPageHome ={
             file: 'intro',
             data: {
                 headline: {
-                    formType: EFormItemType.input,
                     name: "headline",
                     label: staticTextLabels.form.inputHeadline,
                     value: '',
@@ -28,7 +27,6 @@ export const staticViewPageHome: IViewPageHome ={
                     placeholder: true
                 },
                 content: {
-                    formType: EFormItemType.input,
                     name: "headline",
                     label: staticTextLabels.form.inputData,
                     value: '',
@@ -37,9 +35,6 @@ export const staticViewPageHome: IViewPageHome ={
                         exists: false
                     },
                     required: true,
-                    inputType: EInputTypes.text,
-                    maxlength: 40,
-                    placeholder: true
                 },
             },
             response: null,

@@ -1,0 +1,73 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+$maxCountWidth: 3rem;
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+label {
+  display: grid;
+  position: relative;
+  grid-template-columns:1fr;
+  grid-gap: $margin * 0.5;
+  align-items: baseline;
+  box-sizing: border-box;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    &.max-count {
+      position: absolute;
+      top: 50%;
+      right: $border;
+      max-width: $maxCountWidth;
+      transform: translateY(-50%);
+      padding: $padding * 0.125;
+      background-color: var(--c-thirdly);
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &.required::after {
+      content: "*";
+    }
+
+    &.error {
+      color: var(--c-error);
+      grid-column-start: 2;
+    }
+  }
+
+  .input-wrapper {
+    display: flex;
+    position: relative;
+
+    textarea {
+      display: flex;
+      width: 100%;
+      min-height: 40rem;
+
+      &.error {
+        border-color: var(--c-error);
+      }
+
+      &.max-count {
+        padding-right: $maxCountWidth * 1.25;
+      }
+
+    }
+  }
+
+
+  // --- breakpoint 01 - 03 ---
+  @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
+    grid-template-columns: 1fr;
+    span:last-of-type {
+      grid-column: initial;
+    }
+  }
+}

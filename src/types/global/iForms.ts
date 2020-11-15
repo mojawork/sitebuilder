@@ -17,7 +17,6 @@ export interface IInputError {
 }
 
 export interface IInputItem {
-  formType: EFormItemType;
   name: string;
   label: string;
   value: string;
@@ -28,12 +27,18 @@ export interface IInputItem {
   placeholder?: boolean;
 }
 
-export interface IForms {
-  headline: string;
-  formItems: Array<IInputItem>;
+export interface ITextAreaItem {
+  name: string;
+  label: string;
+  value: string;
+  error: IInputError;
+  required: boolean;
+  maxlength?: number;
 }
 
-export interface IfromValidate {
+
+
+export interface IFromValidate {
   error: { exists: boolean };
   required?: boolean;
   value?: string;

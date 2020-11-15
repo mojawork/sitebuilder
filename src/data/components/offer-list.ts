@@ -38,7 +38,6 @@ export const saticOfferHeaderImage: IImage = {
 
 export const saticOfferFormHeader: IInputItem[] = [
     {
-        formType: EFormItemType.input,
         name: "headline",
         label: staticOfferlistLabels.form.headline,
         value: "",
@@ -52,7 +51,6 @@ export const saticOfferFormHeader: IInputItem[] = [
         placeholder: false
     },
     {
-        formType: EFormItemType.input,
         name: "date",
         label: staticOfferlistLabels.form.date,
         value: "",
@@ -70,7 +68,6 @@ export const saticOfferFormHeader: IInputItem[] = [
 export const staticOfferListOfferItems: IOfferListOfferItems = {
     offer:[
         {
-            formType: EFormItemType.input,
             name: "name",
             label: staticOfferlistLabels.form.name,
             value: "",
@@ -84,7 +81,6 @@ export const staticOfferListOfferItems: IOfferListOfferItems = {
             placeholder: true
         },
         {
-            formType: EFormItemType.input,
             name: "description",
             label: staticOfferlistLabels.form.description,
             value: "",
@@ -98,7 +94,6 @@ export const staticOfferListOfferItems: IOfferListOfferItems = {
             placeholder: true
         },
         {
-            formType: EFormItemType.input,
             name: "price",
             label: staticOfferlistLabels.form.price,
             value: "",
@@ -117,7 +112,6 @@ export const staticOfferListOfferItems: IOfferListOfferItems = {
 export const staticOfferListHeadlineItems: IOfferListHeadlineItems = {
     headline:[
             {
-                formType: EFormItemType.input,
                 name: "headline",
                 label: staticOfferlistLabels.form.offerHeadline,
                 value: "",

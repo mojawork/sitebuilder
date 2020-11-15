@@ -1,0 +1,23 @@
+<label>
+    <span
+        :class="{ 'required': options.required}"
+        v-text="options.label"/>
+    <span class="input-wrapper">
+        <textarea
+            :class="{ 'error': options.error.exists, 'max-count' : options.maxlength }"
+            @blur="validate"
+            :maxlength="this.options.maxlength"
+            :name = "this.options.name"
+            v-model="options.value">
+                    At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+        </textarea>
+        <span
+            class="ELLIPSIS max-count"
+            v-if="options.maxlength"
+            v-text="this.getMaxCount.max(this.options.value, this.options.maxlength)"/>
+    </span>
+    <span
+        class="error"
+        v-if="options.error.exists"
+        v-text="options.error.massage"/>
+</label>

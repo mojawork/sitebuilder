@@ -1,5 +1,5 @@
 import _find from "lodash/find";
-import {IfromValidate} from "@/types/global/iForms";
+import {IFromValidate} from "@/types/global/iForms";
 
 export class FormInputValidate {
     public required(value: string, required: boolean): boolean {
@@ -63,18 +63,24 @@ export class FormInputValidate {
     }
 }
 
+export class FormTextareaValidate {
+    public required(value: string, required: boolean): boolean {
+        return required && value.length <= 1;
+    }
+}
+
 export class FormValidate {
     public checkErrors(
-        formItems: Record<string, IfromValidate> | Array<IfromValidate>
+        formItems: Record<string, IFromValidate> | Array<IFromValidate>
     ): boolean {
-        _find(formItems, (item: IfromValidate) => {
+        _find(formItems, (item: IFromValidate) => {
             if (item.required) {
                 item.error.exists = (item.value?.length ?? 0) <= 1;
             }
         });
 
         let result = false;
-        _find(formItems, (item: IfromValidate) => {
+        _find(formItems, (item: IFromValidate) => {
             if (item.error && item.error.exists) {
                 result = item.error.exists;
             }

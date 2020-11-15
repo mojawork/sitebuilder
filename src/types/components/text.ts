@@ -1,4 +1,4 @@
-import {IInputItem} from "@/types/global/iForms";
+import {IInputItem, ITextAreaItem} from "@/types/global/iForms";
 import {EComponentTypes} from "@/types/components/global";
 
 export enum ETextTypes {
@@ -48,7 +48,7 @@ export interface ITextView {
 
 export interface  ITextItemData {
   headline: IInputItem;
-  content: IInputItem;
+  content: ITextAreaItem;
 }
 
 export interface ITextItem {
