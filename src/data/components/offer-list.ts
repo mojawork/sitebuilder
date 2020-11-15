@@ -59,7 +59,7 @@ export const saticOfferFormHeader: IInputItem[] = [
             exists: false
         },
         required: true,
-        inputType: EInputTypes.text,
+        inputType: EInputTypes.date,
         maxlength: 12,
         placeholder: false
     }
