@@ -23,7 +23,7 @@ export default class MainTextSite extends Vue {
     private mounted() {
         if (this.options) {
             store.commit("UpdateTextData", this.options)
-            // this.textService.load(this.options); // todo: reactivate service
+            this.textService.load(this.options); // todo: reactivate service
         }
     }
 }
