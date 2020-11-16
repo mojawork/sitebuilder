@@ -20,6 +20,7 @@
   h1{
     font-family: 'terminator', cursive;
     font-size: 4rem  * $font-desktop-factor;
+    line-height:  6.8rem  * $font-desktop-factor * 0.65;
     font-weight: 400;
     font-style: normal;
   }
@@ -27,6 +28,7 @@
   h2{
     font-family: 'terminator', cursive;
     font-size: 2rem  * $font-desktop-factor;
+    line-height:  4rem  * $font-desktop-factor * 0.65;
     font-weight: 200;
     font-style: normal;
     padding-bottom: $padding * 0.5 !important;
@@ -35,11 +37,14 @@
 
   @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
     h1{
-      font-size: 8rem  * $font-mobile-factor * 0.65;
+      font-size: 2.8rem  * $font-mobile-factor * 0.65;
+      line-height:  3.8rem  * $font-mobile-factor * 0.65;
     }
     h2{
-      font-size: 5.8rem  * $font-mobile-factor * 0.65;
+      font-size: 2rem  * $font-mobile-factor * 0.65;
+      line-height:  3rem  * $font-mobile-factor * 0.65;
       padding-bottom: $padding * 0.125 !important;
+
     }
   }
 

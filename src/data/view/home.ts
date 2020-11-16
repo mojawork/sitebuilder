@@ -40,7 +40,5 @@ export const staticViewPageHome: IViewPageHome ={
             response: null,
             generate: false
         }
-
-
     ]
 }

@@ -19,8 +19,12 @@ export class TextService {
         }).then(
             result => {
                 let resultText = result.data as ITextItem;
-                text.data = resultText.response
-                store.commit("UpdateTextData", text);
+
+                console.log(resultText.response)
+                if (resultText.response?.content.value) {
+                    text.data = resultText.response
+                    store.commit("UpdateTextData", text);
+                }
             },
             error => {
                 console.error(error)
