@@ -2,23 +2,12 @@
 // fonts
 // ----------------------------------------------------------------------------
 
-@font-face {
-  font-family: "terminator";
-  src: url("~@/assets/fonts/terminator/terminatorrealnfi.eot");
-  src: url("~@/assets/fonts/terminator/terminatorrealnfi.eot?#iefix") format("embedded-opentype"),
-  url("~@/assets/fonts/terminator/terminatorrealnfi.otf") format("opentype"),
-  url("~@/assets/fonts/terminator/terminatorrealnfi.svg") format("svg"),
-  url("~@/assets/fonts/terminator/terminatorrealnfi.ttf") format("truetype"),
-  url("~@/assets/fonts/terminator/terminatorrealnfi.woff") format("woff"),
-  url("~@/assets/fonts/terminator/terminatorrealnfi.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 .theme-customize {
 
   h1{
-    font-family: 'terminator', cursive;
+    font-family: 'Courgette', cursive;
     font-size: 4rem  * $font-desktop-factor;
     line-height:  6.8rem  * $font-desktop-factor * 0.65;
     font-weight: 400;
@@ -26,7 +15,7 @@
   }
 
   h2{
-    font-family: 'terminator', cursive;
+    font-family: 'Courgette', cursive;
     font-size: 2rem  * $font-desktop-factor;
     line-height:  4rem  * $font-desktop-factor * 0.65;
     font-weight: 200;

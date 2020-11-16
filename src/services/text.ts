@@ -20,11 +20,10 @@ export class TextService {
             result => {
                 let resultText = result.data as ITextItem;
 
-                console.log(resultText.response)
-                if (resultText.response?.content.value) {
+                //if (resultText.data?.content.value) { //todo: fix it!!
                     text.data = resultText.response
                     store.commit("UpdateTextData", text);
-                }
+                //}
             },
             error => {
                 console.error(error)

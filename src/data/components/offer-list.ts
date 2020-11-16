@@ -29,11 +29,11 @@ export const staticOfferlistLabels: IOfferListLabels = {
 };
 
 export const saticOfferHeaderImage: IImage = {
-    src: "svg/logo-mojawork.svg",
+    src: "svg/pizza.svg",
     // url: 'https://mojawork.de',
-    alt: "logo",
+    alt: "Logo Pissaria Luca Brasi",
     // caption: 'caption',
-    title: "title"
+    title: "Lecker Pizza"
 }
 
 export const saticOfferFormHeader: IInputItem[] = [
