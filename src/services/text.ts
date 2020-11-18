@@ -7,6 +7,11 @@ export class TextService {
     // config ---
     private service = process.env.VUE_APP_TEXT_SERVICE;
 
+    private error() {
+        store.state.data.main.text.error = true;
+        store.commit("updateState", store.state);
+    }
+
     public load(text: ITextItem) {
         axios({
             method: "post",
@@ -19,15 +24,15 @@ export class TextService {
         }).then(
             result => {
                 let resultText = result.data as ITextItem;
-
-                console.log(resultText.response)
                 if (resultText.response?.content.value) {
                     text.data = resultText.response
                     store.commit("UpdateTextData", text);
+                } else {
+                    this.error()
                 }
             },
             error => {
-                console.error(error)
+                this.error()
             }
         );
     }
@@ -45,12 +50,18 @@ export class TextService {
         }).then(
             result => {
                 let resultText = result.data as ITextItem;
-                text.response = resultText.response;
-                text.generate = false;
-                store.commit("UpdateTextData", text);
+                if (resultText.response?.content.value) {
+                    text.response = resultText.response;
+                    text.generate = false;
+                    store.commit("UpdateTextData", text);
+                } else {
+                    this.error()
+                }
+
+
             },
             error => {
-                console.error(error)
+                this.error()
             }
         );
     }

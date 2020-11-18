@@ -9,6 +9,7 @@ export interface IRootState {
             text: {
                 edit: string;
                 data: { [name: string]: ITextItem } | null
+                error: boolean
             };
         };
         footer: string;

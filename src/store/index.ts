@@ -15,7 +15,8 @@ export default new Vuex.Store<IRootState>({
                 offerList: staticDataOfferList,
                 text: {
                     edit: '',
-                    data: {}
+                    data: {},
+                    error: false
                 }
             },
             footer: "footer",
