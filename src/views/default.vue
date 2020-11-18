@@ -1,20 +1,17 @@
 <template>
   <article>
-    <MainTextSite :options="false"/>
+    <h1>DEFAULT - Component</h1>
   </article>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import {setTheme} from "@/views/utils/setTheme";
-import MainTextSite from "@/components/main/text/site/site.vue";
 
 @Component({
-  components: {
-    MainTextSite
-  }
+  components: {}
 })
-export default class ViewContent extends Vue {
+export default class ViewDefault extends Vue {
   private theme = new setTheme();
 
   //  --- Lifecycle hooks ---

@@ -1,10 +1,13 @@
 <header>
     <strong class="h1-g">Header</strong>
     <nav>
-        <router-link :to="{name: 'Home'}">home</router-link>
-        <!--
-            <router-link :to="{name: 'Content'}">content</router-link>
-        //-->
+        <template v-for="routeItem in routes">
+            <router-link
+                :to="routeItem.route"
+                :title="routeItem.title"
+                v-text="routeItem.label"
+            />
+        </template>
     </nav>
 </header>
 
