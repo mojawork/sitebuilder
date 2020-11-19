@@ -4,6 +4,7 @@ import {IRootState} from "@/types/state/state";
 import {staticDataOfferList} from "@/data/components/offer-list";
 import {IOfferList} from "@/types/components/offer-list";
 import {ITextItem} from "@/types/components/text";
+import {IRouteItem} from "@/types/global/routes";
 
 Vue.use(Vuex);
 
@@ -11,6 +12,7 @@ export default new Vuex.Store<IRootState>({
     state: {
         data: {
             header: "header",
+            routes: [],
             main: {
                 offerList: staticDataOfferList,
                 text: {
@@ -23,9 +25,14 @@ export default new Vuex.Store<IRootState>({
         }, edit: false
     },
     mutations: {
-        // --- updateState ---
+        // --- updateState ------------------------------------------------------------
         updateState(state: IRootState, payload: IRootState) {
             state = payload;
+        },
+
+        // --- updateRoutes -----------------------------------------------------------
+        updateRoutes(state: IRootState, payload: IRouteItem[]) {
+            state.data.routes = payload;
         },
         // --- OfferList --------------------------------------------------------------
         UpdateOfferListData(

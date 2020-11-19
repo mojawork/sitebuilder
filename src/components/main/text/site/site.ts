@@ -16,14 +16,14 @@ export default class MainTextSite extends Vue {
 
     public setEditId() {
         store.commit("UpdateTextEdit", this.options?.id);
-        this.$router.push('/ViewTextEdit')
+        this.$router.push({name: 'ViewTextEdit'})
     }
 
     //  --- Lifecycle hooks ---
     private mounted() {
         if (this.options) {
             store.commit("UpdateTextData", this.options)
-            this.textService.load(this.options); // todo: reactivate service
+            this.textService.load(this.options);
         }
     }
 }
