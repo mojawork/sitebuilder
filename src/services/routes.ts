@@ -23,7 +23,8 @@ export class RouteService {
             }
         }).then(
             result => {
-               console.log(result.data)
+                const data = result.data as IRouteItem[];
+                store.commit("updateRoutes", data);
             },
             error => {
                console.log('error')

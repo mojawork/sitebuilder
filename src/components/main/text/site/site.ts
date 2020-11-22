@@ -1,8 +1,8 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-
 import {ITextItem} from "@/types/components/text";
 import {TextService} from "@/services/text";
 import store from "@/store";
+import {IViewNames} from "@/types/global/routes";
 
 @Component({
     components: {}
@@ -13,10 +13,11 @@ export default class MainTextSite extends Vue {
     })
     private options!: ITextItem | null;
     private textService = new TextService();
+    private viewNames = IViewNames;
 
     public setEditId() {
         store.commit("UpdateTextEdit", this.options?.id);
-        this.$router.push({name: 'ViewTextEdit'})
+        this.$router.push({name: this.viewNames.textEdit})
     }
 
     //  --- Lifecycle hooks ---

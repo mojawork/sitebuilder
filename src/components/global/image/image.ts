@@ -13,12 +13,6 @@ export default class GlobalImage extends Vue {
 
   //  --- Lifecycle hooks ---
   private beforeMount() {
-
-    console.log(this.assets);
-
     this.imageSRC= this.assets + this.options.src
-
-    console.log(this.imageSRC)
-
   }
 }

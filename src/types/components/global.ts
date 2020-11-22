@@ -1,4 +1,5 @@
 
 export enum EComponentTypes {
-  text = "text"
+  text = "text",
+  offerList = "offerList"
 }

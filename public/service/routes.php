@@ -8,7 +8,9 @@ $fileName = 'data';
 
 if ($data) {
     echo $data;
+    mkdir($folder, 0777, true);
     $count = count(glob($folder . "*.json"));
+
     file_put_contents($folder.$fileName . ($count + 1) . '.json', $data);
 } else {
     $count = count(glob($folder . "*.json"));

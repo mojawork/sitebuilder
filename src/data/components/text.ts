@@ -1,4 +1,4 @@
-import {ETextTypes, ITextEdit, ITextItem, ITextLabels} from "@/types/components/text";
+import {ETextTypes, ITextComponentData, ITextEdit, ITextItem, ITextLabels} from "@/types/components/text";
 import {EFormItemType, EInputTypes} from "@/types/global/iForms";
 
 export const staticTextLabels: ITextLabels = {
@@ -18,6 +18,32 @@ export const staticTextLabels: ITextLabels = {
         documentation: "documentation"
     }
 };
+
+export const staticTextComponentData : ITextComponentData = {
+    headline: {
+        name: "headline",
+        label: staticTextLabels.form.inputHeadline,
+        value: '',
+        error: {
+            massage: staticTextLabels.form.error,
+            exists: false
+        },
+        required: true,
+        inputType: EInputTypes.text,
+        maxlength: 40,
+        placeholder: true
+    },
+    content: {
+        name: "headline",
+        label: staticTextLabels.form.inputData,
+        value: '',
+        error: {
+            massage: staticTextLabels.form.error,
+            exists: false
+        },
+        required: true,
+    },
+}
 
 export const staticTextEdit: ITextEdit = {
     form: {

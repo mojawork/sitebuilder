@@ -1,4 +1,4 @@
-import {EFormItemType, EInputTypes, IInputItem} from "@/types/global/iForms";
+import {EInputTypes, IInputItem} from "@/types/global/iForms";
 import {
     EofferListDataNames,
     IOfferList, IOfferListHeadlineItems,
@@ -148,12 +148,11 @@ export const staticDataOfferList: IOfferList = {
         [EofferListDataNames.header]: [],
         [EofferListDataNames.items]: [],
         [EofferListDataNames.footer]: [],
-        error: false
     },
     response: {
         [EofferListDataNames.header]: [],
         [EofferListDataNames.items]: [],
         [EofferListDataNames.footer]: [],
-        error: false
-    }
+    },
+    error: false
 };

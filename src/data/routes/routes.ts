@@ -1,18 +1,18 @@
-import {IComponentTypes, IRouteItem} from "@/types/global/routes";
+import {IViewNames, IRouteItem} from "@/types/global/routes";
 
 
 export const staticHeaderRoutes: IRouteItem[] = [
     {
         label: 'Home',
         title: 'Homepage',
-        route: '/hutzegrunz',
-        component: IComponentTypes.Home
+        route: '/home',
+        viewName: IViewNames.index,
     },
     {
-        label: 'Default',
-        title: 'Default Component',
-        route: '/impint',
-        component: IComponentTypes.Default
+        label: 'Test',
+        title: 'test',
+        route: '/test',
+        viewName: IViewNames.index,
     }
 ]
 

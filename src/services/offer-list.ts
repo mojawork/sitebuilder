@@ -8,6 +8,12 @@ export class OfferListService {
   // config ---
   private saveService = process.env.VUE_APP_OFFER_LIST_SERVICE;
 
+  private error() {
+    store.state.data.main.offerList.error = true;
+    store.commit("updateState", store.state);
+
+  }
+
   public load() {
     axios({
       method: "get",
@@ -24,8 +30,7 @@ export class OfferListService {
         }
       },
       error => {
-        store.state.data.main.offerList.data.error = true;
-        store.commit("updateState", store.state);
+        error()
       }
     );
   }
@@ -45,8 +50,7 @@ export class OfferListService {
         store.commit("UpdateOfferListResponse", data);
       },
       error => {
-        store.state.data.main.offerList.response.error = true;
-        store.commit("UpdateOfferListResponse", store.state.data.main.offerList.response);
+        error()
       }
     );
   }

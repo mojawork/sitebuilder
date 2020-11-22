@@ -46,7 +46,7 @@ export interface ITextView {
   tabs: string[];
 }
 
-export interface  ITextItemData {
+export interface  ITextComponentData {
   headline: IInputItem;
   content: ITextAreaItem;
 }
@@ -57,8 +57,8 @@ export interface ITextItem {
   componentType: EComponentTypes;
   folder : string;
   file: string;
-  data: ITextItemData | null;
-  response: ITextItemData | null;
+  componentData: ITextComponentData | null;
+  componentResponse: ITextComponentData | null;
   generate: boolean;
 }
 

@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from "vue-property-decorator";
 import {IOfferList} from "@/types/components/offer-list";
 import GlobalImage from "@/components/global/image/image.vue";
 import {saticOfferHeaderImage} from "@/data/components/offer-list";
+import {IViewNames} from "@/types/global/routes";
 
 @Component({
     components: {
@@ -12,6 +13,8 @@ export default class MainOfferListSite extends Vue {
     @Prop({required: true})
     @Prop({required: true})
     public data!: IOfferList["data"];
+
+    public viewNames = IViewNames;
 
     public headerImage = saticOfferHeaderImage;
 

@@ -24,8 +24,8 @@ export class TextService {
         }).then(
             result => {
                 let resultText = result.data as ITextItem;
-                if (resultText.response?.content.value) {
-                    text.data = resultText.response
+                if (resultText.componentResponse?.content.value) {
+                    text.componentData = resultText.componentResponse
                     store.commit("UpdateTextData", text);
                 } else {
                     this.error()
@@ -50,8 +50,8 @@ export class TextService {
         }).then(
             result => {
                 let resultText = result.data as ITextItem;
-                if (resultText.response?.content.value) {
-                    text.response = resultText.response;
+                if (resultText.componentResponse?.content.value) {
+                    text.componentResponse = resultText.componentResponse;
                     text.generate = false;
                     store.commit("UpdateTextData", text);
                 } else {

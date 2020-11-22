@@ -11,4 +11,15 @@
         <MainOfferListView slot="right" :options="options.view"></MainOfferListView>
 
     </GlobalSplitter>
+
+
+    <global-popup
+            v-if="options.error"
+            v-bind:display.sync="options.error"
+            :options="{
+                headline: 'Data cannot be loaded',
+                button: 'ok',
+                color: textColors.error
+            }"/>
+
 </div>

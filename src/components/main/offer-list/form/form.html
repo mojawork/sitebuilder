@@ -68,21 +68,4 @@
         </div>
     </footer>
 
-
-    <global-popup
-            v-if="data.error"
-            v-bind:display.sync="data.error"
-            :options="{
-                headline: 'Data cannot be loaded',
-                button: 'ok',
-                color: textColors.error
-            }"/>
-    <global-popup
-            v-if="response.error"
-            v-bind:display.sync="response.error"
-            :options="{
-                headline: 'Data cannot be saved',
-                button: 'ok',
-                color: textColors.error
-            }"/>
 </div>

@@ -1,31 +1,30 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import ViewHome from "@/views/home.vue";
 import ViewOfferListEdit from "@/views/offer-list-edit.vue";
 import ViewTextEdit from "@/views/text-edit.vue";
 import ViewDefault from "@/views/default.vue";
+import ViewIndex from "@/views/index.vue";
+import {IViewNames} from "@/types/global/routes";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/:id",
-    name: "Home",
-    component: ViewHome, props: true,
+    path: '/', redirect: { name: IViewNames.index }
   },
   {
-    path: "/Default/",
-    name: "Default",
-    component: ViewDefault , props: true,
+    path: "/:id",
+    name: IViewNames.index,
+    component: ViewIndex, props: true,
   },
   {
     path: "/ViewOfferListEdit",
-    name: "ViewOfferListEdit",
+    name: IViewNames.offerListEdit,
     component: ViewOfferListEdit,
   },
   {
     path: "/ViewTextEdit",
-    name: "ViewTextEdit",
+    name: IViewNames.textEdit,
     component: ViewTextEdit,
   },
 

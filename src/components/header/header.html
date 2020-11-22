@@ -1,7 +1,7 @@
 <header>
     <strong class="h1-g">Header</strong>
     <nav>
-        <template v-for="routeItem in routes">
+        <template v-for="routeItem in $store.state.data.routes">
             <router-link
                 :to="routeItem.route"
                 :title="routeItem.title"

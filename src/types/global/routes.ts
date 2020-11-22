@@ -1,12 +1,12 @@
-export enum IComponentTypes {
-  Default= 'ViewDefault',
-  Home= 'Home',
-  offerlist = 'offerlist'
+export enum IViewNames {
+    index = 'index',
+    textEdit = 'textEdit',
+    offerListEdit = 'offerListEdit',
 }
 
 export interface IRouteItem {
-  label:string,
-  route:string,
-  title:string
-  component: IComponentTypes;
+    label: string;
+    route: string;
+    title: string;
+    viewName: IViewNames;
 }

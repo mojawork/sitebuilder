@@ -5,14 +5,25 @@ import {staticDataOfferList} from "@/data/components/offer-list";
 import {IOfferList} from "@/types/components/offer-list";
 import {ITextItem} from "@/types/components/text";
 import {IRouteItem} from "@/types/global/routes";
+import {staticSiteHome} from "@/data/sites/home";
+import {staticSiteTest} from "@/data/sites/test";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store<IRootState>({
     state: {
         data: {
+            siteId: 'index',
             header: "header",
             routes: [],
+            sites: {
+                edit: '',
+                data: {
+                    home:staticSiteHome,
+                    test:staticSiteTest
+                },
+                error: false
+            },
             main: {
                 offerList: staticDataOfferList,
                 text: {
@@ -22,7 +33,7 @@ export default new Vuex.Store<IRootState>({
                 }
             },
             footer: "footer",
-        }, edit: false
+        }, edit: true
     },
     mutations: {
         // --- updateState ------------------------------------------------------------

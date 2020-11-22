@@ -55,16 +55,15 @@ export interface IOfferListOfferItems {
 export interface IOfferList {
     form: IOfferListForm;
     view: IOfferListView;
+    error: boolean;
     data: {
         [EofferListDataNames.header]: Array<IInputItem>[];
         [EofferListDataNames.items]: Array<IOfferListHeadlineItems | IOfferListOfferItems>
         [EofferListDataNames.footer]: Array<IInputItem>[];
-        error: boolean;
     };
     response: {
         [EofferListDataNames.header]: Array<IInputItem>[];
         [EofferListDataNames.items]: Array<IOfferListHeadlineItems | IOfferListOfferItems>;
         [EofferListDataNames.footer]: Array<IInputItem>[];
-        error: boolean;
     };
 }

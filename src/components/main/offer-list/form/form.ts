@@ -1,7 +1,6 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 import {saticOfferFormHeader, staticOfferListHeadlineItems, staticOfferListOfferItems} from "@/data/components/offer-list";
 import GlobalInput from "@/components/global/form-items/input/input.vue";
-import GlobalPopup from "@/components/global/popup/popup.vue";
 import {EofferListDataNames, IOfferList,} from "@/types/components/offer-list";
 import _cloneDeep from "lodash/cloneDeep";
 import {FormValidate} from "@/components/global/form-items/validate/validate";
@@ -9,11 +8,9 @@ import store from "@/store";
 import {OfferListService} from "@/services/offer-list";
 import {ETextColors} from "@/types/global/ICssClasses";
 
-
 @Component({
     components: {
-        GlobalInput,
-        GlobalPopup
+        GlobalInput
     }
 })
 export default class MainOfferListForm extends Vue {
@@ -28,7 +25,7 @@ export default class MainOfferListForm extends Vue {
 
     public staticOfferHeadlineItems = staticOfferListHeadlineItems;
     public staticOfferItems = staticOfferListOfferItems;
-    public textColors = ETextColors;
+
     private validate = new FormValidate();
     private service = new OfferListService();
 
@@ -89,10 +86,6 @@ export default class MainOfferListForm extends Vue {
         if (!error) {
             this.service.save();
         }
-    }
-
-    public error(): boolean {
-        return this.response.error || this.data.error;
     }
 
     //  --- Lifecycle hooks ---
