@@ -1,17 +1,28 @@
 <template>
   <article>
-    <h1>DEFAULT - Component</h1>
+    <section>
+      <h1>test - Component</h1>
+
+    </section>
+    <section>
+      <GlobalEditor/>
+    </section>
+
   </article>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import {setTheme} from "@/views/utils/setTheme";
+import GlobalEditor from "@/components/global/form-items/editor/editor.vue";
+
 
 @Component({
-  components: {}
+  components: {
+    GlobalEditor
+  }
 })
-export default class ViewDefault extends Vue {
+export default class ViewTest extends Vue {
   private theme = new setTheme();
 
   //  --- Lifecycle hooks ---
@@ -22,8 +33,13 @@ export default class ViewDefault extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/scss/import.scss";
+
 article {
   display: flex;
   flex-flow: column;
+  section {
+    margin-bottom: $margin;
+  }
 }
 </style>

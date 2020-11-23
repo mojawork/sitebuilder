@@ -2,6 +2,7 @@ export enum IViewNames {
     index = 'index',
     textEdit = 'textEdit',
     offerListEdit = 'offerListEdit',
+    test = 'test',
 }
 
 export interface IRouteItem {

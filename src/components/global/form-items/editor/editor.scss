@@ -1,0 +1,24 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  padding: $padding * 0.5;
+  background-color: var(--text-secondary);
+
+}
+
+.ql-toolbar {
+  border: 0 !important;
+}
+
+.editor {
+  height: 37rem;
+}
+

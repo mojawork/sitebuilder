@@ -24,7 +24,7 @@ body {
     }
   }
 
-  input, select, button, textarea {
+  input, select, button, textarea, .editor {
     display: flex;
     align-items: center;
     border-radius: $radius;

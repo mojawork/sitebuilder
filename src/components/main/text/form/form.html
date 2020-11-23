@@ -5,6 +5,7 @@
 
     <div class="entry">
         <GlobalInput :options="data.componentData.headline"/>
+        <GlobalEditor v-model="data.componentData.content.value"/>
         <GlobalTextarea :options="data.componentData.content"/>
     </div>
 

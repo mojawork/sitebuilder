@@ -6,12 +6,14 @@ import {FormValidate} from "@/components/global/form-items/validate/validate";
 import {ETextColors} from "@/types/global/ICssClasses";
 import {ITextEdit, ITextItem} from "@/types/components/text";
 import {TextService} from "@/services/text";
+import GlobalEditor from "@/components/global/form-items/editor/editor.vue";
 
 
 @Component({
     components: {
         GlobalInput,
         GlobalTextarea,
+        GlobalEditor,
         GlobalPopup
     }
 })

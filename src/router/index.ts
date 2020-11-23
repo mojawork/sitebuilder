@@ -2,13 +2,15 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import ViewOfferListEdit from "@/views/offer-list-edit.vue";
 import ViewTextEdit from "@/views/text-edit.vue";
-import ViewDefault from "@/views/default.vue";
+
 import ViewIndex from "@/views/index.vue";
 import {IViewNames} from "@/types/global/routes";
+import ViewTest from "@/views/test.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+
   {
     path: '/', redirect: { name: IViewNames.index }
   },
@@ -21,6 +23,11 @@ const routes: Array<RouteConfig> = [
     path: "/ViewOfferListEdit",
     name: IViewNames.offerListEdit,
     component: ViewOfferListEdit,
+  },
+  {
+    path: "/demo/-",
+    name: IViewNames.test,
+    component: ViewTest,
   },
   {
     path: "/ViewTextEdit",
