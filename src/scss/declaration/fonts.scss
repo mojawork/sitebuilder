@@ -4,6 +4,10 @@
 
 body {
 
+  strong > em {
+    font-weight: bold;
+  }
+
   // --- mediascreen 01 - 03 ---
   @include mediascreen($mediascreen: 'custom', $max: $ms-3-max) {
     *:not(span) {
@@ -54,13 +58,16 @@ body {
       font-size: $font-size-3 * $font-desktop-factor;
       line-height: $line-height-3 * $font-desktop-factor;
     }
-    h4, .h4-g, strong {
+    h4, .h4-g, strong, em {
       font-size: $font-size-4 * $font-desktop-factor;
       line-height: $line-height-4 * $font-desktop-factor;
     }
     small, .small {
       font-size: $font-size-1 * $font-desktop-factor;
       line-height: $line-height-1 * $font-desktop-factor;
+    }
+    em {
+      font-style: italic;
     }
     .icons-g {
       font-size: $font-size-button * $font-desktop-factor;
@@ -85,7 +92,7 @@ body {
       font-size: $font-size-3 * $font-print-factor;
       line-height: $line-height-3 * $font-print-factor;
     }
-    h4, .h4-g, strong {
+    h4, .h4-g, strong, em {
       font-size: $font-size-4 * $font-print-factor;
       line-height: $line-height-4 * $font-print-factor;
     }

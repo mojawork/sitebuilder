@@ -25,13 +25,13 @@ export default class GlobalEditor extends Vue {
             modules: {
                 toolbar: [
                     [{header: [2, 3, false]}],
-                    ['bold', 'italic', 'underline'],
+                    ['bold', 'italic'],
                     [{'list': 'ordered'}, {'list': 'bullet'}],
                     ['link']
                 ]
             },
             theme: 'snow',
-            formats: ['bold', 'underline', 'header', 'italic', 'list', 'link']
+            formats: ['bold', 'italic', 'list', 'link']
         });
         this.editor.focus(
         )
