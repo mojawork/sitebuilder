@@ -1,0 +1,5 @@
+@mixin focus-gm {
+  outline: none !important;
+  border: $border solid var(--c-focus) !important;
+  box-shadow: 0 0 $button-shadow *2 0 var(--c-focus) !important;
+}

@@ -5,7 +5,8 @@
 
     </section>
     <section>
-      <GlobalEditor/>
+
+
     </section>
 
   </article>

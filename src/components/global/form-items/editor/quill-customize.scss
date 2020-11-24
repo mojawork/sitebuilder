@@ -16,19 +16,34 @@
     width: 3rem !important;
     height: 3rem !important;
     margin-right: $margin * 0.5 !important;
+
+    &:focus {
+      @include focus-gm;
+    }
   }
 
   .ql-picker {
-    border: 1px solid var(--c-primary) !important;
-    padding: $padding * 0.26 !important;
+    box-shadow: 0 0 $button-shadow 0 var(--text-secondary) !important;
     width: 16rem !important;
     height: auto !important;
     border-radius: $radius !important;
-
+    .ql-picker-options{
+      background-color: var(--c-secondary) !important;
+      border: $border solid var(--c-primary) !important;
+    }
     .ql-picker-label {
-      padding-right: $padding !important;
+      padding: $padding * 0.26 !important;
+      padding-left: $padding !important;
+      border:0 !important;
     }
   }
+
+  .ql-picker-label{
+    &:focus {
+      @include focus-gm;
+    }
+  }
+
 }
 
 .ql-snow, .ql-stroke {
@@ -41,6 +56,10 @@
 
 .ql-editor {
   width: 100% !important;
+}
+
+.ql-editor:focus {
+  @include focus-gm;
 }
 
 .ql-container.ql-snow {

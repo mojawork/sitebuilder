@@ -11,14 +11,21 @@
   flex-flow: column;
   padding: $padding * 0.5;
   background-color: var(--text-secondary);
+  label{
+    display: flex;
+    margin-bottom:$margin;
+    &.required::after {
+      content: "*";
+    }
+  }
 
-}
-
-.ql-toolbar {
-  border: 0 !important;
 }
 
 .editor {
   height: 37rem;
+  padding:0;
+  &:focus{
+
+  }
 }
 

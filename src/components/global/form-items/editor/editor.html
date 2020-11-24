@@ -1,3 +1,7 @@
 <div class="wrapper">
-    <div class="editor" ref="editor" v-html="value"/>
+    <label :class="{ 'required': options.required}"
+            v-text="options.label"/>
+    <div class="editor"
+         ref="editor"
+         v-html="this.editValue"/>
 </div>

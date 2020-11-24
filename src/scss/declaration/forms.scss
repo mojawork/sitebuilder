@@ -5,6 +5,7 @@ $inputMinSize: 4rem;
 // ----------------------------------------------------------------------------
 
 body {
+
   fieldset {
     display: flex;
     padding: $padding;
@@ -34,9 +35,7 @@ body {
     -webkit-appearance: none;
 
     &:focus {
-      outline: none;
-      border-color: var(--c-focus);
-      box-shadow: 0 0 $button-shadow *2 0 var(--c-focus);
+      @include focus-gm;
     }
   }
 
@@ -48,6 +47,7 @@ body {
     //-moz-appearance: textfield;
     // appearance: textfield;
   }
+
 
   button {
     font-weight: $font-weight-bold;

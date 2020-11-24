@@ -1,21 +1,23 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 import Quill from 'quill';
-import {update} from "lodash-es";
+import _cloneDeep from "lodash/cloneDeep";
+import {ITextAreaItem} from "@/types/global/iForms";
 
 @Component
 export default class GlobalEditor extends Vue {
 
-    //@Prop({required: true})
-    //public value!: string;
+    @Prop({required: true})
+    public options!: ITextAreaItem;
+
+    @Prop({required: true})
+    public value!: string;
 
     public editor: Quill | null = null;
-    public value = ''
-
+    public editValue = this.options.value
 
     private update() {
         this.$emit('input', this.editor?.getText() ? this.editor.root.innerHTML : '');
     }
-
 
     private mounted() {
 
@@ -31,8 +33,10 @@ export default class GlobalEditor extends Vue {
             theme: 'snow',
             formats: ['bold', 'underline', 'header', 'italic', 'list', 'link']
         });
+        this.editor.focus(
+        )
 
-        this.editor.root.innerHTML = this.value;
+        this.editor.root.innerHTML = this.editValue;
 
         // We will add the update event here
         this.editor.on('text-change', () => {
