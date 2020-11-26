@@ -65,7 +65,12 @@ export class FormInputValidate {
 
 export class FormTextareaValidate {
     public required(value: string, required: boolean): boolean {
-        return required && value.length <= 1;
+        let cleanValue = value.replace(/<\/?[^>]+(>|$)/g, "");
+        if (required && cleanValue.length <= 1) {
+            value = '';
+            return true
+        }
+        return false;
     }
 }
 

@@ -3,12 +3,14 @@ import GlobaDataView from "@/components/global/data-view/data-view.vue";
 import GlobaTab from "@/components/global/tab/tab.vue";
 import MainTextSite from "@/components/main/text/site/site.vue";
 import {ITextEdit, ITextItem} from "@/types/components/text";
+import GlobalTextarea from "@/components/global/form-items/textarea/textarea.vue";
 
 @Component({
   components: {
     GlobaTab,
     GlobaDataView,
-    MainTextSite
+    MainTextSite,
+    GlobalTextarea
   }
 })
 export default class MainTextView extends Vue {

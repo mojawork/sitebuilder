@@ -27,13 +27,12 @@ export interface IInputItem {
   placeholder?: boolean;
 }
 
-export interface ITextAreaItem {
+export interface ITextAreaEditorItem {
   name: string;
   label: string;
   value: string;
   error: IInputError;
   required: boolean;
-  maxlength?: number;
 }
 
 

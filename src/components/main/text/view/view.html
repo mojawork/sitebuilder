@@ -5,6 +5,7 @@
     <GlobaTab :options="options.tabs" :activeTab="1">
         <div class="column-g">
             <GlobaDataView :options="$store.state.data.main.text"></GlobaDataView>
+            <GlobalTextarea :options="data.componentData.content"/>
         </div>
 
         <MainTextSite

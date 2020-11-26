@@ -6,10 +6,10 @@
     <div class="entry">
         <GlobalInput :options="data.componentData.headline"/>
         <GlobalEditor
+                :key="key"
                 v-model="data.componentData.content.value"
                 :options="data.componentData.content"
               />
-        <GlobalTextarea :options="data.componentData.content"/>
     </div>
 
     <footer>

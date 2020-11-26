@@ -15,7 +15,22 @@
   margin-bottom:$margin;
   background-color: var(--c-background);
   .headline {
+    color: var(--text-secondary);
     margin-bottom: $margin;
+  }
+  .content {
+    ::v-deep h2{
+      color: var(--text-secondary) !important;
+    }
+    ::v-deep ul, ::v-deep ol {
+      margin:0 1.5em 1.5em 1.5em;
+      li{
+        margin:0;
+        padding:0;
+        margin-bottom:$margin * 0.5;
+
+      }
+    }
   }
 
   // --- breakpoint 01 - 03 ---

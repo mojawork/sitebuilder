@@ -27,18 +27,20 @@
     width: 16rem !important;
     height: auto !important;
     border-radius: $radius !important;
-    .ql-picker-options{
+
+    .ql-picker-options {
       background-color: var(--c-secondary) !important;
       border: $border solid var(--c-primary) !important;
     }
+
     .ql-picker-label {
       padding: $padding * 0.26 !important;
       padding-left: $padding !important;
-      border:0 !important;
+      border: 0 !important;
     }
   }
 
-  .ql-picker-label{
+  .ql-picker-label {
     &:focus {
       @include focus-gm;
     }
@@ -48,6 +50,7 @@
 
 .ql-snow, .ql-stroke {
   stroke: var(--text-secondary) !important;
+
 }
 
 .ql-snow .ql-picker.ql-expanded .ql-picker-label {
@@ -56,6 +59,12 @@
 
 .ql-editor {
   width: 100% !important;
+}
+
+.ql-cu-error {
+  .ql-editor {
+   border: $border solid var(--c-error) !important;
+  }
 }
 
 .ql-editor:focus {

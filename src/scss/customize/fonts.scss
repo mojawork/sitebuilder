@@ -20,7 +20,8 @@
   h1{
     font-family: 'terminator', cursive;
     font-size: 2.6rem  * $font-desktop-factor;
-    line-height:  3.2rem  * $font-desktop-factor * 0.65;
+    line-height:  4.2rem  * $font-desktop-factor * 0.65;
+
     font-weight: 400;
     font-style: normal;
   }
@@ -28,7 +29,7 @@
   h2{
     font-family: 'terminator', cursive;
     font-size: 1.6rem  * $font-desktop-factor;
-    line-height:  2rem  * $font-desktop-factor * 0.65;
+    line-height:  2.8rem  * $font-desktop-factor * 0.65;
     font-weight: 200;
     font-style: normal;
     padding-bottom: $padding * 0.5 !important;

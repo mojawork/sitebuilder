@@ -1,7 +1,11 @@
-<div class="wrapper">
+<div class="wrapper" :class="{ 'ql-cu-error': options.error.exists}">
     <label :class="{ 'required': options.required}"
             v-text="options.label"/>
     <div class="editor"
          ref="editor"
          v-html="this.editValue"/>
+    <span class="text-error-g"
+          v-if="options.error.exists"
+          v-text="options.error.massage"/>
+
 </div>

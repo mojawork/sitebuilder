@@ -8,7 +8,6 @@ import {ITextEdit, ITextItem} from "@/types/components/text";
 import {TextService} from "@/services/text";
 import GlobalEditor from "@/components/global/form-items/editor/editor.vue";
 
-
 @Component({
     components: {
         GlobalInput,
@@ -24,43 +23,35 @@ export default class MainTextForm extends Vue {
     public data!: ITextItem;
 
     private service = new TextService();
-
     public textColors = ETextColors;
+    public key = false;
+
     private validate = new FormValidate();
 
-
     public reset(): void {
-        console.log('reset')
+        this.key = !this.key
+        if (this.data.componentData) {
+            this.data.componentData.content.value = ''
+        }
     }
 
     public load(): void {
-        console.log('load')
         this.service.load(this.data);
     }
 
     public save(): void {
         let error = false;
 
-        /*
-        this.data.items.forEach((item) => {
-            if ("offer" in item) {
-                error = this.validate.checkErrors(item.offer)
-            }
-            if ("headline" in item) {
-                error = this.validate.checkErrors(item.headline)
-            }
-        })
-         */
+        if (this.data.componentData) {
+            error = this.validate.checkErrors([
+                this.data.componentData.headline,
+                this.data.componentData.content
+            ])
+        }
 
         if (!error) {
             this.service.save(this.data);
         }
-    }
-
-    public error(): boolean {
-
-        return false;
-        // return this.response.error || this.data.error;
     }
 
     //  --- Lifecycle hooks ---

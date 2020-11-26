@@ -4,16 +4,11 @@
         v-text="options.label"/>
     <span class="input-wrapper">
         <textarea
-            :class="{ 'error': options.error.exists, 'max-count' : options.maxlength }"
+            :class="{ 'error': options.error.exists}"
             @blur="validate"
-            :maxlength="this.options.maxlength"
             :name = "this.options.name"
             v-model="options.value">
         </textarea>
-        <span
-            class="ELLIPSIS max-count"
-            v-if="options.maxlength"
-            v-text="this.getMaxCount.max(this.options.value, this.options.maxlength)"/>
     </span>
     <span
         class="error"

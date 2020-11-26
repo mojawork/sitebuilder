@@ -29,13 +29,12 @@
 
     h1 {
       margin: $margin 0;
-      color: var(--text-primary);
+      color: var(--text-secondary);
     }
     span {
       position: absolute;
       top: $margin;
       right: $margin;
-      color: var(--text-secondary);
     }
   }
 
@@ -48,6 +47,7 @@
       flex-flow: column;
       padding: $padding;
       margin: $margin 0;
+      color: var(--text-secondary);
       border-bottom: $border solid var(--text-primary);
     }
 
@@ -62,11 +62,11 @@
       }
 
       strong {
-        color: var(--text-secondary);
+
       }
 
       span {
-        color: var(--text-secondary);
+
       }
 
       span:last-of-type {
