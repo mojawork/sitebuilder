@@ -11,4 +11,18 @@
             :data="data"
             />
     </GlobalSplitter>
+
+    <global-popup
+            v-if="options.error"
+            v-bind:display.sync="options.error"
+            :options="{
+                headline: 'Data cannot be loaded',
+                button: 'ok',
+                color: textColors.error
+            }"/>
+
+    <global-spinner
+            v-if="$store.state.spinner"
+            v-bind:display.sync="$store.state.data.main.text.error"/>
+
 </div>

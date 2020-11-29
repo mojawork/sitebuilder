@@ -1,0 +1,97 @@
+// ----------------------------------------------------------------------------
+// Config
+// ----------------------------------------------------------------------------
+@import "~@/scss/import.scss";
+
+$spinner-size: 26rem;
+$animation-time: 0.75s;
+
+@keyframes pie {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slice {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Defaut
+// ----------------------------------------------------------------------------
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ct-primary);
+  animation-name: pie;
+  animation-duration: $animation-time * 2.25;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  z-index: 1000;
+
+  .pie-container,
+  .pie-slice-left,
+  .pie-slice-left > div,
+  .pie-slice-right,
+  .pie-slice-right > div {
+    position: absolute;
+    display: flex;
+    width: $spinner-size;
+    height: $spinner-size;
+    border-radius: $spinner-size * 0.5;
+  }
+
+  .pie-slice-left > div,
+  .pie-slice-right > div {
+    animation-name: slice;
+    animation-duration: $animation-time;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    background-color: var(--c-thirdly);
+  }
+
+  .pie-slice-right > div {
+    animation-delay: $animation-time;
+  }
+
+  .pie-slice-left {
+
+    clip: rect(0, $spinner-size * 0.5, $spinner-size, 0);
+
+    > div {
+      clip: rect(0, $spinner-size * 0.5, $spinner-size, 0);
+      transform: rotate(0deg);
+    }
+  }
+
+  .pie-slice-right {
+
+    clip: rect(0, $spinner-size, $spinner-size, $spinner-size  *0.5);
+
+    > div {
+      clip: rect(0, $spinner-size, $spinner-size, $spinner-size  *0.5);
+      transform: rotate(180deg);
+    }
+  }
+
+}

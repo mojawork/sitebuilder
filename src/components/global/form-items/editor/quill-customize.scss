@@ -8,20 +8,6 @@
   padding: 0 !important;
   margin-bottom: $margin !important;
 
-  span {
-    margin-right: $margin !important;
-  }
-
-  button {
-    width: 3rem !important;
-    height: 3rem !important;
-    margin-right: $margin * 0.5 !important;
-
-    &:focus {
-      @include focus-gm;
-    }
-  }
-
   .ql-picker {
     box-shadow: 0 0 $button-shadow 0 var(--text-secondary) !important;
     width: 16rem !important;
@@ -38,7 +24,31 @@
       padding-left: $padding !important;
       border: 0 !important;
     }
+
+    .ql-snow .ql-picker.ql-expanded .ql-picker-label {
+      color: transparent !important;
+    }
+
   }
+
+  span {
+    margin-right: $margin !important;
+  }
+
+  button {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-right: $margin * 0.5 !important;
+
+    .ql-snow, .ql-stroke {
+      stroke: var(--text-secondary) !important;
+    }
+
+    &:focus {
+      @include focus-gm;
+    }
+  }
+
 
   .ql-picker-label {
     &:focus {
@@ -48,34 +58,39 @@
 
 }
 
-.ql-snow, .ql-stroke {
-  stroke: var(--text-secondary) !important;
-
-}
-
-.ql-snow .ql-picker.ql-expanded .ql-picker-label {
-  color: transparent !important;
-}
-
-.ql-editor {
-  width: 100% !important;
-}
-
 .ql-cu-error {
   .ql-editor {
-   border: $border solid var(--c-error) !important;
+    border: $border solid var(--c-error) !important;
   }
 }
 
-.ql-editor:focus {
-  @include focus-gm;
+
+.ql-editor {
+  width: 100% !important;
+
+  &:focus {
+    @include focus-gm;
+  }
+
+  .ql-container.ql-snow {
+    border: 1px solid var(--c-primary) !important;
+    border-radius: $radius !important;
+  }
+
+  h2, h3 {
+    margin-bottom: $margin * 0.5;
+  }
+
+  ol, ul {
+    padding-left: 0 !important;
+  }
+
 }
 
-.ql-container.ql-snow {
-  border: 1px solid var(--c-primary) !important;
-  border-radius: $radius !important;
-}
 
-.ql-editor ol, .ql-editor ul {
-  padding-left: 0 !important;
-}
+
+
+
+
+
+

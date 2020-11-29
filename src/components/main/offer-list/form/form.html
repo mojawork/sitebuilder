@@ -12,16 +12,13 @@
         <GlobalInput v-for="item in data.header[0]" :options="item"></GlobalInput>
     </div>
 
-
     <div class="offer-item-labels">
         <strong v-text="staticOfferItems.offer[0].label"></strong>
         <strong v-text="staticOfferItems.offer[1].label"></strong>
         <strong v-text="staticOfferItems.offer[2].label"></strong>
-
     </div>
 
     <template v-if="data.items" v-for="(item ,index) in data.items">
-
         <div class="headline-items" v-if="item.headline">
             <div>
                 <button class="icons-g" @click="removeItem(index)">remove_circle</button>
@@ -32,8 +29,6 @@
                 <button class="icons-g" @click="addHeadlineItem(index)">playlist_add</button>
             </div>
         </div>
-
-
         <div class="offer-items" v-if="item.offer">
             <div>
                 <button class="icons-g" @click="removeItem(index)">remove_circle</button>
@@ -44,12 +39,7 @@
                 <button class="icons-g" @click="addHeadlineItem(index)">playlist_add</button>
             </div>
         </div>
-
-
-
-
     </template>
-
 
     <footer v-if="data.items.length > 0">
         <div class="buttons">

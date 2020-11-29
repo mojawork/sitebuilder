@@ -6,12 +6,16 @@ import MainTextForm from "@/components/main/text/form/form.vue";
 import store from "@/store";
 import {staticTextEdit} from "@/data/components/text";
 import _get from "lodash/get"
+import GlobalPopup from "@/components/global/popup/popup.vue";
+import GlobalSpinner from "@/components/global/spinner/spinner.vue";
 
 @Component({
   components: {
     GlobalSplitter,
     MainTextView,
-    MainTextForm
+    MainTextForm,
+    GlobalPopup,
+    GlobalSpinner
   }
 })
 export default class MainText extends Vue {

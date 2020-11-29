@@ -23,5 +23,6 @@ export interface IRootState {
         };
         footer: string;
     };
+    spinner : boolean;
     edit: boolean;
 }

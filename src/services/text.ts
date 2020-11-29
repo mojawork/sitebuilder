@@ -38,6 +38,7 @@ export class TextService {
     }
 
     public save(text: ITextItem) {
+        store.commit("updateSpinner", true);
         text.generate = true;
         axios({
             method: "post",
@@ -57,8 +58,6 @@ export class TextService {
                 } else {
                     this.error()
                 }
-
-
             },
             error => {
                 this.error()

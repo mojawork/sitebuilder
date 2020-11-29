@@ -1,26 +1,29 @@
-import { Component, Prop, Vue } from "vue-property-decorator";
+import {Component, Prop, Vue} from "vue-property-decorator";
 
-import { IOfferList } from "@/types/components/offer-list";
+import {IOfferList} from "@/types/components/offer-list";
 import MainOfferListForm from "@/components/main/offer-list/form/form.vue";
 import MainOfferListView from "@/components/main/offer-list/view/view.vue";
 import GlobalSplitter from "@/components/global/splitter/splitter.vue";
 import GlobalPopup from "@/components/global/popup/popup.vue";
+import GlobalSpinner from "@/components/global/spinner/spinner.vue";
 import {ETextColors} from "@/types/global/ICssClasses";
 
 @Component({
-  components: {
-    MainOfferListForm,
-    MainOfferListView,
-    GlobalSplitter,
-    GlobalPopup
-  }
+    components: {
+        MainOfferListForm,
+        MainOfferListView,
+        GlobalSplitter,
+        GlobalPopup,
+        GlobalSpinner
+    }
 })
 export default class MainOfferList extends Vue {
-  @Prop({ required: true })
-  public options!: IOfferList;
+    @Prop({required: true})
+    public options!: IOfferList;
 
-  public textColors = ETextColors;
+    public textColors = ETextColors;
 
-  //  --- Lifecycle hooks ---
-  private mounted() {}
+    //  --- Lifecycle hooks ---
+    private mounted() {
+    }
 }

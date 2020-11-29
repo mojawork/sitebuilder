@@ -29,12 +29,4 @@
         </div>
     </footer>
 
-    <global-popup
-            v-if="$store.state.data.main.text.error"
-            v-bind:display.sync="$store.state.data.main.text.error"
-            :options="{
-                headline: 'Data cannot be loaded',
-                button: 'ok',
-                color: textColors.error
-            }"/>
 </div>

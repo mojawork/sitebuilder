@@ -1,15 +1,8 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
-import {IOfferList} from "@/types/components/offer-list";
 import {ETextColors} from "@/types/global/ICssClasses";
 
 @Component({
     components: {},
-
-    data() {
-        return {
-            display2: true
-        }
-    },
 })
 export default class GlobalPopup extends Vue {
     @Prop({required: false})

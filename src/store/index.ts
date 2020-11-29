@@ -19,8 +19,8 @@ export default new Vuex.Store<IRootState>({
             sites: {
                 edit: '',
                 data: {
-                    home:staticSiteHome,
-                    test:staticSiteTest
+                    home: staticSiteHome,
+                    test: staticSiteTest
                 },
                 error: false
             },
@@ -33,12 +33,19 @@ export default new Vuex.Store<IRootState>({
                 }
             },
             footer: "footer",
-        }, edit: true
+        },
+        spinner: false,
+        edit: true
     },
     mutations: {
         // --- updateState ------------------------------------------------------------
         updateState(state: IRootState, payload: IRootState) {
             state = payload;
+        },
+
+        // --- updateSpinner ------------------------------------------------------------
+        updateSpinner(state: IRootState, payload: boolean) {
+            state.spinner = payload;
         },
 
         // --- updateRoutes -----------------------------------------------------------

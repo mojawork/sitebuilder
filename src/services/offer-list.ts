@@ -1,8 +1,6 @@
 import axios from "axios";
 import store from "@/store";
-
-import { IInputItem } from "@/types/global/iForms";
-import { EofferListDataNames, IOfferList } from "@/types/components/offer-list";
+import { IOfferList } from "@/types/components/offer-list";
 
 export class OfferListService {
   // config ---
@@ -11,7 +9,6 @@ export class OfferListService {
   private error() {
     store.state.data.main.offerList.error = true;
     store.commit("updateState", store.state);
-
   }
 
   public load() {
@@ -36,6 +33,7 @@ export class OfferListService {
   }
 
   public save()  {
+    store.commit("updateSpinner", true);
     return axios({
       method: "post",
       url: this.saveService,

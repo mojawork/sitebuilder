@@ -1,7 +1,6 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 import GlobalInput from "@/components/global/form-items/input/input.vue";
 import GlobalTextarea from "@/components/global/form-items/textarea/textarea.vue";
-import GlobalPopup from "@/components/global/popup/popup.vue";
 import {FormValidate} from "@/components/global/form-items/validate/validate";
 import {ETextColors} from "@/types/global/ICssClasses";
 import {ITextEdit, ITextItem} from "@/types/components/text";
@@ -13,7 +12,6 @@ import GlobalEditor from "@/components/global/form-items/editor/editor.vue";
         GlobalInput,
         GlobalTextarea,
         GlobalEditor,
-        GlobalPopup
     }
 })
 export default class MainTextForm extends Vue {
