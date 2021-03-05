@@ -1,4 +1,4 @@
-<section v-if="options" :key="options.id" class="site theme-customize">
+<section v-if="options" :key="options.id" class="site" :class="theme">
     <button
         v-if="$store.state.edit"
         @click="setEditId()"

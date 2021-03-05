@@ -14,6 +14,18 @@ export const staticHeaderRoutes: IRouteItem[] = [
         route: '/test',
         viewName: IViewNames.index,
     }
+
+    /*
+    {
+        label: 'Wurst',
+        title: 'wurst',
+        route: '/wurst',
+        viewName: IViewNames.index,
+    }
+
+     */
+
+
 ]
 
 export const staticFooterRoutes = {}

@@ -14,6 +14,7 @@ export default class MainTextSite extends Vue {
     private options!: ITextItem | null;
     private textService = new TextService();
     private viewNames = IViewNames;
+    public theme = process.env.VUE_APP_DEFAULT_THEME;
 
     public setEditId() {
         store.commit("UpdateTextEdit", this.options?.id);

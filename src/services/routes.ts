@@ -12,8 +12,11 @@ export class RouteService {
 
     private testdata = staticHeaderRoutes
 
-
     public load() {
+
+        store.commit("updateRoutes", this.testdata);
+
+        /*
         axios({
             method: "post",
             url: this.service,
@@ -30,6 +33,8 @@ export class RouteService {
                console.log('error')
             }
         );
+
+         */
     }
 
 

@@ -13,6 +13,7 @@ export default class MainOfferListSite extends Vue {
     @Prop({required: true})
     @Prop({required: true})
     public data!: IOfferList["data"];
+    public theme = process.env.VUE_APP_DEFAULT_THEME;
 
     public viewNames = IViewNames;
 
